@@ -1,0 +1,217 @@
+/*Variables to make scaling more user friendly*/
+:root{
+    --scale-HD: 0.8;
+    --scale-FHD: 1;
+    --scale-QHD: 1.33;
+    --scale-UHD: 2;
+    --scale: 2;
+}
+
+/*3840x2160*/
+@media only screen and (max-width: 3840px) {
+    :root{
+        --scale: var(--scale-UHD);
+    }
+}
+
+/*2560x1440*/
+@media only screen and (max-width: 2560px) {
+    :root{
+        --scale: var(--scale-QHD);
+    }
+}
+
+/*1920x1080*/
+@media only screen and (max-width: 1920px) {
+    :root{
+        --scale: var(--scale-FHD);
+    }
+}
+
+/*1280x720*/
+@media only screen and (max-width: 1280px) {
+    :root{
+        --scale: var(--scale-HD);
+    }
+}
+
+/*Global*/
+html *{
+    font-family: Gadugi !important;
+    font-weight: bold !important;
+    border-radius: calc(8px * var(--scale)) calc(8px * var(--scale)) calc(6px * var(--scale)) calc(6px * var(--scale));
+}
+
+body{
+    background-color: rgb(60, 60, 60);
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: calc(16px * var(--scale));
+    text-align: center;
+    color: rgb(0, 0, 0);
+    cursor: default;
+    animation: footerFadeIn 8s;
+}
+
+select{
+    float: right;
+    width: calc(64px * var(--scale));
+    text-align: center;
+}
+
+input{
+    background: #FFFFFF; 
+    color: #000000;
+}
+
+h1{
+    font-size: calc(38px * var(--scale));
+    cursor: default;
+}
+
+h3{
+    font-size: calc(30px * var(--scale));
+    margin-left: calc(40px * var(--scale));
+    cursor: pointer;
+    animation: footerFadeIn 4s;
+}
+
+img {
+    width: calc(22px * var(--scale));
+    height: calc(22px * var(--scale));
+    padding-top: calc(10px * var(--scale));
+    position: absolute; 
+    bottom: calc(0.2px * var(--scale));
+}
+
+button, select, input {
+    font-size: calc(13px * var(--scale));
+}
+
+button:hover, select:hover, img:hover {
+    cursor: pointer;
+}
+
+input {
+    height: calc(14px * var(--scale));
+}
+
+a:link, a:visited, a:hover, a:active{
+    color: black;
+    text-decoration: none;
+}
+
+/*Classes*/
+.box{
+    background-color:rgb(120, 40, 180);
+    width: calc(592px * var(--scale));
+    margin: 0 auto;
+    margin-top: calc(100px * var(--scale));
+    vertical-align: middle;
+    text-align: center;
+    border: calc(3px * var(--scale)) solid black;
+    padding: calc(20px * var(--scale));
+    border-radius: calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale));
+    animation: boxSlideIn 2s;
+}
+
+.options{
+    font-size: calc(18px * var(--scale));
+    text-align: justify;
+    text-justify: inter-word;
+    margin-left: calc(110px * var(--scale));
+    margin-right: calc(110px * var(--scale));
+}
+
+.result{
+    position: relative;
+    margin-top: calc(20px * var(--scale));
+}
+
+.error{
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+    font-size: calc(24px * var(--scale));
+    color: rgb(0, 180, 0);
+    cursor: default;
+}
+
+.success{
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    cursor: default;
+}
+
+.fadeOut{
+    animation: fadeOut 6s;
+    animation-fill-mode: forwards;
+}
+
+
+/*IDs*/
+#length{
+    float: right;
+    width: calc(23px * var(--scale));
+    height: calc(16px * var(--scale));
+    text-align: center;
+}
+
+#copy {
+    padding-left: calc(2px * var(--scale));
+}
+
+#view {
+    padding-left: calc(26px * var(--scale));
+}
+
+
+/*Animations*/
+@keyframes boxSlideIn{
+    0% {
+        margin-top: calc(1200px * var(--scale));
+    }
+
+    100% {
+        margin-top: calc(100px * var(--scale));
+    }
+}
+
+@keyframes fadeOut{
+    0% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    66% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes footerFadeIn{
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
