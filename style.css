@@ -1,5 +1,5 @@
 /*Variables to make scaling more user friendly*/
-:root{
+:root {
     --scale-HD: 0.8;
     --scale-FHD: 1;
     --scale-QHD: 1.33;
@@ -9,44 +9,44 @@
 
 /*3840x2160*/
 @media only screen and (max-width: 3840px) {
-    :root{
+    :root {
         --scale: var(--scale-UHD);
     }
 }
 
 /*2560x1440*/
 @media only screen and (max-width: 2560px) {
-    :root{
+    :root {
         --scale: var(--scale-QHD);
     }
 }
 
 /*1920x1080*/
 @media only screen and (max-width: 1920px) {
-    :root{
+    :root {
         --scale: var(--scale-FHD);
     }
 }
 
 /*1280x720*/
 @media only screen and (max-width: 1280px) {
-    :root{
+    :root {
         --scale: var(--scale-HD);
     }
 }
 
 /*Global*/
-html *{
+html * {
     font-family: Gadugi !important;
     font-weight: bold !important;
     border-radius: calc(8px * var(--scale)) calc(8px * var(--scale)) calc(6px * var(--scale)) calc(6px * var(--scale));
 }
 
-body{
+body {
     background-color: rgb(60, 60, 60);
 }
 
-footer{
+footer {
     background-color: rgb(40, 40, 40);
     position: fixed;
     left: 0;
@@ -59,18 +59,18 @@ footer{
     border-radius: 0px 0px 0px 0px;
 }
 
-select{
+select {
     float: right;
     width: calc(64px * var(--scale));
     text-align: center;
 }
 
-input{
-    background: #FFFFFF; 
+input {
+    background: #FFFFFF;
     color: #000000;
 }
 
-h1{
+h1 {
     font-size: calc(38px * var(--scale));
     cursor: default;
 }
@@ -79,7 +79,7 @@ img {
     width: calc(22px * var(--scale));
     height: calc(22px * var(--scale));
     padding-top: calc(10px * var(--scale));
-    position: absolute; 
+    position: absolute;
     bottom: calc(0.2px * var(--scale));
 }
 
@@ -96,20 +96,16 @@ input {
 }
 
 /*Classes*/
-.box{
-    background-color:rgb(120, 40, 180);
+.box {
     width: calc(592px * var(--scale));
     margin: 0 auto;
     margin-top: calc(180px * var(--scale));
     vertical-align: middle;
     text-align: center;
-    border: calc(3px * var(--scale)) solid black;
-    padding: calc(20px * var(--scale));
-    border-radius: calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale));
     animation: boxSlideIn 2s;
 }
 
-.options{
+.options {
     font-size: calc(18px * var(--scale));
     text-align: justify;
     text-justify: inter-word;
@@ -117,12 +113,12 @@ input {
     margin-right: calc(110px * var(--scale));
 }
 
-.result{
+.result {
     position: relative;
     margin-top: calc(20px * var(--scale));
 }
 
-.error{
+.error {
     margin: auto;
     vertical-align: middle;
     text-align: center;
@@ -131,7 +127,7 @@ input {
     cursor: default;
 }
 
-.success{
+.success {
     margin: auto;
     vertical-align: middle;
     text-align: center;
@@ -139,14 +135,14 @@ input {
     cursor: default;
 }
 
-.fadeOut{
+.fadeOut {
     animation: fadeOut 6s;
     animation-fill-mode: forwards;
 }
 
 
 /*IDs*/
-#length{
+#length {
     float: right;
     width: calc(23px * var(--scale));
     height: calc(16px * var(--scale));
@@ -163,7 +159,7 @@ input {
 
 
 /*Animations*/
-@keyframes boxSlideIn{
+@keyframes boxSlideIn {
     0% {
         margin-top: calc(1200px * var(--scale));
     }
@@ -173,7 +169,7 @@ input {
     }
 }
 
-@keyframes fadeOut{
+@keyframes fadeOut {
     0% {
         opacity: 1;
     }
@@ -191,7 +187,7 @@ input {
     }
 }
 
-@keyframes footerFadeIn{
+@keyframes footerFadeIn {
     0% {
         opacity: 0;
     }

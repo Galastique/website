@@ -1,92 +1,92 @@
 <!DOCTYPE html>
 <html onmouseleave="leaving()">
 
-    <head>
-        <title>Password Generator</title>
-        <meta name="description" content="User friendly password generator">
-        <meta name="author" content="Galastique">
-        <meta charset="UTF-8">
-        <link rel="icon" href="./images/icon.png">
-        <link rel="stylesheet" href="style.css">
-        <script src="generator.js"></script>
-    </head>
+<head>
+    <title>Password Generator</title>
+    <meta name="description" content="User friendly password generator">
+    <meta name="author" content="Galastique">
+    <meta charset="UTF-8">
+    <link rel="icon" href="./images/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="generator.js"></script>
+</head>
 
-    <body>
-        <a href="https://bit.ly/31ggyc8">
-            <h3>🠔 Back</h3>
-        </a>
-        <div class="box">
+<body>
+    <a href="https://bit.ly/31ggyc8">
+        <h3>🠔 Back</h3>
+    </a>
+    <div class="box">
 
-            <h1>Password Generator</h1>
+        <h1>Password Generator</h1>
 
-            <div class="options">
+        <div class="options">
 
-                <div class="length">
-                    <label>Password length: </label>
-                    <input type="text" id="length" placeholder="40" value="">
-                </div>
-
-                <div class="letters">
-                    <label>Contains letters: </label>
-                    <select id="letters">
-                        <option value="choose" selected disabled hidden>Select</option>
-                        <option value="lower">Lower</option>
-                        <option value="upper">Upper</option>
-                        <option value="both">Both</option>
-                        <option value="none">None</option>
-                    </select>
-                </div>
-
-                <div class="numbers">
-                    <label>Contains numbers: </label>
-                    <select id="numbers">
-                        <option value="choose" selected disabled hidden>Select</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
-                </div>
-
-                <div class="special">
-                    <label>Contains special characters: </label>
-                    <select id="special">
-                        <option value="choose" selected disabled hidden>Select</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
-                </div>
-
-                <div class="easy">
-                    <label>Easy to read: </label>
-                    <select id="easy">
-                        <option value="choose" selected disabled hidden>Select</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
-                </div>
-
+            <div class="length">
+                <label>Password length: </label>
+                <input type="text" id="length" placeholder="40" value="">
             </div>
 
-            <div class="result">
-                <button id="button" onclick="getValues()">Generate password</button>
-                <input type="password" id="password" disabled>
-                <img src="./images/eye.png" id="view" onclick="view()">
-                <img src="./images/copy.png" id="copy" onclick="copy()">
+            <div class="letters">
+                <label>Contains letters: </label>
+                <select id="letters">
+                    <option value="choose" selected disabled hidden>Select</option>
+                    <option value="lower">Lower</option>
+                    <option value="upper">Upper</option>
+                    <option value="both">Both</option>
+                    <option value="none">None</option>
+                </select>
+            </div>
+
+            <div class="numbers">
+                <label>Contains numbers: </label>
+                <select id="numbers">
+                    <option value="choose" selected disabled hidden>Select</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+
+            <div class="special">
+                <label>Contains special characters: </label>
+                <select id="special">
+                    <option value="choose" selected disabled hidden>Select</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+
+            <div class="easy">
+                <label>Easy to read: </label>
+                <select id="easy">
+                    <option value="choose" selected disabled hidden>Select</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
             </div>
 
         </div>
-        
-        <div class="error">
-            <p id="error"></p>
+
+        <div class="result">
+            <button id="button" onclick="getValues()">Generate password</button>
+            <input type="password" id="password" disabled>
+            <img src="./images/eye.png" id="view" onclick="view()">
+            <img src="./images/copy.png" id="copy" onclick="copy()">
         </div>
 
-        <div class="success">
-            <p id="success"></p>
-        </div>
+    </div>
 
-    </body>
+    <div class="error">
+        <p id="error"></p>
+    </div>
 
-    <footer>
-        <p>Made by Galastique - 06/2022</p>
-    </footer>
+    <div class="success">
+        <p id="success"></p>
+    </div>
+
+</body>
+
+<footer>
+    <p>Made by Galastique - 06/2022</p>
+</footer>
 
 </html>

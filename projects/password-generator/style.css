@@ -1,5 +1,5 @@
 /*Variables to make scaling more user friendly*/
-:root{
+:root {
     --scale-HD: 0.8;
     --scale-FHD: 1;
     --scale-QHD: 1.33;
@@ -9,44 +9,44 @@
 
 /*3840x2160*/
 @media only screen and (max-width: 3840px) {
-    :root{
+    :root {
         --scale: var(--scale-UHD);
     }
 }
 
 /*2560x1440*/
 @media only screen and (max-width: 2560px) {
-    :root{
+    :root {
         --scale: var(--scale-QHD);
     }
 }
 
 /*1920x1080*/
 @media only screen and (max-width: 1920px) {
-    :root{
+    :root {
         --scale: var(--scale-FHD);
     }
 }
 
 /*1280x720*/
 @media only screen and (max-width: 1280px) {
-    :root{
+    :root {
         --scale: var(--scale-HD);
     }
 }
 
 /*Global*/
-html *{
+html * {
     font-family: Gadugi !important;
     font-weight: bold !important;
     border-radius: calc(8px * var(--scale)) calc(8px * var(--scale)) calc(6px * var(--scale)) calc(6px * var(--scale));
 }
 
-body{
+body {
     background-color: rgb(60, 60, 60);
 }
 
-footer{
+footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -58,23 +58,23 @@ footer{
     animation: footerFadeIn 8s;
 }
 
-select{
+select {
     float: right;
     width: calc(64px * var(--scale));
     text-align: center;
 }
 
-input{
-    background: #FFFFFF; 
+input {
+    background: #FFFFFF;
     color: #000000;
 }
 
-h1{
+h1 {
     font-size: calc(38px * var(--scale));
     cursor: default;
 }
 
-h3{
+h3 {
     font-size: calc(30px * var(--scale));
     margin-left: calc(40px * var(--scale));
     cursor: pointer;
@@ -85,7 +85,7 @@ img {
     width: calc(22px * var(--scale));
     height: calc(22px * var(--scale));
     padding-top: calc(10px * var(--scale));
-    position: absolute; 
+    position: absolute;
     bottom: calc(0.2px * var(--scale));
 }
 
@@ -101,14 +101,17 @@ input {
     height: calc(14px * var(--scale));
 }
 
-a:link, a:visited, a:hover, a:active{
+a:link,
+a:visited,
+a:hover,
+a:active {
     color: black;
     text-decoration: none;
 }
 
 /*Classes*/
-.box{
-    background-color:rgb(120, 40, 180);
+.box {
+    background-color: rgb(120, 40, 180);
     width: calc(592px * var(--scale));
     margin: 0 auto;
     margin-top: calc(100px * var(--scale));
@@ -120,7 +123,7 @@ a:link, a:visited, a:hover, a:active{
     animation: boxSlideIn 2s;
 }
 
-.options{
+.options {
     font-size: calc(18px * var(--scale));
     text-align: justify;
     text-justify: inter-word;
@@ -128,12 +131,12 @@ a:link, a:visited, a:hover, a:active{
     margin-right: calc(110px * var(--scale));
 }
 
-.result{
+.result {
     position: relative;
     margin-top: calc(20px * var(--scale));
 }
 
-.error{
+.error {
     margin: auto;
     vertical-align: middle;
     text-align: center;
@@ -142,7 +145,7 @@ a:link, a:visited, a:hover, a:active{
     cursor: default;
 }
 
-.success{
+.success {
     margin: auto;
     vertical-align: middle;
     text-align: center;
@@ -150,14 +153,14 @@ a:link, a:visited, a:hover, a:active{
     cursor: default;
 }
 
-.fadeOut{
+.fadeOut {
     animation: fadeOut 6s;
     animation-fill-mode: forwards;
 }
 
 
 /*IDs*/
-#length{
+#length {
     float: right;
     width: calc(23px * var(--scale));
     height: calc(16px * var(--scale));
@@ -174,7 +177,7 @@ a:link, a:visited, a:hover, a:active{
 
 
 /*Animations*/
-@keyframes boxSlideIn{
+@keyframes boxSlideIn {
     0% {
         margin-top: calc(1200px * var(--scale));
     }
@@ -184,7 +187,7 @@ a:link, a:visited, a:hover, a:active{
     }
 }
 
-@keyframes fadeOut{
+@keyframes fadeOut {
     0% {
         opacity: 1;
     }
@@ -202,7 +205,7 @@ a:link, a:visited, a:hover, a:active{
     }
 }
 
-@keyframes footerFadeIn{
+@keyframes footerFadeIn {
     0% {
         opacity: 0;
     }
