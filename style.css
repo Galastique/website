@@ -82,6 +82,7 @@ a {
 
 a:hover {
     text-decoration: underline;
+    color: rgb(220, 220, 220);
 }
 
 /*Classes*/
@@ -120,6 +121,12 @@ a:hover {
 
 #cgllink {
     color: rgb(160, 160, 160);
+}
+
+#selected {
+    color: rgb(220, 220, 220);
+    text-decoration: underline;
+    text-decoration-color: red;
 }
 
 
