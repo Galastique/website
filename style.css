@@ -47,12 +47,8 @@ body {
     background-color: rgb(60, 60, 60);
     text-align: center;
     margin-top: calc(40px * var(--scale));
-    margin-left: calc(120px * var(--scale));
-    margin-right: calc(120px * var(--scale));
-}
-
-p {
-    font-size: calc(16px * var(--scale));
+    margin-left: calc(160px * var(--scale));
+    margin-right: calc(160px * var(--scale));
 }
 
 footer {
@@ -68,8 +64,18 @@ footer {
     border-radius: 0px 0px 0px 0px;
 }
 
+p {
+    font-size: calc(16px * var(--scale));
+}
+
 nav {
     font-size: calc(38px * var(--scale));
+    margin-bottom: calc(25px * var(--scale));
+}
+
+hr {
+    color: rgb(255, 0, 0);
+    border-width: calc(2px * var(--scale));
 }
 
 h1 {
