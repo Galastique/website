@@ -47,8 +47,8 @@ body {
     background-color: rgb(60, 60, 60);
     text-align: center;
     margin-top: calc(40px * var(--scale));
-    margin-left: calc(160px * var(--scale));
-    margin-right: calc(160px * var(--scale));
+    margin-left: calc(175px * var(--scale));
+    margin-right: calc(175px * var(--scale));
 }
 
 footer {
@@ -74,7 +74,6 @@ nav {
 }
 
 hr {
-    color: rgb(255, 0, 0);
     border-width: calc(2px * var(--scale));
 }
 
