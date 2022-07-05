@@ -1,0 +1,10 @@
+/*This simply exists to override the animation and make it *not* happen on pages that arent the homepage*/
+@keyframes footerFadeIn {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
