@@ -2,7 +2,7 @@
 let letters = "abcdefghijklmnopqrstuvwxyz";
 let numbers = "0123456789";
 let special = "!@#$%^&*()-_=+`~[]{};:'\",.?<>/\\|";
-let easy = "Il1|O0'`\";:,.[]{}~^\\";
+let easy = "Il|O0B'`\";:,.[]{}~^\\";
 let generated = false;
 let copied = false;
 
