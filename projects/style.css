@@ -1,3 +1,76 @@
+/*Variables to make scaling more user friendly*/
+:root {
+    --scale-HD: 0.66;
+    --scale-FHD: 1;
+    --scale-QHD: 1.33;
+    --scale-UHD: 2;
+    --scale: 2;
+}
+
+/*3840x2160*/
+@media only screen and (max-width: 3840px) {
+    :root {
+        --scale: var(--scale-UHD);
+    }
+}
+
+/*2560x1440*/
+@media only screen and (max-width: 2560px) {
+    :root {
+        --scale: var(--scale-QHD);
+    }
+}
+
+/*1920x1080*/
+@media only screen and (max-width: 1920px) {
+    :root {
+        --scale: var(--scale-FHD);
+    }
+}
+
+/*1280x720*/
+@media only screen and (max-width: 1280px) {
+    :root {
+        --scale: var(--scale-HD);
+    }
+}
+
+
+/*Global*/
+
+
+
+/*Classes*/
+.project-light {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0 auto;
+    padding: calc(10px * var(--scale));
+    width: calc(800px * var(--scale));
+    height: calc(250px * var(--scale));
+    border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
+}
+
+.project-dark {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+    padding: calc(10px * var(--scale));
+    width: calc(800px * var(--scale));
+    height: calc(250px * var(--scale));
+    border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
+}
+
+.link:link, .link:visited, .link:active {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(200, 200, 200);
+    text-decoration: underline;
+}
+
+
+/*Animations*/
 /*This simply exists to override the animation and make it *not* happen on pages that arent the homepage*/
 @keyframes footerFadeIn {
     0% {
