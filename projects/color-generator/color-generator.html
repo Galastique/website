@@ -3,36 +3,31 @@
 
 <head>
     <title>Random Color Generator</title>
-    <meta name="description" content="Galastique's website! Here you can find an archive of my programming projects, as well as links to my social media.">
-    <meta name="keywords" content="Galastique">
+    <meta name="description" content="Galastique's random color generator">
+    <meta name="keywords" content="Galastique, random, color, generator, random color generator, color generator, random color">
     <meta name="author" content="Galastique">
     <meta charset="UTF-8">
-    <link rel="icon" href="../../images/logo.png">
-    <link rel="stylesheet" href="../../style.css">
-    <script src="./script.js"></script>
+    <link rel="icon" href="./images/icon.png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 
-<body>
-    <nav>
-        <a class="options" id="selected" href="./index.html">Home</a>
-        <a class="options" href="./projects/projects.html">Projects</a>
-        <a class="options" href="./social/social.html">Social</a>
-    </nav>
-    <hr>
+<body onload="generate()">
+    <a href="../projects.html">
+        <h3>🠔 Back</h3>
+    </a>
 
-    <h1>Welcome stranger!</h1>
-    <p>This is my very own website, that I built in HTML, CSS and with a bit of JavaScript, entirely on my own. It contains my frontend programming projects, as well as information about them. You can also find links to several of my social media, in addition to my email if you ever wish to contact me. </p>
-
+    <div class="content">
+        <h1>Random Color Generator</h1>
+        <p id="rgb"></p>
+        <p id="hex"></p>
+        <p id="noJS">If you can read this message, it means that you probably have JavaScript disabled on your browser. Please enable it. The page will work correctly after that.</p>
+        <button onclick="generate()">Generate new color</button>
+    </div>
 </body>
 
 <footer>
-    <div class="sponsored">
-        <a class="cgllink" href="https://www.cglmicro.ca/" target="_blank">
-            <img src="./images/cgl.png">
-            <p class="cgllink">Hosting generously sponsored by CGL Micro Inc.</p>
-        </a>
-    </div>
-    <p>Made by Galastique // June - July 2022</p>
+    <p>Made by Galastique - 07/2022</p>
 </footer>
 
 </html>
