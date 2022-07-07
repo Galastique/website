@@ -1,3 +1,16 @@
+//Changes background color and text fields
+function changeCSS(){
+    document.getElementById("noJS").innerHTML = "";
+    let colors = generate();
+    let rgb = getRGB(colors);
+    let hex = getHex(colors);
+
+    document.body.style.backgroundColor = rgb;
+
+    document.getElementById("rgb").innerHTML = rgb.toUpperCase();
+    document.getElementById("hex").innerHTML = hex.toUpperCase();
+}
+
 //Generates random color
 function generate(){
     let colors = [];
@@ -6,28 +19,32 @@ function generate(){
         colors.push(Math.floor(Math.random() * 256));
     }
 
-    changeCSS(colors);
+    return colors;
 }
 
-//Changes background color and text fields
-function changeCSS(colors){
-    let rgb = `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`;
-    let hex = `#${colors[0].toString(16) + colors[1].toString(16) + colors[2].toString(16)}`;
+//Gets RGB value
+function getRGB(colors){
+    return `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`;
+}
 
-    document.body.style.backgroundColor = rgb;
+//Gets hex value
+function getHex(colors){
+    let red = colors[0].toString(16);
+    let green = colors[1].toString(16);
+    let blue = colors[2].toString(16);
+    let hex = "#";
 
-    //Makes sure hex value has the extra 0 if the number is smaller than 10
-    if(colors[0] < 16){
-        hex = `${hex.substring(0, 1)}0${hex.substring(1)}`;
+    if(red.length == 1){
+        red = `0${red}`;
     }
-    if(colors[1] < 16){
-        hex = `${hex.substring(0, 3)}0${hex.substring(3)}`;
+    if(green.length == 1){
+        green = `0${green}`;
     }
-    if(colors[2] < 16){
-        hex = `${hex.substring(0, 5)}0${hex.substring(5)}`;
+    if(blue.length == 1){
+        blue = `0${blue}`;
     }
 
-    document.getElementById("rgb").innerHTML = rgb.toUpperCase();
-    document.getElementById("hex").innerHTML = hex.toUpperCase();
-    document.getElementById("noJS").innerHTML = "";
+    hex += red + green + blue;
+
+    return hex;
 }
