@@ -37,14 +37,22 @@
 
 
 /*Global*/
+footer {
+    position: absolute;
+    bottom: calc(-1650px * var(--scale));
+    animation: none;
+}
 
-
+h2 {
+    font-size: calc(28px * var(--scale));
+    text-align: center;
+}
 
 /*Classes*/
 .project-light {
     background-color: rgba(0, 0, 0, 0);
     margin: 0 auto;
-    padding: calc(10px * var(--scale));
+    padding: calc(25px * var(--scale));
     width: calc(800px * var(--scale));
     height: calc(250px * var(--scale));
     border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
@@ -53,10 +61,14 @@
 .project-dark {
     background-color: rgba(0, 0, 0, 0.4);
     margin: 0 auto;
-    padding: calc(10px * var(--scale));
+    padding: calc(25px * var(--scale));
     width: calc(800px * var(--scale));
     height: calc(250px * var(--scale));
     border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
+}
+
+.description {
+    text-align: left;
 }
 
 .link:link, .link:visited, .link:active {
@@ -69,15 +81,11 @@
     text-decoration: underline;
 }
 
-
-/*Animations*/
-/*This simply exists to override the animation and make it *not* happen on pages that arent the homepage*/
-@keyframes footerFadeIn {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.projectImage {
+    width: calc(150px * var(--scale));
+    height: calc(150px * var(--scale));
+    position: relative;
+    bottom: calc(220px * var(--scale));
+    left: calc(1000px * var(--scale));
+    padding: 0px;
 }
