@@ -143,6 +143,16 @@ a:hover {
     text-decoration-style: double;
 }
 
+#link:link, #link:visited, #link:active {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}
+
+#link:hover {
+    color: rgb(200, 200, 200);
+    text-decoration: underline;
+}
+
 
 /*Animations*/
 @keyframes boxSlideIn {
