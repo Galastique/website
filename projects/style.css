@@ -85,7 +85,8 @@ h2 {
     width: calc(150px * var(--scale));
     height: calc(150px * var(--scale));
     position: relative;
+    float: right;
     bottom: calc(220px * var(--scale));
-    left: calc(920px * var(--scale));
+    left: calc(-40px * var(--scale));
     padding: 0px;
 }
