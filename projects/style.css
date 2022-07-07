@@ -51,7 +51,7 @@ h2 {
 /*Classes*/
 .project-light {
     background-color: rgba(0, 0, 0, 0);
-    margin: 0 auto;
+    margin-left: calc(60px * var(--scale));
     padding: calc(25px * var(--scale));
     width: calc(800px * var(--scale));
     height: calc(250px * var(--scale));
@@ -60,7 +60,7 @@ h2 {
 
 .project-dark {
     background-color: rgba(0, 0, 0, 0.4);
-    margin: 0 auto;
+    margin-left: calc(60px * var(--scale));
     padding: calc(25px * var(--scale));
     width: calc(800px * var(--scale));
     height: calc(250px * var(--scale));
@@ -86,6 +86,6 @@ h2 {
     height: calc(150px * var(--scale));
     position: relative;
     bottom: calc(220px * var(--scale));
-    left: calc(1000px * var(--scale));
+    left: calc(920px * var(--scale));
     padding: 0px;
 }
