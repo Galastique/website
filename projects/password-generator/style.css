@@ -107,7 +107,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 /*Classes*/
-.box {
+.content {
     background-color: rgb(120, 40, 180);
     width: calc(592px * var(--scale));
     margin: 0 auto;
