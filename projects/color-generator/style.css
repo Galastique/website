@@ -92,10 +92,6 @@ a:link, a:visited, a:hover, a:active {
     animation: boxSlideIn 2s;
 }
 
-
-/*IDs*/
-
-
 /*Animations*/
 @keyframes footerFadeIn {
     0% {
