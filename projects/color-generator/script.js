@@ -16,6 +16,17 @@ function changeCSS(colors){
 
     document.body.style.backgroundColor = rgb;
 
+    //Makes sure hex value has the extra 0 if the number is smaller than 10
+    if(colors[0] < 10){
+        hex = `${hex.substring(0, 1)}0${hex.substring(1)}`;
+    }
+    if(colors[1] < 10){
+        hex = `${hex.substring(0, 3)}0${hex.substring(3)}`;
+    }
+    if(colors[2] < 10){
+        hex = `${hex.substring(0, 5)}0${hex.substring(5)}`;
+    }
+
     document.getElementById("rgb").innerHTML = rgb.toUpperCase();
     document.getElementById("hex").innerHTML = hex.toUpperCase();
     document.getElementById("noJS").innerHTML = "";
