@@ -25,14 +25,6 @@ img {
     bottom: calc(0.2px * var(--scale));
 }
 
-button, select, input {
-    font-size: calc(13px * var(--scale));
-}
-
-button:hover, select:hover, img:hover {
-    cursor: pointer;
-}
-
 input {
     height: calc(14px * var(--scale));
 }

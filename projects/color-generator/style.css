@@ -3,10 +3,6 @@ button, select, input {
     font-size: calc(16px * var(--scale));
 }
 
-button:hover, select:hover, img:hover {
-    cursor: pointer;
-}
-
 /*Classes*/
 .content {
     width: calc(592px * var(--scale));

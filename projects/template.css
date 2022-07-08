@@ -79,6 +79,14 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 }
 
+button, select, input {
+    font-size: calc(13px * var(--scale));
+}
+
+button:hover, select:hover, img:hover {
+    cursor: pointer;
+}
+
 /*Classes*/
 .content {
     margin: 0 auto;
