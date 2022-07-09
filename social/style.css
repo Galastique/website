@@ -1,3 +1,78 @@
+/*Global*/
+footer {
+    position: absolute;
+    bottom: calc(-570px * var(--scale));
+    animation: none;
+}
+
+h3 {
+    font-size: calc(22px * var(--scale));
+}
+
+/*Classes*/
+.socials {
+    height: calc(840px * var(--scale));
+    width: calc(860px * var(--scale));
+    margin: 0 auto;
+    vertical-align: middle;
+    text-align: center;
+    padding: calc(20px * var(--scale));
+}
+
+.left {
+    width: calc(400px * var(--scale));
+    height: calc(840px * var(--scale));
+    float: left;
+}
+
+.right {
+    width: calc(400px * var(--scale));
+    height: calc(840px * var(--scale));
+    float: right;
+}
+
+.light {
+    height: calc(360px * var(--scale));
+    width: calc(360px * var(--scale));
+    margin-top: calc(10px * var(--scale));
+    margin-bottom: calc(10px * var(--scale));
+    background-color: rgba(0, 0, 0, 0);
+    padding: calc(25px * var(--scale));
+    border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
+}
+
+.dark {
+    height: calc(360px * var(--scale));
+    width: calc(360px * var(--scale));
+    margin-top: calc(10px * var(--scale));
+    margin-bottom: calc(10px * var(--scale));
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: calc(25px * var(--scale));
+    border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
+}
+
+.images{
+    width: calc(200px * var(--scale));
+    height: calc(200px * var(--scale));
+    float: none;
+    padding: 0px;
+}
+
+.link:link, .link:visited, .link:active {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(200, 200, 200);
+    text-decoration: underline;
+}
+
+.email:link, .email:visited, .email:active, .email:hover {
+    color: rgb(200, 200, 200);
+    text-decoration: underline;
+}
+
 /*This simply exists to override the animation and make it *not* happen on pages that arent the homepage*/
 @keyframes footerFadeIn {
     0% {
