@@ -5,6 +5,10 @@ footer {
     animation: none;
 }
 
+h2 {
+    font-size: calc(24px * var(--scale));
+}
+
 h3 {
     font-size: calc(22px * var(--scale));
 }
