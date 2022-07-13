@@ -1,0 +1,21 @@
+/*Global*/
+button, select, input {
+    font-size: calc(16px * var(--scale));
+}
+
+body {
+    background: rgb(0, 80, 240);
+}
+
+/*Classes*/
+.content {
+    width: calc(600px * var(--scale));
+    margin: 0 auto;
+    margin-top: calc(60px * var(--scale));
+    vertical-align: middle;
+    text-align: center;
+}
+
+.results {
+    line-height: calc(8px * var(--scale));
+}
