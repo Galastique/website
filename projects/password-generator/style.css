@@ -40,7 +40,6 @@ input {
     border: calc(3px * var(--scale)) solid black;
     padding: calc(20px * var(--scale));
     border-radius: calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale));
-    animation: boxSlideIn 2s;
 }
 
 .options {
@@ -97,16 +96,6 @@ input {
 
 
 /*Animations*/
-@keyframes boxSlideIn {
-    0% {
-        margin-top: calc(1200px * var(--scale));
-    }
-
-    100% {
-        margin-top: calc(100px * var(--scale));
-    }
-}
-
 @keyframes fadeOut {
     0% {
         opacity: 1;
