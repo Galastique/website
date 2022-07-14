@@ -59,7 +59,7 @@ footer {
     text-align: center;
     color: rgb(0, 0, 0);
     cursor: default;
-    animation: footerFadeIn 8s;
+    animation: fadeIn 8s;
 }
 
 h1 {
@@ -73,7 +73,7 @@ a {
     text-decoration: none;
     margin-left: calc(40px * var(--scale));
     cursor: pointer;
-    animation: footerFadeIn 4s;
+    animation: fadeIn 4s;
 }
 
 button, select, input {
@@ -95,7 +95,7 @@ button:hover, select:hover, img:hover {
 }
 
 /*Animations*/
-@keyframes footerFadeIn {
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }
