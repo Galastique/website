@@ -32,12 +32,12 @@ function stop(){
 
 //Starts test
 function start(){
-    document.getElementById("title").innerHTML = "Reaction Test";
+    document.getElementById("title").innerHTML = "Wait for green...";
     document.body.style.backgroundColor = "RGB(200, 40, 40)";
     ongoing = "waiting";
     startTime = 999999999999999;
 
-    let interval = (Math.random() * 5 + 1.5) * 1000;
+    let interval = (Math.random() * 5 + 1.2) * 1000;
     ongoingTest = setTimeout(test, interval);
 }
 
