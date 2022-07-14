@@ -1,28 +1,22 @@
-//Types of characters to include in password generation
-let letters = "abcdefghijklmnopqrstuvwxyz";
-let numbers = "0123456789";
-let special = "!@#$%^&*()-_=+`~[]{};:'\",.?<>/\\|";
-let easy = "Il|O0B'`\";:,.[]{}~^\\";
 let generated = false;
 let copied = false;
 
 //Generates string of every character to use in generation
 function getValues() {
     //Variables
-    let error = "";
+    let chars_l = "abcdefghijklmnopqrstuvwxyz";
+    let chars_n = "0123456789";
+    let chars_s = "!@#$%^&*()-_=+`~[]{};:'\",.?<>/\\|";
+    let easy = "Il|O0B'`\";:,.[]{}~^\\";
     let chars = "";
-    let length;
-    let l;
-    let n;
-    let s;
-    let e;
+    let error = "";
 
     //Gets values
-    length = document.getElementById("length").value;
-    l = document.getElementById("letters").value;
-    n = document.getElementById("numbers").value;
-    s = document.getElementById("special").value;
-    e = document.getElementById("easy").value;
+    let length = document.getElementById("length").value;
+    let l = document.getElementById("letters").value;
+    let n = document.getElementById("numbers").value;
+    let s = document.getElementById("special").value;
+    let e = document.getElementById("easy").value;
 
     //Generates characters included in password + error codes
     //Length
@@ -38,26 +32,26 @@ function getValues() {
 
     //Letters
     if (l == "lower") {
-        chars += letters;
+        chars += chars_l;
     } else if (l == "upper") {
-        chars += letters.toUpperCase();
+        chars += chars_l.toUpperCase();
     } else if (l == "both") {
-        chars += letters;
-        chars += letters.toUpperCase();
+        chars += chars_l;
+        chars += chars_l.toUpperCase();
     } else if (l == "choose") {
         error += "You must select an option for letters\n";
     }
 
     //Numbers
     if (n == "true") {
-        chars += numbers;
+        chars += chars_n;
     } else if (n == "choose") {
         error += "You must select an option for numbers\n";
     }
 
     //Special
     if (s == "true") {
-        chars += special;
+        chars += chars_s;
     } else if (s == "choose") {
         error += "You must select an option for special characters\n";
     }
@@ -111,7 +105,7 @@ function copy() {
     //Copies password
     let copyText = document.getElementById("password");
     copyText.select();
-    copyText.setSelectionRange(0, 99999);
+    copyText.setSelectionRange(0, 1000);
     navigator.clipboard.writeText(copyText.value);
 
     //Displays confirmation
@@ -124,26 +118,24 @@ function copy() {
 //Error message fade out animation
 function animate(field) {
     document.getElementById(field).classList.remove("fadeOut");
-
     setTimeout(function () {
         document.getElementById(field).classList.add("fadeOut");
     }, 1);
+}
+
+//Toggle password visibility
+function view() {
+    let visible = document.getElementById("password").type;
+    if (generated && visible == "password") {
+        document.getElementById("password").type = "text";
+    } else {
+        document.getElementById("password").type = "password";
+    }
 }
 
 //Asks user if they want to leave if they havent copied their password yet
 function leaving() {
     if (generated && !copied) {
         alert("You haven't copied your generated password. Are you sure you would like to leave?");
-    }
-}
-
-//Toggle password visibility
-function view() {
-    let visible = document.getElementById("password").type;
-
-    if (generated && visible == "password") {
-        document.getElementById("password").type = "text";
-    } else {
-        document.getElementById("password").type = "password";
     }
 }
