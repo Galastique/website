@@ -60,7 +60,6 @@ footer {
     text-align: center;
     color: rgb(160, 160, 160);
     cursor: default;
-    animation: footerFadeIn 1.5s;
     border-radius: 0px 0px 0px 0px;
 }
 
@@ -162,19 +161,5 @@ a:hover {
 
     100% {
         margin-top: calc(180px * var(--scale));
-    }
-}
-
-@keyframes footerFadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
     }
 }

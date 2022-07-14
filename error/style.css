@@ -1,8 +1,4 @@
-footer {
-    animation: none;
-}
-
-#back {
+a {
     color: rgb(200, 200, 200);
     text-decoration: underline;
 }
