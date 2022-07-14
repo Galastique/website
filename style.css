@@ -120,21 +120,6 @@ a:hover {
 }
 
 /*IDs*/
-#length {
-    float: right;
-    width: calc(23px * var(--scale));
-    height: calc(16px * var(--scale));
-    text-align: center;
-}
-
-#copy {
-    padding-left: calc(2px * var(--scale));
-}
-
-#view {
-    padding-left: calc(26px * var(--scale));
-}
-
 #selected {
     color: rgb(220, 220, 220);
     text-decoration: underline;
@@ -142,16 +127,19 @@ a:hover {
     text-decoration-style: double;
 }
 
-#link:link, #link:visited, #link:active {
+#link {
     color: rgb(200, 200, 200);
     text-decoration: none;
 }
 
 #link:hover {
+    text-decoration: underline;
+} 
+
+#back {
     color: rgb(200, 200, 200);
     text-decoration: underline;
 }
-
 
 /*Animations*/
 @keyframes boxSlideIn {
