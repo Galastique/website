@@ -14,7 +14,7 @@ h3 {
     font-size: calc(30px * var(--scale));
     margin-left: calc(40px * var(--scale));
     cursor: pointer;
-    animation: footerFadeIn 4s;
+    animation: fadeIn 4s;
 }
 
 img {
@@ -40,6 +40,7 @@ input {
     border: calc(3px * var(--scale)) solid black;
     padding: calc(20px * var(--scale));
     border-radius: calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale));
+    animation: fadeIn 1.5s;
 }
 
 .options {
@@ -111,19 +112,5 @@ input {
 
     100% {
         opacity: 0;
-    }
-}
-
-@keyframes footerFadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
     }
 }
