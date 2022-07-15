@@ -40,7 +40,7 @@ function start(){
 
 //Counts reaction time
 function test(){
-    document.body.style.backgroundColor = "RGB(80, 200, 80)";
+    document.body.style.backgroundColor = "RGB(100, 180, 100)";
     document.getElementById("title").innerHTML = "Click!";
     ongoing = "yes";
     startTime = Date.now();
