@@ -15,7 +15,7 @@ function timer(){
 //Stops test
 function stop(){
     let endTime = Date.now();
-    document.body.style.backgroundColor = "RGB(0, 80, 240)";
+    document.body.style.backgroundColor = "RGB(80, 80, 240)";
     clearTimeout(ongoingTest);
     ongoing = "no";
 
@@ -30,7 +30,7 @@ function stop(){
 
 //Starts test
 function start(){
-    document.body.style.backgroundColor = "RGB(200, 40, 40)";
+    document.body.style.backgroundColor = "RGB(200, 80, 80)";
     document.getElementById("title").innerHTML = "Wait for green...";
     ongoing = "waiting";
     startTime = 999999999999999;
@@ -40,7 +40,7 @@ function start(){
 
 //Counts reaction time
 function test(){
-    document.body.style.backgroundColor = "RGB(40, 200, 40)";
+    document.body.style.backgroundColor = "RGB(80, 200, 80)";
     ongoing = "yes";
     startTime = Date.now();
 }

@@ -31,7 +31,7 @@ input {
 
 /*Classes*/
 .content {
-    background-color: rgb(120, 40, 180);
+    background-color: rgb(160, 80, 220);
     width: calc(592px * var(--scale));
     margin: 0 auto;
     margin-top: calc(100px * var(--scale));
