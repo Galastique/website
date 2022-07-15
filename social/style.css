@@ -1,4 +1,9 @@
 /*Global*/
+hr {
+    opacity: 1;
+    animation: none;
+}
+
 footer {
     position: absolute;
     bottom: calc(-570px * var(--scale));
@@ -14,6 +19,11 @@ h3 {
 }
 
 /*Classes*/
+.options {
+    opacity: 1;
+    animation: none;
+}
+
 .socials {
     height: calc(840px * var(--scale));
     width: calc(860px * var(--scale));
@@ -75,6 +85,14 @@ h3 {
 .email:link, .email:visited, .email:active, .email:hover {
     color: rgb(200, 200, 200);
     text-decoration: underline;
+}
+
+/*IDs*/
+#selected {
+    color: rgb(220, 220, 220);
+    text-decoration: underline;
+    text-decoration-thickness: calc(3px * var(--scale));
+    text-decoration-style: double;
 }
 
 /*This simply exists to override the animation and make it *not* happen on pages that arent the homepage*/
