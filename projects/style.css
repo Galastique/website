@@ -5,6 +5,7 @@ hr {
 }
 
 footer {
+    opacity: 1;
     position: absolute;
     bottom: calc(-1650px * var(--scale));
     animation: none;
