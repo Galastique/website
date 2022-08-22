@@ -65,7 +65,7 @@ function changeValues(){
     document.getElementById("rules").innerHTML = "";
     document.getElementById("result").innerHTML = `Result: ${result.toString()}ms`;
     document.getElementById("min").innerHTML = `Fastest: ${min.toString()}ms`;
-    document.getElementById("max").innerHTML = `Longest: ${max.toString()}ms`;
+    document.getElementById("max").innerHTML = `Slowest: ${max.toString()}ms`;
     document.getElementById("average").innerHTML = `Average: ${average.toString()}ms`;
     document.getElementById("amount").innerHTML = `Amount: ${count.toString()}`;
 }
