@@ -23,11 +23,11 @@ function getValues() {
     if (isNaN(length)) {
         error += "You must enter a valid password length\n";
     } else if (length == "") {
-        error += "You must enter a password length\n";
-    } else if (length < 20) {
-        error += "Your password must be at least 20 characters long\n";
-    } else if (length > 120) {
-        error += "Your password must not be longer than 120 characters\n";
+        length = 24;
+    } else if (length < 12) {
+        error += "Your password must be at least 8 characters long\n";
+    } else if (length > 80) {
+        error += "Your password must not be longer than 80 characters\n";
     }
 
     //Letters

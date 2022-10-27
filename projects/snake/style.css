@@ -1,0 +1,33 @@
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+
+h1 {
+    float: left;
+}
+
+.content {
+    margin-top: 0px;
+    padding: 0px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.grid-item {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#game {
+    width: calc(600px * var(--scale));
+    height: calc(600px * var(--scale));
+    margin: auto;
+    border: 4px solid red;
+    
+    display: grid;
+    grid-gap: 4px;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
