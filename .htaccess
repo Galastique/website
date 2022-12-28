@@ -1,9 +1,9 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} -d 
 RewriteCond %{REQUEST_FILENAME}\.html !-f
-RewriteRule ^([A-Za-z0-9-]+)/?$ $1/$1.html [NC,L]
-ErrorDocument 400 /error/400/
-ErrorDocument 401 /error/401/
-ErrorDocument 403 /error/403/
-ErrorDocument 404 /error/404/
-ErrorDocument 500 /error/500/
+RewriteRule ^([A-Za-z0-9-]+)/?$ $1.html [NC,L]
+ErrorDocument 400 https://galastique.dev/error/400.html
+ErrorDocument 401 https://galastique.dev/error/401.html
+ErrorDocument 403 https://galastique.dev/error/403.html
+ErrorDocument 404 https://galastique.dev/error/404.html
+ErrorDocument 500 https://galastique.dev/error/500.html
