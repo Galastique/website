@@ -151,6 +151,12 @@ a:hover {
     animation-fill-mode: forwards;
 }
 
+#d {
+    animation: fadeIn 3s;
+    animation-delay: 1600ms;
+    animation-fill-mode: forwards;
+}
+
 #link {
     color: rgb(200, 200, 200);
     text-decoration: none;
