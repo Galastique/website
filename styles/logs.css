@@ -1,0 +1,38 @@
+h2 {
+    text-align: center;
+}
+
+h3 {
+    margin: 0px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+/*Changelog timestamps*/
+body div div p {
+    margin-bottom: 0px;
+}
+
+.change-light {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 20px;
+    width: 600px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.change-dark {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 20px;
+    width: 600px;
+    border-radius: 10px 10px 10px 10px;
+}
