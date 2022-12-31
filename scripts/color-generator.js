@@ -6,6 +6,7 @@ function changeCSS(){
     document.body.style.backgroundColor = rgb;
     document.getElementById("rgb").innerHTML = rgb.toUpperCase();
     document.getElementById("hex").innerHTML = hex.toUpperCase();
+    checkTextColor(colors);
 }
 
 //Generates random color
@@ -34,4 +35,17 @@ function getHex(colors){
     }
     h += r + g + b;
     return h;
+}
+
+//Changes text color if background color is too dark
+function checkTextColor(c){
+    if(c[0] + c[1] + c[2] <= 100){
+        document.body.style.color = "white";
+        document.getElementsByTagName("a")[0].style.color = "white";
+        document.getElementsByTagName("p")[2].style.color = "white";
+    }else{
+        document.body.style.color = "black";
+        document.getElementsByTagName("a")[0].style.color = "black";
+        document.getElementsByTagName("p")[2].style.color = "black";
+    }
 }
