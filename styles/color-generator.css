@@ -3,6 +3,10 @@ button, select, input {
     font-size: calc(16px * var(--scale));
 }
 
+p {
+    line-height: 70%;
+}
+
 /*Classes*/
 .content {
     width: calc(592px * var(--scale));
