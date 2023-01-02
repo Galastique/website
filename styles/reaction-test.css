@@ -1,21 +1,22 @@
-/*Global*/
+h1 {
+    font-size: 38px;
+}
+
 button, select, input {
-    font-size: calc(16px * var(--scale));
+    font-size: 16px;
 }
 
 body {
     background: rgb(80, 80, 240);
 }
 
-/*Classes*/
 .content {
-    width: calc(600px * var(--scale));
+    width: 600px;
     margin: 0 auto;
-    margin-top: calc(60px * var(--scale));
-    vertical-align: middle;
+    margin-top: 60px;
     text-align: center;
 }
 
 .results {
-    line-height: calc(8px * var(--scale));
+    line-height: 0.6;
 }

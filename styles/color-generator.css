@@ -1,19 +1,18 @@
-/*Global*/
-button, select, input {
-    font-size: calc(16px * var(--scale));
+h1 {
+    font-size: 38px;
 }
 
 p {
-    line-height: 70%;
+    line-height: 0.8;
 }
 
-/*Classes*/
+button, select, input {
+    font-size: 16px;
+}
+
 .content {
-    width: calc(592px * var(--scale));
     margin: 0 auto;
-    margin-top: calc(80px * var(--scale));
-    vertical-align: middle;
+    margin-top: 4%;
     text-align: center;
-    padding: calc(20px * var(--scale));
-    border-radius: calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale));
+    padding: 20px;
 }

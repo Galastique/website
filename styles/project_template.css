@@ -1,106 +1,57 @@
-/*Variables to make scaling more user friendly*/
-:root {
-    --scale-HD: 0.8;
-    --scale-FHD: 1;
-    --scale-QHD: 1.33;
-    --scale-UHD: 2;
-    --scale: 2;
-}
-
-/*3840x2160*/
-@media only screen and (max-width: 3840px) {
-    :root {
-        --scale: var(--scale-UHD);
-    }
-}
-
-/*2560x1440*/
-@media only screen and (max-width: 2560px) {
-    :root {
-        --scale: var(--scale-QHD);
-    }
-}
-
-/*1920x1080*/
-@media only screen and (max-width: 1920px) {
-    :root {
-        --scale: var(--scale-FHD);
-    }
-}
-
-/*1280x720*/
-@media only screen and (max-width: 1280px) {
-    :root {
-        --scale: var(--scale-HD);
-    }
-}
-
-/*Global*/
 html * {
-    font-family: Gadugi !important;
-    font-weight: bold !important;
-    border-radius: calc(8px * var(--scale)) calc(8px * var(--scale)) calc(6px * var(--scale)) calc(6px * var(--scale));
+    font-family: Gadugi;
+    font-weight: bold;
 }
 
 body {
-    background-color: rgb(60, 60, 60);
+    background-color: rgb(60, 60, 64);
 }
 
-p {
-    font-size: calc(16px * var(--scale));
+button, input, select {
+    border-radius: 8px 8px 8px 8px;
 }
 
 footer {
     position: fixed;
+    opacity: 0;
     left: 0;
     bottom: 0;
     width: 100%;
-    font-size: calc(16px * var(--scale));
+    font-size: 16px;
     text-align: center;
     color: rgb(0, 0, 0);
-    cursor: default;
     animation: fadeIn 8s;
-}
-
-h1 {
-    font-size: calc(38px * var(--scale));
-    cursor: default;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
 }
 
 a {
-    font-size: calc(30px * var(--scale));
+    font-size: 30px;
     color: black;
     text-decoration: none;
-    margin-left: calc(40px * var(--scale));
-    cursor: pointer;
+    margin-left: 40px;
     animation: fadeIn 4s;
 }
 
 button, select, input {
-    font-size: calc(13px * var(--scale));
+    font-size: 13px;
 }
 
 button:hover, select:hover, img:hover {
     cursor: pointer;
 }
 
-/*Classes*/
 .content {
     margin: 0 auto;
-    margin-top: calc(80px * var(--scale));
+    margin-top: 80px;
     vertical-align: middle;
     text-align: center;
-    padding: calc(20px * var(--scale));
-    border-radius: calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale)) calc(20px * var(--scale));
+    padding: 20px;
+    border-radius: 20px 20px 20px 20px;
 }
 
-/*Animations*/
 @keyframes fadeIn {
     0% {
-        opacity: 0;
-    }
-
-    50% {
         opacity: 0;
     }
 

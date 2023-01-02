@@ -1,108 +1,68 @@
-/*Global*/
-hr {
-    opacity: 1;
-    animation: none;
-}
 
-footer {
-    opacity: 1;
-    position: absolute;
-    bottom: calc(-570px * var(--scale));
-    animation: none;
-}
-
-h2 {
-    font-size: calc(24px * var(--scale));
-}
-
-h3 {
-    font-size: calc(22px * var(--scale));
-}
-
-/*Classes*/
-.options {
-    opacity: 1;
-    animation: none;
+h2, p {
+    text-align: center;
 }
 
 .socials {
-    height: calc(840px * var(--scale));
-    width: calc(860px * var(--scale));
+    height: 840px;
+    width: 840px;
     margin: 0 auto;
     vertical-align: middle;
     text-align: center;
-    padding: calc(20px * var(--scale));
+    padding: 20px;
+}
+
+.left, .right {
+    width: 400px;
+    height: 840px;
 }
 
 .left {
-    width: calc(400px * var(--scale));
-    height: calc(840px * var(--scale));
     float: left;
 }
 
 .right {
-    width: calc(400px * var(--scale));
-    height: calc(840px * var(--scale));
     float: right;
 }
 
+.light, .dark {
+    height: 360px;
+    width: 360px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 10px 10px 10px 10px;
+}
+
 .light {
-    height: calc(360px * var(--scale));
-    width: calc(360px * var(--scale));
-    margin-top: calc(10px * var(--scale));
-    margin-bottom: calc(10px * var(--scale));
-    background-color: rgba(0, 0, 0, 0);
-    padding: calc(25px * var(--scale));
-    border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .dark {
-    height: calc(360px * var(--scale));
-    width: calc(360px * var(--scale));
-    margin-top: calc(10px * var(--scale));
-    margin-bottom: calc(10px * var(--scale));
     background-color: rgba(0, 0, 0, 0.4);
-    padding: calc(25px * var(--scale));
-    border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
 }
 
-.images{
-    width: calc(200px * var(--scale));
-    height: calc(200px * var(--scale));
+/*Social logos*/
+div div div img {
+    width: 200px;
+    height: 200px;
     float: none;
     padding: 0px;
 }
 
-.link:link, .link:visited, .link:active {
+/*Social links*/
+div div div a:link, div div div a:visited, div div div a:active {
     color: rgb(200, 200, 200);
     text-decoration: none;
 }
 
-.link:hover {
+div div div a:hover {
     color: rgb(200, 200, 200);
     text-decoration: underline;
 }
 
-.email:link, .email:visited, .email:active, .email:hover {
+/*Email link*/
+p a:link, p a:visited, p a:active, p a:hover {
     color: rgb(200, 200, 200);
     text-decoration: underline;
-}
-
-/*IDs*/
-#selected {
-    color: rgb(220, 220, 220);
-    text-decoration: underline;
-    text-decoration-thickness: calc(3px * var(--scale));
-    text-decoration-style: double;
-}
-
-/*This simply exists to override the animation and make it *not* happen on pages that arent the homepage*/
-@keyframes footerFadeIn {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
 }

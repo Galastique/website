@@ -1,73 +1,49 @@
-/*Global*/
-hr {
-    opacity: 1;
-    animation: none;
-}
-
-footer {
-    opacity: 1;
-    position: absolute;
-    bottom: calc(-1650px * var(--scale));
-    animation: none;
-}
-
 h2 {
-    font-size: calc(28px * var(--scale));
     text-align: center;
 }
 
-/*Classes*/
-.options {
-    opacity: 1;
-    animation: none;
+/*Project descriptions*/
+div div p {
+    max-width: 80%;
+    text-align: justify;
+}
+
+.project-light, .project-dark {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    width: 800px;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
 }
 
 .project-light {
-    background-color: rgba(0, 0, 0, 0);
-    margin-left: calc(60px * var(--scale));
-    padding: calc(25px * var(--scale));
-    width: calc(800px * var(--scale));
-    height: calc(250px * var(--scale));
-    border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .project-dark {
     background-color: rgba(0, 0, 0, 0.4);
-    margin-left: calc(60px * var(--scale));
-    padding: calc(25px * var(--scale));
-    width: calc(800px * var(--scale));
-    height: calc(250px * var(--scale));
-    border-radius: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale)) calc(10px * var(--scale));
 }
 
-.description {
-    text-align: left;
-}
-
-.link:link, .link:visited, .link:active {
+/*Links to projects*/
+div div a:link, div div a:visited, div div a:active {
     color: rgb(200, 200, 200);
     text-decoration: none;
 }
 
-.link:hover {
+div div a:hover {
     color: rgb(200, 200, 200);
     text-decoration: underline;
 }
 
-.projectImage {
-    width: calc(150px * var(--scale));
-    height: calc(150px * var(--scale));
-    position: relative;
-    float: right;
-    bottom: calc(220px * var(--scale));
-    left: calc(-40px * var(--scale));
-    padding: 0px;
-}
-
-/*IDs*/
-#selected {
-    color: rgb(220, 220, 220);
-    text-decoration: underline;
-    text-decoration-thickness: calc(3px * var(--scale));
-    text-decoration-style: double;
+/*Project images*/
+div div img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 65%;
 }

@@ -1,0 +1,76 @@
+/*Makes stuff transparent for animation purposes*/
+nav a, footer, hr {
+    opacity: 0;
+}
+
+hr {
+    animation: expand 3s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+/*Paragraph*/
+body div p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+h1 {
+    text-align: center;
+}
+
+.content {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#a {
+    color: rgb(220, 220, 220);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-style: double;
+    animation: fadeIn 3s;
+    animation-delay: 400ms;
+    animation-fill-mode: forwards;
+}
+
+#b {
+    animation: fadeIn 3s;
+    animation-delay: 800ms;
+    animation-fill-mode: forwards;
+}
+
+#c {
+    animation: fadeIn 3s;
+    animation-delay: 1200ms;
+    animation-fill-mode: forwards;
+}
+
+#d {
+    animation: fadeIn 3s;
+    animation-delay: 1600ms;
+    animation-fill-mode: forwards;
+}
+
+/*Animations*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes expand {
+    0% {
+        opacity: 1;
+        width: 0%;
+    }
+
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
+}
