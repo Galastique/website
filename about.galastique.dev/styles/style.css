@@ -1,0 +1,70 @@
+/*Global*/
+html * {
+    font-family: Gadugi;
+}
+
+body {
+    text-align: center;
+    color: rgb(200, 200, 200);
+    background-color: rgb(60, 60, 64);
+}
+
+nav {
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: rgb(0, 0, 0, 0.3);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: rgb(160, 160, 160);
+}
+
+body div p {
+    font-size: 10px;
+}
+
+div ul li p {
+    line-height: 100%;
+}
+
+.content {
+    margin: auto;
+    width: 50%;
+    line-height: 80%;
+}
+
+
+ul {
+    display: inline-block;
+    text-align: left;
+}
+
+body ul li p, li {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+a {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgb(220, 220, 220);
+}
