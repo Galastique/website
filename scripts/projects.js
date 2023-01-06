@@ -15,7 +15,7 @@ let index = 1;
 projects.forEach((project) => {
     //Project data
     let title = project[0];
-    let link = `./projects/${project[1]}.html`;
+    let link = `./${project[1]}.html`;
     let image = `../images/${project[1]}.png`;
     let description = project[2];
 
