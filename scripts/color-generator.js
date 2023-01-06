@@ -1,3 +1,5 @@
+changeCSS();
+
 //Changes background color and text fields
 function changeCSS(){
     let colors = generate();
