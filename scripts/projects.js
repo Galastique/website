@@ -1,13 +1,13 @@
 const projects = [
     //project title, link to project, link to image, description
-    ["Turtle Bot - a bot for Discord", "turtle-bot", "Turtle Bot is a bot that was mostly made for fun, but he can also be useful for managing small servers, as well as for easy entertainment. He is very easy to use and very likeable by all! <br><br> He has several fully functional management commands, as well as lots of fun commands. "],
     ["Password Generator (completed)", "password-generator", "This user friendly password generator can create very strong passwords, that are virtually impossible to crack. The passwords are generated on your device and aren't stored anywhere. <br><br> I managed to complete the generator part of this program in 1 minute and 59 seconds. The hard part was the HTML & CSS, which took me several days to make look at least presentable."],
     ["Reaction Test (completed)", "reaction-test", "This will test your reaction time in milliseconds. As soon as the background changes color, you have to click. Your time result will appear on screen. <br><br> Let's see if you can beat my score of 207 :)"],
     ["Random Color Generator (completed)", "color-generator", "This random color generator generates a color randomly. If you ever need colors for a project, a palette or anything else, this is the project for you. <br><br> The generated color will have its RGB, HEX, CMYK, HSV and HSL values displayed. "],
+    ["Snake (in progress)", "snake", "This is also another pretty generic game, but this time it's snake. The one game that every programmer that has ever existed has made. That's pretty much it."],
     ["Minesweeper (not started)", "minesweeper", "This is a pretty basic minesweeper recreation. It hasn't been implemented yet, so I don't really know what to put here, but I hope you enjoy it when it eventually comes."],
-    ["Snake (not started)", "snake", "This is also another pretty generic game, but this time it's snake. The one game that every programmer that has ever existed has made. That's pretty much it."],
     //["Simon (not started)", "simon", "Simon, the memory game. A pattern of colors will blink, and you have to repeat it. It's pretty self explanatory. Hopefully when I actually work on it I won't forget to add sounds."],
     ["Tic-tac-toe (not started)", "tic-tac-toe", "Tic-tac-toe. When this is over, you will be able to play either with a friend or on your own with an \"AI\"."],
+    ["Turtle Bot - a bot for Discord (page in progress)", "turtle-bot", "Turtle Bot is a bot that was mostly made for fun, but he can also be useful for managing small servers, as well as for easy entertainment. He is very easy to use and very likeable by all! <br><br> He has several fully functional management commands, as well as lots of fun commands. "],
     //[]
 ];
 let index = 1;
