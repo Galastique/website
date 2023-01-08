@@ -244,6 +244,7 @@ function detectDirection(e){
         case 82:
             death();
             start();
+            updateScore();
             break;
     }
 }
