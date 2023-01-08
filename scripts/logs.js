@@ -22,7 +22,8 @@ const updates = [
     ["2022-12-30", "New features", "Added changelogs page", "Implemented automatic addition of new changes", "Added custom scrollbar", "Changed color generator text to white when background is too dark"],
     ["2022-12-31", "QOL update", "Finished writing all of previous changes to changelogs page", "Added CMYK, HSV & HSL color codes to color generator"],
     ["2023-01-01", "Projects backend overhaul", "Made the projects page dynamic (like this page) instead of static. (This basically means that every project gets added and formatted to the page automatically according to a text file)", "Completely remade CSS files"],
-    ["2023-01-06", "New project!", "Added snake game!", "Patched pretty big bug with projects not linking to the projects"],
+    ["2023-01-06", "New project!", "Added snake game!", "Moved snake game to top of projects", "Added \"Simon\" future project", "Patched pretty big bug with projects not linking to the projects"],
+    ["2023-01-06", "Minor snake update", "Added scoreboard to snake game", "Removed ability to do a 180 in snake game", "Update project descriptions"],
     //[]
 ];
 let index = 1;

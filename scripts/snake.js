@@ -1,5 +1,6 @@
 //Global variables
 let title = document.getElementsByTagName("h1")[0];
+let stats = document.getElementsByTagName("p")[0];
 const delay = 180;
 const boardSize = 16;
 const initialSize = 4;
@@ -34,7 +35,17 @@ function draw(){
 
 //Starts game
 function start(){
+    //Resets settings to default values
+    clearBoard();
+    updateScore();
     title.innerText = "Simple snake game";
+    snakeLength = initialSize;
+    overflow = initialSize - 1;
+    headLocation = [boardSize / 2, boardSize / 2];
+    bodyParts = [[boardSize / 2, boardSize / 2]];
+    lastDirection = null;
+
+    //Sets snake and movement
     let snakeHead = getXY(headLocation[0], headLocation[1]);
     snakeHead.className = "head";
     slither = setInterval(move, delay);
@@ -96,13 +107,13 @@ function move(){
     }
 
     function headToBody(){
-        snakeHead = getXY(headLocation[0], headLocation[1]);
+        let snakeHead = getXY(headLocation[0], headLocation[1]);
         snakeHead.className = "body";
     }
 
     function newHead(){
         //Checks if object is on head
-        snakeHead = getXY(headLocation[0], headLocation[1]);
+        let snakeHead = getXY(headLocation[0], headLocation[1]);
 
         //Moves body
         moveTail();
@@ -133,6 +144,20 @@ function eat(){
     addFruit();
     snakeLength++;
     overflow++;
+    updateScore();
+}
+
+//Changes score
+function updateScore(){
+    let highScore = localStorage.getItem("highscore");
+    let score = snakeLength - initialSize;
+    if(!highScore){
+        highScore = 0;
+    }else if(score > highScore){
+        highScore = score;
+    }
+    localStorage.setItem("highscore", highScore);
+    stats.innerText = `Current score: ${score}    -    High score: ${highScore}`;
 }
 
 //Generates fruit
@@ -181,31 +206,44 @@ function clearBoard(){
 
 //Detects which direction user is trying to move
 function detectDirection(e){
-    //w / up
-    if (e.keyCode == "87" || e.keyCode == "38") {
-        lastDirection = "up";
-    }
-    //a / left
-    else if (e.keyCode == "65" || e.keyCode == "37") {
-        lastDirection = "left";
-    }
-    //s / down
-    else if (e.keyCode == "83" || e.keyCode == "40") {
-       lastDirection = "down";
-    }
-    //d / right
-    else if (e.keyCode == "68" || e.keyCode == "39") {
-       lastDirection = "right";
-    }
-    //r / restart
-    else if(e.keyCode == "82"){
-        death();
-        clearBoard();
-        snakeLength = initialSize;
-        overflow = initialSize - 1;
-        headLocation = [boardSize / 2, boardSize / 2];
-        bodyParts = [[boardSize / 2, boardSize / 2]];
-        lastDirection = null;
-        start();
+    
+    switch(e.keyCode){
+        //w / up
+        case 87:
+        case 38:
+            if(lastDirection != "down"){
+                lastDirection = "up";
+            }
+            break;
+        
+        //a / left
+        case 65:
+        case 37:
+            if(lastDirection != "right"){
+                lastDirection = "left";
+            }
+            break;
+            
+        //s / down
+        case 83:
+        case 40:
+            if(lastDirection != "up"){
+                lastDirection = "down";
+            }
+            break;
+            
+        //d / right
+        case 68:
+        case 39:
+            if(lastDirection != "left"){
+                lastDirection = "right";
+            }
+            break;
+
+        //r / restart
+        case 82:
+            death();
+            start();
+            break;
     }
 }
