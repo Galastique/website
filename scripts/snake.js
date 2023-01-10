@@ -1,24 +1,26 @@
 //Global variables
 let title = document.getElementsByTagName("h1")[0];
 let stats = document.getElementsByTagName("p")[0];
-const delay = 180;
+const delay = 150;
 const boardSize = 16;
 const initialSize = 4;
-let snakeLength = initialSize;
-let overflow = initialSize - 1;
-let headLocation = [boardSize / 2, boardSize / 2];
-let bodyParts = [[boardSize / 2, boardSize / 2]];
+
+//Initial snake variables
+let snakeLength;
+let overflow;
+let headLocation;
+let bodyParts;
 let lastDirection;
 
 //Starts game
-draw();
+drawBoard();
 start();
 
 //Detects keypresses
 document.onkeydown = detectDirection;
 
 //Draws board
-function draw(){
+function drawBoard(){
     const game = document.getElementById("game");
     for(let i = 0; i < boardSize; i++) {
         let row = document.createElement("div");
@@ -30,6 +32,16 @@ function draw(){
         }
 
         game.appendChild(row);
+    }
+}
+
+//Clears board
+function clearBoard(){
+    for(let row = 0; row < boardSize; row++){
+        for(let i = 0; i < boardSize; i++){
+            let item = getXY(row + 1, i + 1);
+            item.className = "";
+        }
     }
 }
 
@@ -46,79 +58,49 @@ function start(){
     lastDirection = null;
 
     //Sets snake and movement
-    let snakeHead = getXY(headLocation[0], headLocation[1]);
-    snakeHead.className = "head";
+    getXY(headLocation[0], headLocation[1]).className = "head";
     slither = setInterval(move, delay);
-    addFruit();
+    spawnFruit();
 }
 
 //Moves snake
 function move(){
+    lastDirection && headToBody();
     switch(lastDirection){
         case "up":
-            if(headLocation[0] != 1){
-                headToBody();
-                headLocation[0]--;
-                newHead();
-            }else{
-                checkLength();
-                death();
-            }
+            headLocation[0] != 1 ? (headLocation[0]--, changeSnake()) : death();
             break;
 
         case "left":
-            if(headLocation[1] != 1){
-                headToBody();
-                headLocation[1]--;
-                newHead();
-            }else{
-                checkLength();
-                death();
-            }
+            headLocation[1] != 1 ? (headLocation[1]--, changeSnake()) : death();
             break;
 
         case "down":
-            if(headLocation[0] != boardSize){
-                headToBody();
-                headLocation[0]++;
-                newHead();
-            }else{
-                checkLength();
-                death();
-            }
+            headLocation[0] != boardSize ? (headLocation[0]++, changeSnake()) : death();
             break;
 
         case "right":
-            if(headLocation[1] != boardSize){
-                headToBody();
-                headLocation[1]++;
-                newHead();
-            }else{
-                checkLength();
-                death();
-            }
+            headLocation[1] != boardSize ? (headLocation[1]++, changeSnake()) : death();
             break;
     }
 
-    function checkLength(){
-        if(snakeLength == boardSize ** 2){
-            victory();
+    //Creates new head
+    function changeSnake(){
+        let snakeHead = getXY(headLocation[0], headLocation[1]);
+        let tail = getXY(bodyParts[0][0], bodyParts[0][1]);
+
+        //Removes last bit of tail
+        if(overflow == 0){
+            tail.className = "";
+            bodyParts.shift();
+        }else{
+            overflow--;
         }
-    }
 
-    function headToBody(){
-        let snakeHead = getXY(headLocation[0], headLocation[1]);
-        snakeHead.className = "body";
-    }
-
-    function newHead(){
-        //Checks if object is on head
-        let snakeHead = getXY(headLocation[0], headLocation[1]);
-
-        //Moves body
-        moveTail();
+        //Adds head
         bodyParts.push([headLocation[0], headLocation[1]]);
         
+        //Checks if object is on head
         if(snakeHead.className == "fruit"){
             eat();
         }else if(snakeHead.className == "body"){
@@ -126,22 +108,37 @@ function move(){
         }
         
         snakeHead.className = "head";
+        checkLength();
+    }
+
+    //Transforms head piece into body
+    function headToBody(){
+        getXY(headLocation[0], headLocation[1]).className = "body";
+    }
+
+    //Checks if player has won
+    function checkLength(){
+        if(snakeLength == boardSize ** 2){
+            victory();
+        }
     }
 }
 
-function moveTail(){
-    let tail = getXY(bodyParts[0][0], bodyParts[0][1]);
-    if(overflow == 0){
-        tail.className = "";
-        bodyParts.shift();
-    }else{
-        overflow--;
+//Generates fruit
+function spawnFruit(){
+    let fruit = getXY(randomNumber(), randomNumber());
+    
+    //Makes sure fruit isnt on top of snake
+    while(fruit.className != "" && fruit.id != null){
+        fruit = getXY(randomNumber(), randomNumber());
     }
+    
+    fruit.className = "fruit";
 }
 
 //Eats fruit and grows
 function eat(){
-    addFruit();
+    spawnFruit();
     snakeLength++;
     overflow++;
     updateScore();
@@ -159,18 +156,6 @@ function updateScore(){
     localStorage.setItem("highscore", highScore);
     stats.innerText = `Current score: ${score}    -    High score: ${highScore}`;
 }
-
-//Generates fruit
-function addFruit(){
-    let fruit = getXY(randomNumber(), randomNumber());
-    
-    //Makes sure fruit isnt on top of snake
-    while(fruit.className != "" && fruit.id != null){
-        fruit = getXY(randomNumber(), randomNumber());
-    }
-    
-    fruit.className = "fruit";
-}
     
 //When player dies
 function death(){
@@ -184,7 +169,7 @@ function victory(){
     title.innerText = "You win!!";
 }
 
-//Returns div object from (x, y) coords
+//Returns div object from (x, y) coords (top left origin = 1, 1)
 function getXY(x, y){
     return document.getElementsByClassName("row")[x - 1].getElementsByTagName("div")[y - 1];
 }
@@ -194,19 +179,8 @@ function randomNumber(){
     return(Math.floor(Math.random() * boardSize) + 1);
 }
 
-//Clears board
-function clearBoard(){
-    for(let row = 0; row < boardSize; row++){
-        for(let i = 0; i < boardSize; i++){
-            let item = getXY(row + 1, i + 1);
-            item.className = "";
-        }
-    }
-}
-
 //Detects which direction user is trying to move
 function detectDirection(e){
-    
     switch(e.keyCode){
         //w / up
         case 87:
