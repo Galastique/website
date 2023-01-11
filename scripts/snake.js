@@ -10,6 +10,7 @@ let snakeLength;
 let overflow;
 let headLocation;
 let bodyParts;
+let currentDirection;
 let lastDirection;
 
 //Starts game
@@ -55,6 +56,7 @@ function start(){
     overflow = initialSize - 1;
     headLocation = [boardSize / 2, boardSize / 2];
     bodyParts = [[boardSize / 2, boardSize / 2]];
+    currentDirection = null;
     lastDirection = null;
 
     //Sets snake and movement
@@ -65,8 +67,8 @@ function start(){
 
 //Moves snake
 function move(){
-    lastDirection && headToBody();
-    switch(lastDirection){
+    currentDirection && headToBody();
+    switch(currentDirection){
         case "up":
             headLocation[0] != 1 ? (headLocation[0]--, changeSnake()) : death();
             break;
@@ -108,6 +110,7 @@ function move(){
         }
         
         snakeHead.className = "head";
+        lastDirection = currentDirection;
         checkLength();
     }
 
@@ -186,7 +189,7 @@ function detectDirection(e){
         case 87:
         case 38:
             if(lastDirection != "down"){
-                lastDirection = "up";
+                currentDirection = "up";
             }
             break;
         
@@ -194,7 +197,7 @@ function detectDirection(e){
         case 65:
         case 37:
             if(lastDirection != "right"){
-                lastDirection = "left";
+                currentDirection = "left";
             }
             break;
             
@@ -202,7 +205,7 @@ function detectDirection(e){
         case 83:
         case 40:
             if(lastDirection != "up"){
-                lastDirection = "down";
+                currentDirection = "down";
             }
             break;
             
@@ -210,7 +213,7 @@ function detectDirection(e){
         case 68:
         case 39:
             if(lastDirection != "left"){
-                lastDirection = "right";
+                currentDirection = "right";
             }
             break;
 
