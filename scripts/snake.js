@@ -49,8 +49,6 @@ function clearBoard(){
 //Starts game
 function start(){
     //Resets settings to default values
-    clearBoard();
-    updateScore();
     title.innerText = "Simple snake game";
     snakeLength = initialSize;
     overflow = initialSize - 1;
@@ -58,6 +56,8 @@ function start(){
     bodyParts = [[boardSize / 2, boardSize / 2]];
     currentDirection = null;
     lastDirection = null;
+    clearBoard();
+    updateScore();
 
     //Sets snake and movement
     getXY(headLocation[0], headLocation[1]).className = "head";
