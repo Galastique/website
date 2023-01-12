@@ -49,7 +49,7 @@ function clearBoard(){
 //Starts game
 function start(){
     //Resets settings to default values
-    title.innerText = "Simple snake game";
+    title.innerText = "Slithering snake";
     snakeLength = initialSize;
     overflow = initialSize - 1;
     headLocation = [boardSize / 2, boardSize / 2];
@@ -163,13 +163,13 @@ function updateScore(){
 //When player dies
 function death(){
     clearInterval(slither);
-    title.innerText = "You died! (press R to restart)";
+    title.innerText = "You died! (Press R to restart)";
 }
 
 //When player wins
 function victory(){
     clearInterval(slither);
-    title.innerText = "You win!!";
+    title.innerText = "You won!!!";
 }
 
 //Returns div object from (x, y) coords (top left origin = 1, 1)

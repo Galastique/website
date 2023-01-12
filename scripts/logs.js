@@ -25,6 +25,7 @@ const updates = [
     ["2023-01-06", "New project!", "Added snake game!", "Moved snake game to top of projects", "Added \"Simon\" future project", "Patched pretty big bug with projects not linking to the projects"],
     ["2023-01-06", "Minor snake update", "Added scoreboard to snake game", "Removed ability to do a 180 in snake game", "Update project descriptions"],
     ["2023-01-10", "Minor snake tweaks", "Made snake 30ms faster", "Actually prevented 180s this time", "Optimized snake code"],
+    ["2023-01-11", "Minor snake modifications", "Changed title text", "Removed temporary message", "Adjusted margins on text elements"],
     //[]
 ];
 let index = 1;
