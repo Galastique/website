@@ -49,6 +49,7 @@ function clearBoard(){
 //Starts game
 function start(){
     //Resets settings to default values
+    document.getElementById("game").style.borderColor = "darkgoldenrod";
     title.innerText = "Slithering snake";
     snakeLength = initialSize;
     overflow = initialSize - 1;
@@ -163,12 +164,14 @@ function updateScore(){
 //When player dies
 function death(){
     clearInterval(slither);
+    document.getElementById("game").style.borderColor = "darkred";
     title.innerText = "You died! (Press R to restart)";
 }
 
 //When player wins
 function victory(){
     clearInterval(slither);
+    document.getElementById("game").style.borderColor = "darkgreen";
     title.innerText = "You won!!!";
 }
 
@@ -217,8 +220,10 @@ function detectDirection(e){
             }
             break;
 
-        //r / restart
+        //r / space / enter - restart
         case 82:
+        case 32:
+        case 13:
             death();
             start();
             updateScore();
