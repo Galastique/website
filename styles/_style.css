@@ -1,6 +1,7 @@
 /*Global*/
 html * {
     font-family: Gadugi;
+    scroll-behavior: smooth;
 }
 
 body {
