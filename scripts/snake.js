@@ -129,12 +129,12 @@ function move(){
 
 //Generates fruit
 function spawnFruit(){
-    let fruit = getXY(randomNumber(), randomNumber());
+    let fruit;
     
     //Makes sure fruit isnt on top of snake
-    while(fruit.className != "" && fruit.id != null){
+    do{
         fruit = getXY(randomNumber(), randomNumber());
-    }
+    }while(fruit.className != "" && fruit.id != null);
     
     fruit.className = "fruit";
 }
