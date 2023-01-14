@@ -1,0 +1,80 @@
+h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+body div p {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.content {
+    margin-top: 0px;
+    padding: 0px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(120, 120, 120);
+    width: 480px;
+    height: 480px;
+    margin: auto;
+    border: 6px solid darkgoldenrod;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+div div div div {
+    border: 1px solid black;
+    font-size: 21px;
+    width: 28px;
+    height: 28px;
+}
+
+#flag {
+    background-color: darkgreen;
+}
+
+.mine {
+    background-color: darkred;
+}
+
+.one {
+    color: blue;
+}
+
+.two {
+    color: green;
+}
+
+.three {
+    color: red;
+}
+
+.four {
+    color: darkblue;
+}
+
+.five {
+    color: darkred;
+}
+
+.six {
+    color: darkcyan;
+}
+
+.seven {
+    color: black;
+}
+
+.height {
+    color: gray;
+}
