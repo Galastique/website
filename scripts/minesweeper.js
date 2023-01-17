@@ -1,7 +1,10 @@
 //Global variables
+const boardSize = 16;
+const nMines = 40;
 let title = document.getElementsByTagName("h1")[0];
 let stats = document.getElementsByTagName("p")[0];
-const boardSize = 16;
+let generated = false;
+let minesLeft = nMines;
 
 //Game variables
 let mines = [
@@ -25,13 +28,49 @@ let mines = [
 
 //Starts game
 drawBoard();
-start(); //ONLY CALL THIS GUY ON CLICK (BE SURE TO SAVE THE CLICK LOCATION TO MAKE SURE NO BOMBS SPAWN THERE)
 
 //Detects keypresses
 document.onkeydown = detectAction;
 
 //Prevents right-clicking from opening context menu instead of placing flag
-document.getElementById("game").onmousedown = function(event) {
+document.getElementById("game").onmouseup = function(event) {
+    let div = event.target;
+    
+    if(div.id == "game"){
+        return;
+    }
+    
+    //Left click
+    if(event.button == 0){
+        if(!generated){
+            div.id = "startClick";
+            start();
+            div.id = "";
+        }
+
+
+        //Only reveals tile if flag isnt there
+        if(!div.id){
+            
+        }
+
+
+    }
+
+    //Right click
+    else if(event.button == 2 && generated){
+        //Places/removes flag
+        if(!div.id){
+            div.id = "flag";
+            div.style.backgroundImage = "url(../images/minesweeper_flag.png)";
+            minesLeft--;
+        }else{
+            div.id = "";
+            div.style.backgroundImage = "";
+            minesLeft++;
+        }
+        stats.innerText = `Mines left: ${minesLeft}`;
+    }
     window.addEventListener("contextmenu", e => e.preventDefault());
 }
 
@@ -61,6 +100,7 @@ function clearBoard(){
         child = game.lastElementChild;
     }
     mines = [["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""]];
+    generated = false;
 }
 
 //Reveals board
@@ -71,26 +111,27 @@ function revealBoard(){
 //Starts game
 function start(){
     generateMines();
-    stats.innerText = "Mines left: 40";
+    stats.innerText = `Mines left: ${nMines}`;
 }
 
 //Generates mines
 function generateMines(){
-    let fruit;
+    let mine;
     let x;
     let y;
     
-    for(let i = 0; i < 40; i++){
-        //Makes sure fruit isnt on top of snake
+    for(let i = 0; i < nMines; i++){
         do{
             x = randomNumber();
             y = randomNumber();
-            fruit = getXY(x, y);
-        }while(fruit.className != "" && fruit.id != null);
+            mine = getDivByCoords(x, y);
+        }while(mine.className != "" || mine.id != "");
         
-        fruit.className = "mine";
         mines[x - 1][y - 1] = "m";
+        mine.className = "mine";
+        mine.style.backgroundImage = "url(../images/minesweeper_mine.png)";
     }
+    generated = true;
     generateNumbers();
 }
 
@@ -135,9 +176,9 @@ function generateNumbers(){
                 }
 
                 mines[i][j] = nMines;
-                getXY(i + 1, j + 1).className = number(nMines);
+                getDivByCoords(i + 1, j + 1).className = number(nMines);
                 if(nMines != 0){
-                    getXY(i + 1, j + 1).innerText = nMines;
+                    getDivByCoords(i + 1, j + 1).innerText = nMines;
                 }
             }
         }
@@ -156,7 +197,7 @@ function victory(){
 }
 
 //Returns div object from (x, y) coords (top left origin = 1, 1)
-function getXY(x, y){
+function getDivByCoords(x, y){
     return document.getElementsByClassName("row")[x - 1].getElementsByTagName("div")[y - 1];
 }
 
@@ -193,12 +234,9 @@ function detectAction(e){
     switch(e.keyCode){
         //r - restart
         case 82:
-        case 32:
-        case 13:
             death();
             clearBoard();
             drawBoard();
-            generateMines();
             break;
     }
 }

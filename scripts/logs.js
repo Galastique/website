@@ -26,7 +26,8 @@ const updates = [
     ["2023-01-06", "Minor snake update", "Added scoreboard to snake game", "Removed ability to do a 180 in snake game", "Update project descriptions"],
     ["2023-01-10", "Minor snake tweaks", "Made snake 30ms faster", "Actually prevented 180s this time", "Optimized snake code"],
     ["2023-01-12", "Minor snake & password generator changes", "Changed title text (snake)", "Removed temporary message (snake)", "Adjusted margins on text elements (snake)", "Optimized code (PG)", "Changed layout, colors and text sizes (PG)"],
-    ["2023-01-14", "Minesweeper", "Started working on minesweeper project", "Border around snake game now changes color if you win/lose", "You can now restart a game a snake with the space and enter keys", "Fixed issue with snake game grid containing gaps"],
+    ["2023-01-14", "Minesweeper", "Started minesweeper project", "Border around snake game now changes color if you win/lose", "You can now restart a game a snake with the space and enter keys", "Fixed issue with snake game grid containing gaps"],
+    ["2023-01-17", "Major minesweeper update", "Mines now generate after first click", "Mines now appear as image", "Implemented flags", "Implemented left/right clicking"]
     //[]
 ];
 let index = 1;

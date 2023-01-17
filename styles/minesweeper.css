@@ -18,7 +18,7 @@ body div p {
 #game {
     display: flex;
     flex-direction: column;
-    background-color: rgb(120, 120, 120);
+    background-color: rgb(140, 140, 140);
     width: 480px;
     height: 480px;
     margin: auto;
@@ -40,11 +40,11 @@ div div div div {
 }
 
 #flag {
-    background-color: darkgreen;
+    background-size: contain;
 }
 
 .mine {
-    background-color: darkred;
+    background-size: contain;
 }
 
 .one {
@@ -52,11 +52,11 @@ div div div div {
 }
 
 .two {
-    color: green;
+    color: rgb(20, 140, 20);
 }
 
 .three {
-    color: red;
+    color: rgb(180, 20, 20);
 }
 
 .four {
