@@ -37,7 +37,7 @@ document.onkeydown = detectAction;
 document.getElementById("game").onmouseup = function(event) {
     let div = event.target;
     
-    if(div.id == "game" || !alive){
+    if(div.id == "game" || div.id == "row" || !alive){
         return;
     }
     
@@ -91,7 +91,7 @@ document.getElementById("game").onmouseup = function(event) {
             div.style.backgroundImage = "";
             minesLeft++;
         }
-        stats.innerText = `Mines left: ${minesLeft}`;
+        minesLeft < 0 ? (stats.innerText = `Mines left: ${minesLeft} (one or more of your flags are incorrect)`) : stats.innerText = `Mines left: ${minesLeft}`;
     }
     window.addEventListener("contextmenu", e => e.preventDefault());
 }
@@ -226,7 +226,7 @@ function showTile(x, y, type){
             div.removeAttribute("id");
             div.style.backgroundImage = "";
             minesLeft++;
-            stats.innerText = `Mines left: ${minesLeft}`;
+            minesLeft < 0 ? (stats.innerText = `Mines left: ${minesLeft} (one or more of your flags are incorrect)`) : stats.innerText = `Mines left: ${minesLeft}`;
         }
         
         //Check for other empty spots
