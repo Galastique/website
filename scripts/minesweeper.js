@@ -101,7 +101,7 @@ function drawBoard(){
 }
 
 //Clears board
-function clearBoard(){
+function resetBoard(){
     let game = document.getElementById("game");
     let child = game.lastElementChild;
     while(child){
@@ -113,60 +113,8 @@ function clearBoard(){
     generated = false;
     minesLeft = nMines;
     alive = true;
+    stats.innerText = `Mines left: ${nMines}`;
     mines = [["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""]];
-}
-
-//Reveals full board
-function revealBoard(){
-    for(let i = 0; i < boardSize; i++){
-        for(let j = 0; j < boardSize; j++){
-            showTile(i, j, "full");
-        }
-    }
-}
-
-//Reveals individual tiles
-let checkedTiles = [];
-function showTile(x, y, type){
-    type != "surround" ? checkedTiles = [] : null;
-    let row = document.getElementsByClassName("row")[x];
-    let item = row.getElementsByTagName("div")[y];
-    //Mines
-    if(type != "surround" && mines[x][y] == "m"){
-        item.className = "mine";
-        item.style.backgroundImage = "url(../images/minesweeper_mine.png)";
-        item.style.backgroundColor = "RGB(180, 180, 180)";
-    }
-    //Numbers & empty spots
-    else if(generated){
-        let div = getDivByCoords(x + 1, y + 1);
-        //Reveals current spot
-        div.className = number(mines[x][y]);
-        div.innerText = mines[x][y];
-        item.style.backgroundColor = "RGB(180, 180, 180)";
-
-        //Automatically removes flag if it was on top of blank space
-        if(div.id){
-            div.removeAttribute("id");
-            div.style.backgroundImage = "";
-            minesLeft++;
-            stats.innerText = `Mines left: ${minesLeft}`;
-        }
-        
-        //Check for other empty spots
-        if(type != "full" && !checkedTiles.includes(`${x},${y}`) && mines[x][y] == ""){
-            checkedTiles.push(`${x},${y}`);
-            x > 0 && y > 0 && showTile(x - 1, y - 1, "surround"); //top left
-            x > 0 && showTile(x - 1, y, "surround"); //top
-            x > 0 && y < boardSize - 1 && showTile(x - 1, y + 1, "surround"); //top right
-            y > 0 && showTile(x, y - 1, "surround"); //left
-            y < boardSize - 1 && showTile(x, y + 1, "surround"); //right
-            x < boardSize - 1 && y > 0 && showTile(x + 1, y - 1, "surround"); //bottom left
-            x < boardSize - 1 && showTile(x + 1, y, "surround"); //bottom
-            x < boardSize - 1 && y < boardSize - 1 && showTile(x + 1, y + 1, "surround"); //bottom right
-        }
-        type != "full" && checkIfWon();
-    }
 }
 
 //Starts game
@@ -221,7 +169,61 @@ function generateNumbers(){
     }
 }
 
-//
+//Reveals full board
+function revealBoard(){
+    for(let i = 0; i < boardSize; i++){
+        for(let j = 0; j < boardSize; j++){
+            showTile(i, j, "full");
+        }
+    }
+}
+
+//Reveals individual tiles
+let checkedTiles = [];
+function showTile(x, y, type){
+    type != "surround" && (checkedTiles = []);
+    let row = document.getElementsByClassName("row")[x];
+    let item = row.getElementsByTagName("div")[y];
+    //Mines
+    if(type != "surround" && mines[x][y] == "m"){
+        item.className = "mine";
+        item.style.backgroundImage = "url(../images/minesweeper_mine.png)";
+        item.style.backgroundColor = "RGB(180, 180, 180)";
+    }
+
+    //Numbers & empty spots
+    else if(generated){
+        let div = getDivByCoords(x + 1, y + 1);
+        //Reveals current spot
+        div.className = number(mines[x][y]);
+        div.innerText = mines[x][y];
+        item.style.backgroundColor = "RGB(180, 180, 180)";
+
+        //Automatically removes flag if it was on top of blank space (only runs during with recursive calls)
+        if(div.id){
+            div.removeAttribute("id");
+            div.style.backgroundImage = "";
+            minesLeft++;
+            stats.innerText = `Mines left: ${minesLeft}`;
+        }
+        
+        //Check for other empty spots
+        if(type != "full" && !checkedTiles.includes(`${x},${y}`) && mines[x][y] == ""){
+            checkedTiles.push(`${x},${y}`);
+            x > 0 && y > 0 && showTile(x - 1, y - 1, "surround"); //top left
+            x > 0 && showTile(x - 1, y, "surround"); //top
+            x > 0 && y < boardSize - 1 && showTile(x - 1, y + 1, "surround"); //top right
+            y > 0 && showTile(x, y - 1, "surround"); //left
+            y < boardSize - 1 && showTile(x, y + 1, "surround"); //right
+            x < boardSize - 1 && y > 0 && showTile(x + 1, y - 1, "surround"); //bottom left
+            x < boardSize - 1 && showTile(x + 1, y, "surround"); //bottom
+            x < boardSize - 1 && y < boardSize - 1 && showTile(x + 1, y + 1, "surround"); //bottom right
+        }
+        type != "full" && checkIfWon();
+    }
+}
+
+//Checks if user has won
 function checkIfWon(){
     let count = 0;
     for(let i = 0; i < boardSize; i++){
@@ -238,6 +240,14 @@ function checkIfWon(){
     }
 }
 
+//Victory
+function victory(){
+    document.getElementById("game").style.borderColor = "darkgreen";
+    title.innerText = "You won!!!";
+    generated = false;
+    alive = false;
+}
+
 //Death
 function death(){
     document.getElementById("game").style.borderColor = "darkred";
@@ -245,14 +255,6 @@ function death(){
     generated = false;
     alive = false;
     revealBoard();
-}
-
-//Victory
-function victory(){
-    document.getElementById("game").style.borderColor = "darkgreen";
-    title.innerText = "You won!!!";
-    generated = false;
-    alive = false;
 }
 
 //Returns div object from (x, y) coords (top left origin = 1, 1)
@@ -282,7 +284,7 @@ function randomNumber(){
     return(Math.floor(Math.random() * boardSize) + 1);
 }
 
-//Transforms number in letters
+//Transforms number in letters for class name
 function number(n){
     let number = "";
     switch(n){
@@ -320,7 +322,7 @@ function detectAction(e){
         //r - restart
         case 82:
             death();
-            clearBoard();
+            resetBoard();
             drawBoard();
             break;
     }
