@@ -45,12 +45,24 @@ document.getElementById("game").onmouseup = function(event) {
     if(event.button == 0){
         if(!generated){
             div.id = "startClick";
+            let x = getCoordsByDiv("startClick", "x");
+            let y = getCoordsByDiv("startClick", "y");
+
+            x > 0 - 1 && x > 0 && (mines[x - 1][y - 1] = "startClick"); //top left
+            x > 0 - 1 && (mines[x - 1][y] = "startClick"); //top
+            x > 0 - 1 && y < boardSize - 1 && (mines[x - 1][y + 1] = "startClick"); //top right
+            x > 0 && (mines[x][y - 1] = "startClick"); //left
+            mines[x][y] = "startClick"; //center
+            y < boardSize - 1 && (mines[x][y + 1] = "startClick"); //right
+            x < boardSize - 1 && x > 0 && (mines[x + 1][y - 1] = "startClick"); //bottom left
+            x < boardSize - 1 && (mines[x + 1][y] = "startClick"); //bottom
+            x < boardSize - 1 && y < boardSize - 1 && (mines[x + 1][y + 1] = "startClick"); //bottom right
+
             start();
-            div.removeAttribute("id");
         }
 
         //Only reveals tile if flag isnt there
-        if(!div.id){
+        if(div.id != "flag"){
             div.id = "reveal";
             let x = getCoordsByDiv("reveal", "x");
             let y = getCoordsByDiv("reveal", "y");
@@ -140,7 +152,17 @@ function generateMines(){
         mines[x - 1][y - 1] = "m";
     }
     generated = true;
+    removeStartClick();
     generateNumbers();
+}
+
+//Checks tiles around first click to reveal area (like every other minesweeper game. it makes it more fun)
+function removeStartClick(){
+    for(let i = 0; i < mines.length; i++){
+        while(mines[i].includes("startClick")){
+            mines[i][mines[i].indexOf("startClick")] = "";
+        }
+    }
 }
 
 //Generates numbers
