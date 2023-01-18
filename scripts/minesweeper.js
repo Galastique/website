@@ -48,10 +48,10 @@ document.getElementById("game").onmouseup = function(event) {
             let x = getCoordsByDiv("startClick", "x");
             let y = getCoordsByDiv("startClick", "y");
 
-            x > 0 - 1 && x > 0 && (mines[x - 1][y - 1] = "startClick"); //top left
-            x > 0 - 1 && (mines[x - 1][y] = "startClick"); //top
-            x > 0 - 1 && y < boardSize - 1 && (mines[x - 1][y + 1] = "startClick"); //top right
-            x > 0 && (mines[x][y - 1] = "startClick"); //left
+            x > 0 && y > 0 && (mines[x - 1][y - 1] = "startClick"); //top left
+            x > 0 && (mines[x - 1][y] = "startClick"); //top
+            x > 0 && y < boardSize - 1 && (mines[x - 1][y + 1] = "startClick"); //top right
+            y > 0 && (mines[x][y - 1] = "startClick"); //left
             mines[x][y] = "startClick"; //center
             y < boardSize - 1 && (mines[x][y + 1] = "startClick"); //right
             x < boardSize - 1 && x > 0 && (mines[x + 1][y - 1] = "startClick"); //bottom left
