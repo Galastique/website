@@ -3,10 +3,11 @@ const boardSize = 16;
 const nMines = 40;
 let title = document.getElementsByTagName("h1")[0];
 let stats = document.getElementsByTagName("p")[0];
-let generated = false;
-let minesLeft = nMines;
 
 //Game variables
+let alive = true;
+let generated = false;
+let minesLeft = nMines;
 let mines = [
     ["","","","","","","","","","","","","","","",""],
     ["","","","","","","","","","","","","","","",""],
@@ -32,11 +33,11 @@ drawBoard();
 //Detects keypresses
 document.onkeydown = detectAction;
 
-//Prevents right-clicking from opening context menu instead of placing flag
+//Click events
 document.getElementById("game").onmouseup = function(event) {
     let div = event.target;
     
-    if(div.id == "game"){
+    if(div.id == "game" || !alive){
         return;
     }
     
@@ -45,13 +46,22 @@ document.getElementById("game").onmouseup = function(event) {
         if(!generated){
             div.id = "startClick";
             start();
-            div.id = "";
+            div.removeAttribute("id");
         }
-
 
         //Only reveals tile if flag isnt there
         if(!div.id){
-            
+            div.id = "reveal";
+            let x = getCoordsByDiv("reveal", "x");
+            let y = getCoordsByDiv("reveal", "y");
+            div.removeAttribute("id");
+            let object = mines[x][y];
+
+            if(object == "m"){
+                death();
+            }else{
+                showTile(x, y);
+            }
         }
 
 
@@ -60,12 +70,12 @@ document.getElementById("game").onmouseup = function(event) {
     //Right click
     else if(event.button == 2 && generated){
         //Places/removes flag
-        if(!div.id){
+        if(!div.id && div.style.backgroundColor != "rgb(180, 180, 180)"){
             div.id = "flag";
             div.style.backgroundImage = "url(../images/minesweeper_flag.png)";
             minesLeft--;
-        }else{
-            div.id = "";
+        }else if(div.id){
+            div.removeAttribute("id");
             div.style.backgroundImage = "";
             minesLeft++;
         }
@@ -76,7 +86,6 @@ document.getElementById("game").onmouseup = function(event) {
 
 //Draws board
 function drawBoard(){
-    document.getElementById("game").style.borderColor = "darkgoldenrod";
     const game = document.getElementById("game");
     for(let i = 0; i < boardSize; i++) {
         let row = document.createElement("div");
@@ -99,13 +108,65 @@ function clearBoard(){
         game.removeChild(child);
         child = game.lastElementChild;
     }
-    mines = [["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""]];
+    game.style.borderColor = "darkgoldenrod";
+    title.innerText = "Minesweeper";
     generated = false;
+    minesLeft = nMines;
+    alive = true;
+    mines = [["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""]];
 }
 
-//Reveals board
+//Reveals full board
 function revealBoard(){
-    //MAKE EVERYTHING HAVE AN OPACITY OF 0 BY DEFAULT, AND CHANGE TO 1 ON CLICK
+    for(let i = 0; i < boardSize; i++){
+        for(let j = 0; j < boardSize; j++){
+            showTile(i, j, "full");
+        }
+    }
+}
+
+//Reveals individual tiles
+let checkedTiles = [];
+function showTile(x, y, type){
+    type != "surround" ? checkedTiles = [] : null;
+    let row = document.getElementsByClassName("row")[x];
+    let item = row.getElementsByTagName("div")[y];
+    //Mines
+    if(type != "surround" && mines[x][y] == "m"){
+        item.className = "mine";
+        item.style.backgroundImage = "url(../images/minesweeper_mine.png)";
+        item.style.backgroundColor = "RGB(180, 180, 180)";
+    }
+    //Numbers & empty spots
+    else if(generated){
+        let div = getDivByCoords(x + 1, y + 1);
+        //Reveals current spot
+        div.className = number(mines[x][y]);
+        div.innerText = mines[x][y];
+        item.style.backgroundColor = "RGB(180, 180, 180)";
+
+        //Automatically removes flag if it was on top of blank space
+        if(div.id){
+            div.removeAttribute("id");
+            div.style.backgroundImage = "";
+            minesLeft++;
+            stats.innerText = `Mines left: ${minesLeft}`;
+        }
+        
+        //Check for other empty spots
+        if(type != "full" && !checkedTiles.includes(`${x},${y}`) && mines[x][y] == ""){
+            checkedTiles.push(`${x},${y}`);
+            x > 0 && y > 0 && showTile(x - 1, y - 1, "surround"); //top left
+            x > 0 && showTile(x - 1, y, "surround"); //top
+            x > 0 && y < boardSize - 1 && showTile(x - 1, y + 1, "surround"); //top right
+            y > 0 && showTile(x, y - 1, "surround"); //left
+            y < boardSize - 1 && showTile(x, y + 1, "surround"); //right
+            x < boardSize - 1 && y > 0 && showTile(x + 1, y - 1, "surround"); //bottom left
+            x < boardSize - 1 && showTile(x + 1, y, "surround"); //bottom
+            x < boardSize - 1 && y < boardSize - 1 && showTile(x + 1, y + 1, "surround"); //bottom right
+        }
+        type != "full" && checkIfWon();
+    }
 }
 
 //Starts game
@@ -121,15 +182,14 @@ function generateMines(){
     let y;
     
     for(let i = 0; i < nMines; i++){
+        //Checks if random tile is clear
         do{
             x = randomNumber();
             y = randomNumber();
             mine = getDivByCoords(x, y);
-        }while(mine.className != "" || mine.id != "");
+        }while(mines[x - 1][y - 1] != "" || mine.id != "");
         
         mines[x - 1][y - 1] = "m";
-        mine.className = "mine";
-        mine.style.backgroundImage = "url(../images/minesweeper_mine.png)";
     }
     generated = true;
     generateNumbers();
@@ -139,47 +199,40 @@ function generateMines(){
 function generateNumbers(){
     for(let i = 0; i < mines.length; i++){
         for(let j = 0; j < mines[i].length; j++){
-            //Listen, I know this section is scuffed as fuck, but I honestly wasnt sure how to tackle it
-            //hmu if you know a better way
+            //I know this section is essential impossible to read, but the only other way to do it was to have 50 lines of nested if statements
+            //It's efficient, trust me
             if(mines[i][j] != "m"){
-                let nMines = 0;
-                if(i > 0){
-                    if(j > 0){
-                        mines[i - 1][j - 1] == "m" && nMines++;
-                    }
-                    
-                    if(j < mines[i].length - 1){
-                        mines[i - 1][j + 1] == "m" && nMines++;
-                    }
-                    
-                    mines[i - 1][j] == "m" && nMines++;
-                }
+                let surroundingMines = 0;
                 
-                if(i < mines.length - 1){
-                    if(j > 0){
-                        mines[i + 1][j - 1] == "m" && nMines++;
-                    }
-                    
-                    if(j < mines[i].length - 1){
-                        mines[i + 1][j + 1] == "m" && nMines++;
-                    }
-                    
-                    mines[i + 1][j] == "m" && nMines++;
-                }
-                
-                if(j > 0){
-                    mines[i][j - 1] == "m" && nMines++;
-                }
-                
-                if(j < mines[i].length - 1){
-                    mines[i][j + 1] == "m" && nMines++;
-                }
+                //Counts surrounding mines
+                i > 0 && j > 0 && mines[i - 1][j - 1] == "m" && surroundingMines++; //top left
+                i > 0 && mines[i - 1][j] == "m" && surroundingMines++; //top
+                i > 0 && j < boardSize - 1 &&  mines[i - 1][j + 1] == "m" && surroundingMines++; //top right
+                j > 0 && mines[i][j - 1] == "m" && surroundingMines++; //left
+                j < boardSize - 1 && mines[i][j + 1] == "m" && surroundingMines++; //right
+                i < boardSize - 1 && j > 0 && mines[i + 1][j - 1] == "m" && surroundingMines++; //bottom left
+                i < boardSize - 1 && mines[i + 1][j] == "m" && surroundingMines++; //bottom
+                i < boardSize - 1 && j < boardSize - 1 && mines[i + 1][j + 1] == "m" && surroundingMines++; //bottom right
 
-                mines[i][j] = nMines;
-                getDivByCoords(i + 1, j + 1).className = number(nMines);
-                if(nMines != 0){
-                    getDivByCoords(i + 1, j + 1).innerText = nMines;
-                }
+                //Adds numbers to array
+                surroundingMines != 0 && (mines[i][j] = surroundingMines);
+            }
+        }
+    }
+}
+
+//
+function checkIfWon(){
+    let count = 0;
+    for(let i = 0; i < boardSize; i++){
+        let row = document.getElementsByClassName("row")[i];
+        for(let j = 0; j < boardSize; j++){
+            let item = row.getElementsByTagName("div")[j];
+            if(item.style.backgroundColor == "rgb(180, 180, 180)"){
+                count++;
+            }
+            if(count == (boardSize * boardSize) - nMines){
+                victory();
             }
         }
     }
@@ -188,17 +241,40 @@ function generateNumbers(){
 //Death
 function death(){
     document.getElementById("game").style.borderColor = "darkred";
-
+    title.innerText = "You lost! (Press R to start a new game)";
+    generated = false;
+    alive = false;
+    revealBoard();
 }
 
+//Victory
 function victory(){
     document.getElementById("game").style.borderColor = "darkgreen";
-
+    title.innerText = "You won!!!";
+    generated = false;
+    alive = false;
 }
 
 //Returns div object from (x, y) coords (top left origin = 1, 1)
 function getDivByCoords(x, y){
     return document.getElementsByClassName("row")[x - 1].getElementsByTagName("div")[y - 1];
+}
+
+//Returns coords from div object
+function getCoordsByDiv(id, xOrY){
+    for(let i = 0; i < boardSize; i++){
+        let row = document.getElementsByClassName("row")[i];
+        for(let j = 0; j < boardSize; j++){
+            let item = row.getElementsByTagName("div")[j];
+            if(item.id == id){
+                if(xOrY == "x"){
+                    return i;
+                }else if(xOrY == "y"){
+                    return j;
+                }
+            }
+        }
+    }
 }
 
 //Generates number between [1, 16]
@@ -208,23 +284,32 @@ function randomNumber(){
 
 //Transforms number in letters
 function number(n){
-    let number;
-    if(n == 1){
-        number = "one";
-    }else if(n == 2){
-        number = "two";
-    }else if(n == 3){
-        number = "three";
-    }else if(n == 4){
-        number = "four";
-    }else if(n == 5){
-        number = "five";
-    }else if(n == 6){
-        number = "six";
-    }else if(n == 7){
-        number = "seven";
-    }else if(n == 8){
-        number = "height";
+    let number = "";
+    switch(n){
+        case 1:
+            number = "one";
+            break;
+        case 2:
+            number = "two";
+            break;
+        case 3:
+            number = "three";
+            break;
+        case 4:
+            number = "four";
+            break;
+        case 5:
+            number = "five";
+            break;
+        case 6:
+            number = "six";
+            break;
+        case 7:
+            number = "seven";
+            break;
+        case 8:
+            number = "height";
+            break;
     }
     return number;
 }
