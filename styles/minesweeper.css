@@ -19,8 +19,8 @@ body div p {
     display: flex;
     flex-direction: column;
     background-color: rgb(140, 140, 140);
-    width: 480px;
-    height: 480px;
+    width: 479px;
+    height: 479px;
     margin: auto;
     border: 6px solid darkgoldenrod;
 }
