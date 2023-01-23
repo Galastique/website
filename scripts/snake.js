@@ -39,6 +39,22 @@ function drawBoard(){
 
         game.appendChild(row);
     }
+    checkerBoard();
+}
+
+//Turn board into checker board pattern
+function checkerBoard(){
+    for(let i = 0; i < boardSize; i++) {
+        let row = document.getElementsByClassName("row")[i];
+
+        for(let j = 0; j < boardSize; j++){
+            let cell = row.getElementsByTagName("div")[j];
+
+            if((i + j) % 2 == 0){
+                cell.className = "darker";
+            }
+        }
+    }
 }
 
 //Clears board
@@ -49,6 +65,7 @@ function clearBoard(){
             item.className = "";
         }
     }
+    checkerBoard();
 }
 
 //Starts game
@@ -66,7 +83,7 @@ function start(){
     updateScore();
 
     //Sets snake and movement
-    getXY(headLocation[0], headLocation[1]).className = "head";
+    getXY(headLocation[0], headLocation[1]).classList.add("head");
     slither = setInterval(move, delay);
     spawnFruit();
 }
@@ -99,7 +116,7 @@ function move(){
 
         //Removes last bit of tail
         if(overflow == 0){
-            tail.className = "";
+            tail.classList.remove("body");
             bodyParts.shift();
         }else{
             overflow--;
@@ -109,20 +126,21 @@ function move(){
         bodyParts.push([headLocation[0], headLocation[1]]);
         
         //Checks if object is on head
-        if(snakeHead.className == "fruit"){
+        if(snakeHead.classList.contains("fruit")){
+            snakeHead.classList.remove("fruit");
             eat();
-        }else if(snakeHead.className == "body"){
+        }else if(snakeHead.classList.contains("body")){
             death();
         }
         
-        snakeHead.className = "head";
+        snakeHead.classList.add("head");
         lastDirection = currentDirection;
         checkLength();
     }
 
     //Transforms head piece into body
     function headToBody(){
-        getXY(headLocation[0], headLocation[1]).className = "body";
+        getXY(headLocation[0], headLocation[1]).classList.replace("head", "body");
     }
 
     //Checks if player has won
@@ -140,9 +158,9 @@ function spawnFruit(){
     //Makes sure fruit isnt on top of snake
     do{
         fruit = getXY(randomNumber(), randomNumber());
-    }while(fruit.className != "" && fruit.id != null);
+    }while((fruit.classList.contains("head") || fruit.classList.contains("body")) && fruit.id != null);
     
-    fruit.className = "fruit";
+    fruit.classList.add("fruit");
 }
 
 //Eats fruit and grows
