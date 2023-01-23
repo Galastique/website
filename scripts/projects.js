@@ -7,7 +7,7 @@ const projects = [
     ["Random Color Generator", "color-generator", "This random color generator generates a color randomly. If you ever need colors for a project, a palette or anything else, this is the project for you. <br><br> The generated color will have its RGB, HEX, CMYK, HSV and HSL values displayed. "],
     ["Simon (not yet implemented)", "simon", "Simon, the memory game. A pattern of colors will blink, and you have to repeat it. It's pretty self explanatory. Hopefully when I actually work on it I won't forget to add sounds."],
     ["Tic-tac-toe (not yet implemented)", "tic-tac-toe", "Tic-tac-toe. When this is over, you will be able to play either with a friend or on your own with an \"AI\"."],
-    ["Turtle Bot - a bot for Discord (page coming soon)", "turtle-bot", "Turtle Bot is a bot that was mostly made for fun, but he can also be useful for managing small servers, as well as for easy entertainment. He is very easy to use and very likeable by all! <br><br> He has several fully functional management commands, as well as lots of fun commands. "],
+    //["Turtle Bot - a bot for Discord (page coming soon)", "turtle-bot", "Turtle Bot is a bot that was mostly made for fun, but he can also be useful for managing small servers, as well as for easy entertainment. He is very easy to use and very likeable by all! <br><br> He has several fully functional management commands, as well as lots of fun commands. "],
     //[]
 ];
 let index = 1;

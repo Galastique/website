@@ -54,7 +54,7 @@ document.getElementById("game").onmouseup = function(event) {
             y > 0 && (mines[x][y - 1] = "startClick"); //left
             mines[x][y] = "startClick"; //center
             y < boardSize - 1 && (mines[x][y + 1] = "startClick"); //right
-            x < boardSize - 1 && x > 0 && (mines[x + 1][y - 1] = "startClick"); //bottom left
+            x < boardSize - 1 && y > 0 && (mines[x + 1][y - 1] = "startClick"); //bottom left
             x < boardSize - 1 && (mines[x + 1][y] = "startClick"); //bottom
             x < boardSize - 1 && y < boardSize - 1 && (mines[x + 1][y + 1] = "startClick"); //bottom right
 

@@ -18,7 +18,7 @@ body div p {
 #game {
     display: flex;
     flex-direction: column;
-    background-color: rgb(140, 140, 140);
+    background-color: rgb(130, 130, 130);
     width: 479px;
     height: 479px;
     margin: auto;

@@ -17,8 +17,13 @@ let lastDirection;
 drawBoard();
 start();
 
-//Detects keypresses
+//Detects keypresses and stops scrolling with arrows
 document.onkeydown = detectDirection;
+window.addEventListener("keydown", function(e) {
+    if(["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
 //Draws board
 function drawBoard(){
