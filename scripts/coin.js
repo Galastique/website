@@ -1,0 +1,1 @@
+document.getElementsByTagName("img")[0].setAttribute("src", `../images/coin_${["heads", "tails"][Math.floor(Math.random() * 2)]}.png`);
