@@ -266,8 +266,20 @@ function checkIfWon(){
 function victory(){
     document.getElementById("game").style.borderColor = "darkgreen";
     title.innerText = "You won!!!";
+    stats.innerText = "Mines left: 0";
     generated = false;
     alive = false;
+
+    for (let i = 0; i < boardSize; i++) {
+        let row = document.getElementsByClassName("row")[i];
+        for (let j = 0; j < boardSize; j++) {
+            let item = row.getElementsByTagName("div")[j];
+            if (item.style.backgroundColor != "rgb(180, 180, 180)") {
+                item.id = "flag";
+                item.style.backgroundImage = "url(../images/minesweeper_flag.png)";
+            }
+        }
+    }
 }
 
 //Death
