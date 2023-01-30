@@ -33,6 +33,7 @@ const updates = [
     ["2023-01-23", "Minor game updates", "Snake game now has grid to make viewing tiles easier", "Minesweeper tile borders are now slightly less dark", "Added 2 new project ideas (currently in draft form)"],
     ["2023-01-24", "New project!", "Added clever coin (joke) project", "Added adjectives in front of completed projects"],
     ["2023-01-27", "Minor improvement", "All flags will now be placed when you win minesweeper"],
+    ["2023-01-30", "", "Change a few project names"],
     //[]
 ];
 let index = 1;

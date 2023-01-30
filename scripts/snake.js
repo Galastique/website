@@ -72,7 +72,7 @@ function clearBoard(){
 function start(){
     //Resets settings to default values
     document.getElementById("game").style.borderColor = "darkgoldenrod";
-    title.innerText = "Slithering snake";
+    title.innerText = "Savage snake";
     snakeLength = initialSize;
     overflow = initialSize - 1;
     headLocation = [boardSize / 2, boardSize / 2];
