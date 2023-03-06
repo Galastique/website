@@ -7,7 +7,7 @@ const projects = [
     ["Proper Password Generator", "password-generator", "This user friendly password generator can create very secure passwords, that are virtually impossible to crack (assuming proper settings are chosen). The passwords are generated on your local device and aren't stored anywhere. <br><br> I managed to complete the generator part of this program in 1 minute and 59 seconds. The hard part was the HTML & CSS, which took me quite a while to make look at least presentable."],
     ["Clever Coin", "coin", "It's a coin. <br><br>It randomly shows either head or tails."],
     ["Simple Simon (not yet implemented)", "simon", "Simon, the memory game. A pattern of colors will blink, and you have to repeat it. It's pretty self explanatory. Hopefully when I actually work on it I won't forget to add sounds."],
-    ["Handy Hangman (not yet implemented)", "hangman", "Hangman: The darkest child's game that exists. This hangman game has a custom word list that contains 1,000+ manually chosen words!"],
+    ["Handy Hangman (not yet implemented)", "hangman", "Hangman: The darkest child's game that exists. This hangman game has a semi-custom word list that contains 40,000+ words!"],
     ["Tactical Tic-tac-toe (not yet implemented)", "tic-tac-toe", "Tic-tac-toe. When this is over, you will be able to play either with a friend or on your own with an \"AI\"."],
     //["Turtle Bot - a bot for Discord (page coming soon)", "turtle-bot", "Turtle Bot is a bot that was mostly made for fun, but he can also be useful for managing small servers, as well as for easy entertainment. He is very easy to use and very likeable by all! <br><br> He has several fully functional management commands, as well as lots of fun commands. "],
     //[]
