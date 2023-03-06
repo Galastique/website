@@ -8,6 +8,10 @@ div div p {
     text-align: justify;
 }
 
+.change-number {
+    font-size: 8px;
+}
+
 .project-light, .project-dark {
     margin: auto;
     margin-top: 30px;
