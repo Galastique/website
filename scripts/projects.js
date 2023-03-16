@@ -8,10 +8,10 @@ let index = 1;
 
 projects.forEach((project) => {
     //Project data
-    let title = project[0];
-    let link = `./${project[1]}.html`;
-    let image = `../images/${project[1]}.png`;
-    let description = project[2];
+    let title = project.name;
+    let link = `./${project.link}.html`;
+    let image = `../images/${project.link}.png`;
+    let description = project.description;
 
     //Create elements
     let eDiv = document.createElement("div");

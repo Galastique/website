@@ -8,9 +8,9 @@ let index = 0;
 
 updates.reverse().forEach((update) => {
     //Update data
-    let timestamp = update[0];
-    let title = update[1];
-    let changes = update.slice(2, update.length);
+    let timestamp = update.date;
+    let title = update.title;
+    let changes = update.changes;
 
     //Create elements
     let change = document.createElement("div");
