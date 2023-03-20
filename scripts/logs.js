@@ -1,9 +1,6 @@
-//Import JSON data
-let request = new XMLHttpRequest();
-request.open("GET", "../data/logs.json", false);
-request.send(null)
+import {getJSON} from "./getJsonData.js"
 
-const updates = JSON.parse(request.responseText);
+const updates = getJSON("logs");
 let index = 0;
 
 updates.reverse().forEach((update) => {

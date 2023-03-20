@@ -1,9 +1,6 @@
-//Import JSON data
-let request = new XMLHttpRequest();
-request.open("GET", "../data/projects.json", false);
-request.send(null)
+import {getJSON} from "./getJsonData.js"
 
-const projects = JSON.parse(request.responseText);
+const projects = getJSON("projects");
 let index = 1;
 
 projects.forEach((project) => {
