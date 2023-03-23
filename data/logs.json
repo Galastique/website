@@ -173,5 +173,10 @@
         "date": "2023-03-16",
         "title": "Minor backend update",
         "changes": ["Transfered some data to JSON files", "Changed JSON structure to make it much better"]
+    },
+    {
+        "date": "2023-03-22",
+        "title": "Frontend update",
+        "changes": ["Changed px values to em", "Optimized CSS", "Minor visual tweaks", "Transfered hangman wordlist to a JSON file"]
     }
 ]
