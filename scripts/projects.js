@@ -17,10 +17,10 @@ projects.forEach((project) => {
     let eA = document.createElement("a");
     let eImg = document.createElement("img");
 
-    //Adds classe
+    //Adds class
     index % 2 == 0 ? eDiv.setAttribute("class", "project-dark") : eDiv.setAttribute("class", "project-light");
 
-    //Changes text
+    //Changes attributes
     eH2.innerText = title;
     eA.innerText = "View project ➜";
     eA.setAttribute("href", link);

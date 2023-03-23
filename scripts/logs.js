@@ -25,7 +25,7 @@ updates.reverse().forEach((update) => {
     index % 2 != 0 ? change.setAttribute("class", "change-light") : change.setAttribute("class", "change-dark");
     changeNumber.setAttribute("class", "change-number")
 
-    //Changes text
+    //Changes attributes
     changeTitle.innerText = title;
     changes.forEach((change) =>{
         changeChanges[changes.indexOf(change)].innerText = change;
