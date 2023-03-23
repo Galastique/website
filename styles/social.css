@@ -4,17 +4,17 @@ h2, p {
 }
 
 .socials {
-    height: 840px;
-    width: 840px;
+    height: 52em;
+    width: 52rem;
     margin: 0 auto;
     vertical-align: middle;
     text-align: center;
-    padding: 20px;
+    padding: 1em;
 }
 
 .left, .right {
-    width: 400px;
-    height: 840px;
+    width: 25em;
+    height: 52rem;
 }
 
 .left {
@@ -26,12 +26,12 @@ h2, p {
 }
 
 .light, .dark {
-    height: 360px;
-    width: 360px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding: 25px;
-    border-radius: 10px 10px 10px 10px;
+    width: 22.5em;
+    height: 22.5rem;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    border-radius: 0.6em 0.6em 0.6em 0.6em;
 }
 
 .light {
@@ -44,10 +44,10 @@ h2, p {
 
 /*Social logos*/
 div div div img {
-    width: 200px;
-    height: 200px;
+    width: 12.5em;
+    height: 12.5rem;
     float: none;
-    padding: 0px;
+    padding: 0;
 }
 
 /*Social links*/

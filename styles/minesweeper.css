@@ -1,16 +1,14 @@
-h1 {
-    margin-top: 0px;
-    margin-bottom: 0px;
+h1, body div p, .content {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 body div p {
-    margin-top: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 0.6em;
 }
 
 .content {
-    margin-top: 0px;
-    padding: 0px;
+    padding: 0;
     margin: 0 auto;
     text-align: center;
 }
@@ -19,10 +17,10 @@ body div p {
     display: flex;
     flex-direction: column;
     background-color: rgb(130, 130, 130);
-    width: 479px;
-    height: 479px;
+    width: 30em;
+    height: 30em;
     margin: auto;
-    border: 6px solid darkgoldenrod;
+    border: 0.3em solid darkgoldenrod;
 }
 
 .row {
@@ -33,17 +31,13 @@ body div p {
 }
 
 div div div div {
-    border: 1px solid rgb(60, 60, 60);
-    font-size: 21px;
-    width: 28px;
-    height: 28px;
+    border: 0.05em solid rgb(60, 60, 60);
+    font-size: 1.3em;
+    width: 1.75em;
+    height: 1.75rem;
 }
 
-#flag {
-    background-size: contain;
-}
-
-.mine {
+.mine, #flag {
     background-size: contain;
 }
 

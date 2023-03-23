@@ -8,7 +8,7 @@ body {
 }
 
 button, input, select {
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
 }
 
 footer {
@@ -17,7 +17,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    font-size: 16px;
+    font-size: 1em;
     text-align: center;
     color: rgb(0, 0, 0);
     animation: fadeIn 8s;
@@ -26,15 +26,15 @@ footer {
 }
 
 a {
-    font-size: 30px;
+    font-size: 1.9em;
     color: black;
     text-decoration: none;
-    margin-left: 40px;
+    margin-left: 2.5em;
     animation: fadeIn 4s;
 }
 
 button, select, input {
-    font-size: 13px;
+    font-size: 0.8em;
 }
 
 button:hover, select:hover, img:hover {
@@ -46,8 +46,8 @@ button:hover, select:hover, img:hover {
     margin-top: 80px;
     vertical-align: middle;
     text-align: center;
-    padding: 20px;
-    border-radius: 20px 20px 20px 20px;
+    padding: 1.25em;
+    border-radius: 1.25em 1.25em 1.25em 1.25em;
 }
 
 @keyframes fadeIn {

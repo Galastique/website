@@ -8,17 +8,13 @@ div div p {
     text-align: justify;
 }
 
-.change-number {
-    font-size: 8px;
-}
-
 .project-light, .project-dark {
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 20px;
-    width: 800px;
-    border-radius: 10px 10px 10px 10px;
+    margin-top: 1.8em;
+    margin-bottom: 1.8em;
+    padding: 1.25em;
+    width: 50em;
+    border-radius: 0.65em 0.65em 0.65em 0.65em;
     position: relative;
 }
 
@@ -43,8 +39,8 @@ div div a:hover {
 
 /*Project images*/
 div div img {
-    width: 150px;
-    height: 150px;
+    width: 9.4em;
+    height: 9.4rem;
     position: absolute;
     top: 0;
     bottom: 0;

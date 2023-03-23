@@ -3,7 +3,7 @@ h2 {
 }
 
 h3 {
-    margin: 0px;
+    margin: 0;
 }
 
 footer {
@@ -14,34 +14,30 @@ footer {
 
 /*Changelog timestamps*/
 body div div p {
-    margin-bottom: 0px;
+    margin-bottom: 0;
+}
+
+.change-light, .change-dark {
+    position: relative;
+    margin: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding: 1.25em;
+    width: 37.5em;
+    border-radius: 0.6em 0.6em 0.6em 0.6em;
 }
 
 .change-light {
-    position: relative;
     background-color: rgba(255, 255, 255, 0.05);
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding: 20px;
-    width: 600px;
-    border-radius: 10px 10px 10px 10px;
 }
 
 .change-dark {
-    position: relative;
     background-color: rgba(0, 0, 0, 0.4);
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding: 20px;
-    width: 600px;
-    border-radius: 10px 10px 10px 10px;
 }
 
 .change-number {
 	position: absolute;
-	top: 0px;
-	right: 0px;
-	padding-right: 14px;
+	top: 0;
+	right: 0;
+	padding-right: 0.8em;
 }

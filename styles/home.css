@@ -24,32 +24,25 @@ h1 {
     padding-right: 10%;
 }
 
-#a {
-    color: rgb(220, 220, 220);
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-decoration-style: double;
+#a, #b, #c, #d {
     animation: fadeIn 3s;
-    animation-delay: 400ms;
     animation-fill-mode: forwards;
+}
+
+#a {
+    animation-delay: 400ms;
 }
 
 #b {
-    animation: fadeIn 3s;
     animation-delay: 800ms;
-    animation-fill-mode: forwards;
 }
 
 #c {
-    animation: fadeIn 3s;
     animation-delay: 1200ms;
-    animation-fill-mode: forwards;
 }
 
 #d {
-    animation: fadeIn 3s;
     animation-delay: 1600ms;
-    animation-fill-mode: forwards;
 }
 
 /*Animations*/

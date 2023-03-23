@@ -7,9 +7,9 @@ html * {
 body {
     color: rgb(200, 200, 200);
     background-color: rgb(60, 60, 64);
-    margin-top: 40px;
-    margin-left: 175px;
-    margin-right: 175px;
+    margin-top: 2.5em;
+    margin-left: 10em;
+    margin-right: 10em;
 }
 
 footer {
@@ -26,23 +26,23 @@ footer {
 }
 
 body div.content p {
-    font-size: 16px;
+    font-size: 1.2em;
 }
 
 nav {
     text-align: center;
     font-weight: bold;
-    font-size: 38px;
-    margin-bottom: 25px;
+    font-size: 2.4em;
+    margin-bottom: 1em;
 }
 
 hr {
-    border-width: 2px;
-    border-radius: 2px 2px 2px 2px;
+    border-width: 0.15em;
+    border-radius: 0.1em 0.1em 0.1em 0.1em;
 }
 
 h1 {
-    font-size: 38px;
+    font-size: 2.4em;
 }
 
 a {
@@ -57,16 +57,16 @@ a:hover {
 /*Links in nav bar*/
 nav a {
     color: rgb(200, 200, 200);
-    margin: 20px;
-    margin-bottom: 0px;
+    margin: 1em;
+    margin-bottom: 0;
 }
 
 /*Footer image*/
 footer img {
     cursor: pointer;
-    height: 40px;
-    padding-top: 5px;
-    padding-right: 4px;
+    height: 2.5em;
+    padding-top: 0.3em;
+    padding-right: 0.25em;
     float: left;
 }
 
@@ -74,8 +74,8 @@ footer img {
 footer div {
     position: absolute;
     text-align: left;
-    padding-left: 20px;
-    padding-top: 1px;
+    padding-left: 1.2em;
+    padding-top: 0.05em;
     line-height: 80%;
     vertical-align: top;
 }
@@ -83,35 +83,35 @@ footer div {
 /*Link next to image in footer*/
 footer div a {
     color: rgb(160, 160, 160);
-    font-size: 12px;
+    font-size: 0.75em;
     white-space: nowrap;
     position: relative;
     top: 10px;
 }
 
-#selected {
+.selected {
     color: rgb(220, 220, 220);
     text-decoration: underline;
-    text-decoration-thickness: calc(3px * var(--scale));
+    text-decoration-thickness: 0.08em;
     text-decoration-style: double;
 }
 
 /*Custom scroll bar*/
 /* width */
 ::-webkit-scrollbar {
-    width: 14px;
+    width: 0.9em;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 2px grey;
-    border-radius: 8px;
+    box-shadow: inset 0 0 0.1em grey;
+    border-radius: 0.5em;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: rgb(120, 10, 120);
-    border-radius: 8px;
+    border-radius: 0.5em;
 }
 
 /* Handle on hover */

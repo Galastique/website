@@ -1,18 +1,14 @@
-h1 {
-    font-size: 38px;
-}
-
 p {
-    line-height: 0.8;
+    line-height: 0.75;
 }
 
 button, select, input {
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .content {
     margin: 0 auto;
     margin-top: 4%;
     text-align: center;
-    padding: 20px;
+    padding: 1.25em;
 }

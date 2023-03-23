@@ -1,9 +1,9 @@
 h1 {
-    font-size: 38px;
+    font-size: 3em;
 }
 
 button, select, input {
-    font-size: 16px;
+    font-size: 2em;
 }
 
 body {
@@ -11,9 +11,9 @@ body {
 }
 
 .content {
-    width: 600px;
+    width: 37.5em;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 3.75em;
     text-align: center;
 }
 
