@@ -187,6 +187,6 @@
     {
         "date": "2023-03-23",
         "title": "Added new images",
-        "changes": ["Added images for hangman project"]
+        "changes": ["Added images for hangman project", "Added custom color on text selection"]
     }
 ]
