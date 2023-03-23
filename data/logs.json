@@ -177,6 +177,6 @@
     {
         "date": "2023-03-22",
         "title": "Frontend update",
-        "changes": ["Changed px values to em", "Optimized CSS", "Minor visual tweaks", "Transfered hangman wordlist to a JSON file"]
+        "changes": ["Changed px values to em", "Optimized CSS", "Minor visual tweaks", "Changed scrollbar color", "Changed colors for project & social \"blocks\"", "Transfered hangman wordlist to a JSON file"]
     }
 ]
