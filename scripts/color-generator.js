@@ -3,7 +3,7 @@ changeCSS();
 //Changes background color and text fields
 function changeCSS(){
     let colors = generate();
-    let rgb = `RGB(${colors[0]}, ${colors[1]}, ${colors[2]})`;
+    let rgb = getRGB(colors);
     let hex = getHex(colors);
     let cmyk = getCmyk(colors);
     let hsv = getHsv(colors);
@@ -15,6 +15,7 @@ function changeCSS(){
     document.getElementById("hsv").innerText = hsv;
     document.getElementById("hsl").innerText = hsl;
     checkTextColor(colors);
+    changeSelectTextColor();
 }
 
 //Generates random color
@@ -24,6 +25,11 @@ function generate(){
         c.push(Math.floor(Math.random() * 256));
     }
     return c;
+}
+
+//Gets rgb value
+function getRGB(colors){
+    return `RGB(${colors[0]}, ${colors[1]}, ${colors[2]})`;
 }
 
 //Gets hex value
@@ -125,4 +131,14 @@ function checkTextColor(c){
         document.getElementsByTagName("a")[0].style.color = "black";
         document.getElementsByTagName("p")[5].style.color = "black";
     }
+}
+
+//Changes select text color
+function changeSelectTextColor(){
+    let colors = generate();
+    let rgb = `RGBA(${colors[0]}, ${colors[1]}, ${colors[2]}, 1)`;
+
+    let styleSheet = document.styleSheets[1];
+    styleSheet.removeRule("::selection");
+    styleSheet.insertRule(`::selection { background: ${rgb}; }`, 0);
 }
