@@ -50,6 +50,11 @@ button:hover, select:hover, img:hover {
     border-radius: 1.25em 1.25em 1.25em 1.25em;
 }
 
+/*Custom text selection color*/
+::selection {
+    background: rgba(128, 87, 148, 0.6);
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;

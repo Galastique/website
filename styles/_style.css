@@ -102,7 +102,7 @@ footer div a {
 
 /*Custom text selection color*/
 ::selection {
-  background: rgb(128, 87, 148);
+  background: rgba(128, 87, 148, 0.6);
 }
 
 /*Custom scroll bar*/
