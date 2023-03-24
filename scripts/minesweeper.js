@@ -1,6 +1,7 @@
 //Global variables
 const boardSize = 16;
 const nMines = 40;
+const explosionSound = document.getElementsByTagName("audio")[0];
 let title = document.getElementsByTagName("h1")[0];
 let stats = document.getElementsByTagName("p")[0];
 
@@ -283,7 +284,8 @@ function victory(){
 }
 
 //Death
-function death(){
+function death(play = true){
+    playSound(play);
     document.getElementById("game").style.borderColor = "darkred";
     title.innerText = "You lost! (Press R to start a new game)";
     generated = false;
@@ -355,9 +357,14 @@ function detectAction(e){
     switch(e.keyCode){
         //r - restart
         case 82:
-            death();
+            death(false);
             resetBoard();
             drawBoard();
             break;
     }
+}
+
+//Audio
+function playSound(play){
+    play && explosionSound.play();
 }

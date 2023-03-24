@@ -1,6 +1,7 @@
 //Global variables
 let title = document.getElementsByTagName("h1")[0];
 let stats = document.getElementsByTagName("p")[0];
+const eatingSound = document.getElementsByTagName("audio")[0];
 const delay = 150;
 const boardSize = 16;
 const initialSize = 4;
@@ -165,6 +166,7 @@ function spawnFruit(){
 
 //Eats fruit and grows
 function eat(){
+    playSound();
     spawnFruit();
     snakeLength++;
     overflow++;
@@ -252,4 +254,9 @@ function detectDirection(e){
             updateScore();
             break;
     }
+}
+
+//Audio
+function playSound() {
+    eatingSound.play();
 }
