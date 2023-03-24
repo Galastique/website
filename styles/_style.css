@@ -112,11 +112,6 @@ footer div a {
 }
 
 /*Track*/
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 0.1em grey;
-    border-radius: 0.5em;
-}
-
 /*Scrollbar*/
 ::-webkit-scrollbar-thumb {
     background: rgb(128, 87, 148);

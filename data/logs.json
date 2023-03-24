@@ -188,5 +188,10 @@
         "date": "2023-03-23",
         "title": "Image and color update",
         "changes": ["Added images for hangman project", "Added custom color on text selection", "Color generator will now also generate a random text selection color"]
+    },
+    {
+        "date": "2023-03-24",
+        "title": "Minor visual change",
+        "changes": ["Scrollbar track is now invisible"]
     }
 ]
