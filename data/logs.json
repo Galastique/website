@@ -192,6 +192,6 @@
     {
         "date": "2023-03-24",
         "title": "Cool changes",
-        "changes": ["Added explosion sound on death in minesweeper", "Added fruit eating sound in snake", "Scrollbar track is now invisible"]
+        "changes": ["Added explosion sound on death in minesweeper", "Added fruit eating sound in snake", "Scrollbar track is now invisible", "Patched visual bug with height in minesweeper"]
     }
 ]

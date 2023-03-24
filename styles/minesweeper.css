@@ -18,7 +18,6 @@ body div p {
     flex-direction: column;
     background-color: rgb(130, 130, 130);
     width: 30em;
-    height: 30em;
     margin: auto;
     border: 0.3em solid darkgoldenrod;
 }
