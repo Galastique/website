@@ -258,6 +258,6 @@ function detectDirection(e){
 
 //Audio
 function playSound() {
-    eatingSound.volume = 0.05;
+    eatingSound.volume = 0.1;
     eatingSound.play();
 }
