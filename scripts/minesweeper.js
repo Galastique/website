@@ -366,5 +366,6 @@ function detectAction(e){
 
 //Audio
 function playSound(play){
+    explosionSound.volume = 0.25;
     play && explosionSound.play();
 }
