@@ -13,6 +13,8 @@ hr {
 body div p {
     text-align: justify;
     text-justify: inter-word;
+    margin-left: 2em;
+    margin-right: 2em;
 }
 
 h1 {
@@ -64,6 +66,6 @@ h1 {
 
     100% {
         opacity: 1;
-        width: 100%;
+        width: 80%;
     }
 }
