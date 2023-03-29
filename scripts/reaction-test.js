@@ -3,8 +3,14 @@ let ongoingTest;
 let results = [];
 let startTime = 0;
 
-//Checks if test is running
-function timer(){
+//Checks if test is running on click
+document.getElementsByTagName("html")[0].onmousedown = function (event) {
+    let div = event.target;
+
+    if (div.id == "back") {
+        return;
+    }
+
     if(ongoing != "no"){
         stop();
     }else{

@@ -197,6 +197,6 @@
     {
         "date": "2023-03-29",
         "title": "Visual update",
-        "changes": ["Finally changed footer to make it fixed at the bottom of the pages"]
+        "changes": ["Finally changed footer to make it fixed at the bottom of the pages", "Reaction test will no longer trigger when you click \"back\""]
     }
 ]
