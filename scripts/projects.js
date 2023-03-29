@@ -6,8 +6,8 @@ let index = 1;
 projects.forEach((project) => {
     //Project data
     let title = project.name;
-    let link = `./projects/${project.link}.html`;
-    let image = `./images/${project.link}.png`;
+    let link = `./${project.link}.html`;
+    let image = `../images/${project.link}.png`;
     let description = project.description;
 
     //Create elements
