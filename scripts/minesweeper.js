@@ -72,6 +72,7 @@ document.getElementById("game").onmouseup = function(event) {
 
             if(object == "m"){
                 death();
+                div.style.backgroundColor = "RGB(220, 40, 40)";
             }else{
                 showTile(x, y);
             }
@@ -209,9 +210,16 @@ function showTile(x, y, type){
     let item = row.getElementsByTagName("div")[y];
     //Mines
     if(type != "surround" && mines[x][y] == "m"){
-        item.className = "mine";
-        item.style.backgroundImage = "url(../images/minesweeper_mine.png)";
-        item.style.backgroundColor = "RGB(180, 180, 180)";
+        if(item.id != "flag"){
+            item.className = "mine";
+            item.style.backgroundImage = "url(../images/minesweeper_mine.png)";
+        }
+    }
+
+    else if(type == "full"){
+        if(item.id == "flag" && mines[x][y] != "m"){
+            item.style.backgroundImage = "url(../images/minesweeper_wrongFlag.png)";
+        }
     }
 
     //Numbers & empty spots

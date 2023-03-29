@@ -197,6 +197,6 @@
     {
         "date": "2023-03-29",
         "title": "Visual update",
-        "changes": ["Finally changed footer to make it fixed at the bottom of the pages", "Reaction test will no longer trigger when you click \"back\"", "Added a 2 second time limit to reaction test"]
+        "changes": ["Finally changed footer to make it fixed at the bottom of the pages", "Reaction test will no longer trigger when you click \"back\"", "Added a 2 second time limit to reaction test", "Minesweeper will now turn the mine that you die on red", "Minesweeper will now display flags that are wrong on death", "Minesweeper will now leave flags that are correct on death", "You can no longer select text within the minesweeper game box"]
     }
 ]

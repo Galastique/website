@@ -26,7 +26,6 @@ body div p {
     display: flex;
     flex-direction: row;
     text-align: center;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
 }
 
 div div div div {
@@ -70,4 +69,8 @@ div div div div {
 
 .height {
     color: gray;
+}
+
+div div div {
+    user-select: none;
 }
