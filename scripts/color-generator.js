@@ -137,8 +137,7 @@ function checkTextColor(c){
 function changeSelectTextColor(){
     let colors = generate();
     let rgb = `RGBA(${colors[0]}, ${colors[1]}, ${colors[2]}, 1)`;
-
     let styleSheet = document.styleSheets[1];
     styleSheet.removeRule("::selection");
-    styleSheet.insertRule(`::selection { background: ${rgb}; }`, 0);
+    styleSheet.insertRule(`::selection { background: ${rgb}; }`);
 }
