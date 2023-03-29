@@ -19,18 +19,23 @@ document.getElementsByTagName("html")[0].onmousedown = function (event) {
 }
 
 //Stops test
-function stop(){
+function stop(failed = false){
     let endTime = Date.now();
     document.body.style.backgroundColor = "RGB(80, 80, 240)";
     clearTimeout(ongoingTest);
+    clearTimeout(timeLimit);
     ongoing = "no";
 
-    if(startTime > endTime){
-        document.getElementById("title").innerHTML = "You clicked too soon!";
+    if(!failed){
+        if(startTime > endTime){
+            document.getElementById("title").innerHTML = "You clicked too soon!";
+        }else{
+            results.push(endTime - startTime);
+            document.getElementById("title").innerHTML = "Click to test again";
+            changeValues();
+        }
     }else{
-        results.push(endTime - startTime);
-        document.getElementById("title").innerHTML = "Click to test again";
-        changeValues();
+        document.getElementById("title").innerHTML = "You were too slow!";
     }
 }
 
@@ -50,6 +55,7 @@ function test(){
     document.getElementById("title").innerHTML = "Click!";
     ongoing = "yes";
     startTime = Date.now();
+    timeLimit = setTimeout(function() {stop(true)}, 2000);
 }
 
 //Gets average value of results
