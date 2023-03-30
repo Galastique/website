@@ -22,14 +22,10 @@ hr {
     width: 80%;
 }
 
-body div.content {
-    margin-top: 1em;
-}
-
 footer {
     background-color: rgb(0, 0, 0, 0.4);
     width: 100%;
-    margin-top: 1em;
+    margin-top: 3.5em;
     text-align: center;
     color: rgb(160, 160, 160);
     animation: fadeIn 3s;
@@ -45,8 +41,8 @@ nav {
     text-align: center;
     font-weight: bold;
     font-size: 2.4em;
-    margin-top: 1.2em;
-    margin-bottom: 1em;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
 }
 
 hr {
