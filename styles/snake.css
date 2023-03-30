@@ -37,6 +37,10 @@ div div div div {
     height: 1.875rem;
 }
 
+.difficulty {
+    padding-top: 0.75rem;
+}
+
 .darker {
     background-color: rgb(110, 110, 110);
 }

@@ -2,9 +2,10 @@
 let title = document.getElementsByTagName("h1")[0];
 let stats = document.getElementsByTagName("p")[0];
 const eatingSound = document.getElementsByTagName("audio")[0];
-const delay = 150;
 const boardSize = 16;
 const initialSize = 4;
+const delays = [250, 150, 100, 75];
+let delay = delays[1];
 
 //Initial snake variables
 let snakeLength;
@@ -80,6 +81,7 @@ function start(){
     bodyParts = [[boardSize / 2, boardSize / 2]];
     currentDirection = null;
     lastDirection = null;
+    delay = changeDifficulty();
     clearBoard();
     updateScore();
 
@@ -260,4 +262,14 @@ function detectDirection(e){
 function playSound() {
     eatingSound.volume = 0.1;
     eatingSound.play();
+}
+
+//Change difficulty
+function changeDifficulty() {
+    let radioButtons = document.getElementsByTagName("input");
+    for(let i = 0; i < radioButtons.length; i++){
+        if(radioButtons[i].checked){
+            return delays[i];
+        }
+    }
 }
