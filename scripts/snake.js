@@ -81,7 +81,6 @@ function start(){
     bodyParts = [[boardSize / 2, boardSize / 2]];
     currentDirection = null;
     lastDirection = null;
-    delay = changeDifficulty();
     clearBoard();
     updateScore();
 
@@ -213,7 +212,13 @@ function randomNumber(){
 }
 
 //Detects which direction user is trying to move
-function detectDirection(e){
+function detectDirection(e) {
+    if(!currentDirection && !lastDirection){
+        delay = changeDifficulty();
+        clearInterval(slither);
+        slither = setInterval(move, delay);
+    }
+
     switch(e.keyCode){
         //w / up
         case 87:
