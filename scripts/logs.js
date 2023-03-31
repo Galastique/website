@@ -1,6 +1,5 @@
-import {getJSON} from "./getJsonData.js"
+import updates from "../data/logs.json" assert {type: "json"};
 
-const updates = getJSON("logs");
 let index = 0;
 
 updates.reverse().forEach((update) => {
