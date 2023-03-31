@@ -128,6 +128,7 @@ function move(){
         bodyParts.push([headLocation[0], headLocation[1]]);
         
         //Checks if object is on head
+        snakeHead.classList.add("head");
         if(snakeHead.classList.contains("fruit")){
             snakeHead.classList.remove("fruit");
             eat();
@@ -135,21 +136,12 @@ function move(){
             death();
         }
         
-        snakeHead.classList.add("head");
         lastDirection = currentDirection;
-        checkLength();
     }
 
     //Transforms head piece into body
     function headToBody(){
         getXY(headLocation[0], headLocation[1]).classList.replace("head", "body");
-    }
-
-    //Checks if player has won
-    function checkLength(){
-        if(snakeLength == boardSize ** 2){
-            victory();
-        }
     }
 }
 
@@ -168,23 +160,41 @@ function spawnFruit(){
 //Eats fruit and grows
 function eat(){
     playSound();
-    spawnFruit();
     snakeLength++;
     overflow++;
     updateScore();
+
+    if(checkLength() == "stop"){
+        return;
+    }
+
+    spawnFruit();
+}
+
+//Checks if player has won
+function checkLength() {
+    if(snakeLength == boardSize ** 2) {
+        victory();
+        return "stop";
+    }
 }
 
 //Changes score
 function updateScore(){
-    let highScore = localStorage.getItem("highscore");
+    const difficultyList = ["easy", "medium", "hard", "insane"];
+    let difficultyIndex = delays.indexOf(delay);
+    let highScoreType = `highscore_${difficultyList[difficultyIndex]}`;
     let score = snakeLength - initialSize;
+    let highScore = localStorage.getItem(highScoreType);
+
     if(!highScore){
         highScore = 0;
     }else if(score > highScore){
         highScore = score;
     }
-    localStorage.setItem("highscore", highScore);
-    stats.innerText = `Current score: ${score}    -    High score: ${highScore}`;
+
+    localStorage.setItem(highScoreType, highScore);
+    stats.innerText = `Current score: ${score}    -    High score (${difficultyList[difficultyIndex]}): ${highScore}`;
 }
     
 //When player dies
@@ -217,6 +227,7 @@ function detectDirection(e) {
         delay = changeDifficulty();
         clearInterval(slither);
         slither = setInterval(move, delay);
+        updateScore();
     }
 
     switch(e.keyCode){
@@ -256,6 +267,7 @@ function detectDirection(e) {
         case 82:
         case 32:
         case 13:
+            delay = changeDifficulty();
             death();
             start();
             updateScore();

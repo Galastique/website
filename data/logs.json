@@ -207,6 +207,6 @@
     {
         "date": "2023-03-31",
         "title": "Optimization",
-        "changes": ["Changed how JSON files are read"]
+        "changes": ["Changed how JSON files are read", "Patched a minor bug in snake", "Added individual highscores for different difficulties in snake"]
     }
 ]
