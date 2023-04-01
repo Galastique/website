@@ -47,6 +47,7 @@ div div div div {
 
 .head {
     background-color: darkgreen;
+    background-size: contain;
 }
 
 .body {

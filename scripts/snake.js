@@ -129,6 +129,9 @@ function move(){
         
         //Checks if object is on head
         snakeHead.classList.add("head");
+        snakeHead.style.backgroundImage = "url(../images/snake_smile.png)";
+        snakeHead.style.transform = `rotate(${["down", "left", "up", "right"].indexOf(currentDirection) * 90}deg)`;
+
         if(snakeHead.classList.contains("fruit")){
             snakeHead.classList.remove("fruit");
             eat();
@@ -141,7 +144,9 @@ function move(){
 
     //Transforms head piece into body
     function headToBody(){
-        getXY(headLocation[0], headLocation[1]).classList.replace("head", "body");
+        let head = getXY(headLocation[0], headLocation[1]);
+        head.classList.replace("head", "body");
+        head.style.backgroundImage = "";
     }
 }
 
@@ -163,6 +168,10 @@ function eat(){
     snakeLength++;
     overflow++;
     updateScore();
+
+    let snakeHead = getXY(headLocation[0], headLocation[1]);
+    snakeHead.style.backgroundImage = "url(../images/snake_eat.png)";
+    snakeHead.style.transform = `rotate(${["down", "left", "up", "right"].indexOf(currentDirection) * 90}deg)`;
 
     if(checkLength() == "stop"){
         return;
@@ -200,6 +209,13 @@ function updateScore(){
 //When player dies
 function death(){
     clearInterval(slither);
+
+    if(currentDirection){
+        let snakeHead = getXY(headLocation[0], headLocation[1]);
+        snakeHead.style.backgroundImage = "url(../images/snake_frown.png)";
+        snakeHead.style.transform = `rotate(${["down", "left", "up", "right"].indexOf(currentDirection) * 90}deg)`;
+    }
+
     document.getElementById("game").style.borderColor = "darkred";
     title.innerText = "You died! (Press R to restart)";
 }
