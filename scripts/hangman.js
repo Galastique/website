@@ -1,6 +1,6 @@
-import {getJSON} from "./getJsonData.js"
+import wordList from "../data/hangman.json";
+assert(typeof wordList == "json");
 
-const wordList = getJSON("hangman");
 let word = wordList[Math.floor(Math.random() * wordList.length)];
 
 console.log(`Wordlist contains ${wordList.length} words`);
