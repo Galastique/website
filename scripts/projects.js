@@ -1,5 +1,14 @@
 import projects from "../data/projects.json" assert {type: "json"};
 
+let isFirefox = typeof InstallTrigger !== 'undefined';
+
+if(isFirefox){
+    let request = new XMLHttpRequest();
+    request.open("GET", `../data/${fileName}.json`, false);
+    request.send(null)
+    projects = JSON.parse(request.responseText);
+}
+
 let index = 1;
 
 projects.forEach((project) => {
