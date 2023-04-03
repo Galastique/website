@@ -1,14 +1,6 @@
-import projects from "../data/projects.json" assert {type: "json"};
+import {getJSON} from "./getJsonData.js"
 
-let isFirefox = typeof InstallTrigger !== 'undefined';
-
-if(isFirefox){
-    let request = new XMLHttpRequest();
-    request.open("GET", "../data/projects.json", false);
-    request.send(null)
-    projects = JSON.parse(request.responseText);
-}
-
+const projects = getJSON("projects");
 let index = 1;
 
 projects.forEach((project) => {

@@ -213,5 +213,10 @@
         "date": "2023-04-01",
         "title": "Snake update",
         "changes": ["Added cute smile to snake"]
+    },
+    {
+        "date": "2023-04-03",
+        "title": "Bug fix",
+        "changes": ["Patched huge bug that prevented JSON files from being read on Firefox"]
     }
 ]
