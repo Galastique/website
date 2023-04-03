@@ -1,6 +1,6 @@
-import updates from "../data/logs.json";
-assert(typeof updates == "json");
+import {getJSON} from "./getJsonData.js"
 
+const updates = getJSON("logs");
 let index = 0;
 
 updates.reverse().forEach((update) => {

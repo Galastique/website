@@ -1,6 +1,6 @@
-import projects from "../data/projects.json";
-assert(typeof projects == "json");
+import {getJSON} from "./getJsonData.js"
 
+const projects = getJSON("projects");
 let index = 1;
 
 projects.forEach((project) => {
