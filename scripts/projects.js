@@ -4,7 +4,7 @@ let isFirefox = typeof InstallTrigger !== 'undefined';
 
 if(isFirefox){
     let request = new XMLHttpRequest();
-    request.open("GET", `../data/${fileName}.json`, false);
+    request.open("GET", "../data/projects.json", false);
     request.send(null)
     projects = JSON.parse(request.responseText);
 }
