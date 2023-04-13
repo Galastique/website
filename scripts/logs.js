@@ -3,7 +3,7 @@ import {getJSON} from "./getJsonData.js"
 const updates = getJSON("logs");
 let index = 0;
 
-updates.reverse().forEach((update) => {
+for(let update of updates.reverse()){
     //Update data
     let timestamp = update.date;
     let title = update.title;
@@ -44,4 +44,4 @@ updates.reverse().forEach((update) => {
     content.appendChild(change);
 
     index++;
-});
+};

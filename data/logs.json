@@ -218,5 +218,10 @@
         "date": "2023-04-03",
         "title": "Bug fix",
         "changes": ["Patched huge bug that prevented JSON files from being read on Firefox"]
+    },
+    {
+        "date": "2023-04-13",
+        "title": "Tiny optimization",
+        "changes": ["Changed \"for each\" loops to \"for... of\" loops on projects and changelogs page (it's better and faster)"]
     }
 ]

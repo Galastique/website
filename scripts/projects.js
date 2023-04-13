@@ -3,7 +3,7 @@ import {getJSON} from "./getJsonData.js"
 const projects = getJSON("projects");
 let index = 1;
 
-projects.forEach((project) => {
+for(let project of projects){
     //Project data
     let title = project.name;
     let link = `./${project.link}.html`;
@@ -37,4 +37,4 @@ projects.forEach((project) => {
     content.appendChild(eDiv);
 
     index++;
-});
+};
