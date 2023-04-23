@@ -86,7 +86,7 @@ document.getElementById("game").onmouseup = function(event) {
         //Places/removes flag
         if(!div.id && div.style.backgroundColor != "rgb(180, 180, 180)"){
             div.id = "flag";
-            div.style.backgroundImage = "url(../images/minesweeper_flag.png)";
+            div.style.backgroundImage = "url(../images/projects/minesweeper/flag.png)";
             minesLeft--;
         }else if(div.id){
             div.removeAttribute("id");
@@ -212,13 +212,13 @@ function showTile(x, y, type){
     if(type != "surround" && mines[x][y] == "m"){
         if(item.id != "flag"){
             item.className = "mine";
-            item.style.backgroundImage = "url(../images/minesweeper_mine.png)";
+            item.style.backgroundImage = "url(../images/projects/minesweeper/mine.png)";
         }
     }
 
     else if(type == "full"){
         if(item.id == "flag" && mines[x][y] != "m"){
-            item.style.backgroundImage = "url(../images/minesweeper_wrongFlag.png)";
+            item.style.backgroundImage = "url(../images/projects/minesweeper/wrongFlag.png)";
         }
     }
 
@@ -285,7 +285,7 @@ function victory(){
             let item = row.getElementsByTagName("div")[j];
             if (item.style.backgroundColor != "rgb(180, 180, 180)") {
                 item.id = "flag";
-                item.style.backgroundImage = "url(../images/minesweeper_flag.png)";
+                item.style.backgroundImage = "url(../images/projects/minesweeper/flag.png)";
             }
         }
     }

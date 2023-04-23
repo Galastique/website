@@ -227,6 +227,6 @@
     {
         "date": "2023-04-23",
         "title": "Big changes",
-        "changes": ["Randomized project adjectives on projects page", "Changed date to local date format on changelogs page", "Added option to view source code on projects"]
+        "changes": ["Added option to view source code on projects", "Randomized project adjectives on projects page", "Changed date to local date format on changelogs page", "Reorganized scripts, stylsheets and images"]
     }
 ]

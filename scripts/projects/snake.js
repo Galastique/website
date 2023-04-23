@@ -129,7 +129,7 @@ function move(){
         
         //Checks if object is on head
         snakeHead.classList.add("head");
-        snakeHead.style.backgroundImage = "url(../images/snake_smile.png)";
+        snakeHead.style.backgroundImage = "url(../images/projects/snake/smile.png)";
         snakeHead.style.transform = `rotate(${["down", "left", "up", "right"].indexOf(currentDirection) * 90}deg)`;
 
         if(snakeHead.classList.contains("fruit")){
@@ -170,7 +170,7 @@ function eat(){
     updateScore();
 
     let snakeHead = getXY(headLocation[0], headLocation[1]);
-    snakeHead.style.backgroundImage = "url(../images/snake_eat.png)";
+    snakeHead.style.backgroundImage = "url(../images/projects/snake/eat.png)";
     snakeHead.style.transform = `rotate(${["down", "left", "up", "right"].indexOf(currentDirection) * 90}deg)`;
 
     if(checkLength() == "stop"){
@@ -212,7 +212,7 @@ function death(){
 
     if(currentDirection){
         let snakeHead = getXY(headLocation[0], headLocation[1]);
-        snakeHead.style.backgroundImage = "url(../images/snake_frown.png)";
+        snakeHead.style.backgroundImage = "url(../images/projects/snake/frown.png)";
         snakeHead.style.transform = `rotate(${["down", "left", "up", "right"].indexOf(currentDirection) * 90}deg)`;
     }
 
