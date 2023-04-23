@@ -5,9 +5,9 @@ let index = 0;
 
 for(let update of updates.reverse()){
     //Update data
-    let timestamp = update.date;
     let title = update.title;
     let changes = update.changes;
+    let timestamp = new Date(update.date.split("-"));
 
     //Create elements
     let change = document.createElement("div");
@@ -31,7 +31,9 @@ for(let update of updates.reverse()){
         changeChanges[changes.indexOf(change)].innerText = change;
         changeList.appendChild(changeChanges[changes.indexOf(change)]);
     });
-    changeDate.innerText = timestamp;
+    //changeDate.innerText = timestamp.toLocaleDateString();
+    //changeDate.innerText = timestamp.toDateString();
+    changeDate.innerText = timestamp.toISOString().substring(0, 10);
     changeNumberText.innerText = `Update #${updates.length - index}`;
 
     //Integrates elements
