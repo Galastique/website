@@ -9,7 +9,7 @@ for(let project of projects){
     let title = `${adjective} ${project.name}`;
     let link = `./${project.link}.html`;
     let sourceLink = `./source-code/${project.link}.html`;
-    let image = `../images/${project.link}.png`;
+    let image = `../images/icons/${project.link}.png`;
     let description = project.description;
 
     //Create elements
@@ -25,7 +25,7 @@ for(let project of projects){
 
     //Changes attributes
     eH2.innerText = title;
-    eA.innerHTML = "View project ➜&emsp;&emsp;";
+    eA.innerHTML = "View project ➜";
     eA2.innerText = "View source code ➜";
     eA.setAttribute("href", link);
     eA2.setAttribute("href", sourceLink);

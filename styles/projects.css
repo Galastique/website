@@ -8,6 +8,10 @@ div div p {
     text-align: justify;
 }
 
+a {
+    margin-right: 2em;
+}
+
 .project-light, .project-dark {
     margin: auto;
     margin-top: 1.8em;
@@ -44,5 +48,5 @@ div div img {
     top: 0;
     bottom: 0;
     margin: auto;
-    margin-left: 44%;
+    margin-left: 40.5%;
 }
