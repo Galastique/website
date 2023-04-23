@@ -31,9 +31,9 @@ for(let update of updates.reverse()){
         changeChanges[changes.indexOf(change)].innerText = change;
         changeList.appendChild(changeChanges[changes.indexOf(change)]);
     });
-    //changeDate.innerText = timestamp.toLocaleDateString();
-    //changeDate.innerText = timestamp.toDateString();
-    changeDate.innerText = timestamp.toISOString().substring(0, 10);
+    changeDate.innerText = timestamp.toLocaleDateString(); //local date format(?)
+    //changeDate.innerText = timestamp.toDateString(); //"Sun Apr 23 2023" format
+    //changeDate.innerText = timestamp.toISOString().substring(0, 10); //2023-04-23 format
     changeNumberText.innerText = `Update #${updates.length - index}`;
 
     //Integrates elements

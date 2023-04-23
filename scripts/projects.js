@@ -5,7 +5,8 @@ let index = 1;
 
 for(let project of projects){
     //Project data
-    let title = project.name;
+    let adjective = project.adjectives[Math.floor(Math.random() * project.adjectives.length)];
+    let title = `${adjective} ${project.name}`;
     let link = `./${project.link}.html`;
     let image = `../images/${project.link}.png`;
     let description = project.description;

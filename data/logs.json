@@ -223,5 +223,10 @@
         "date": "2023-04-13",
         "title": "Tiny optimization",
         "changes": ["Changed \"for each\" loops to \"for... of\" loops on projects and changelogs page (it's better and faster)"]
+    },
+    {
+        "date": "2023-04-23",
+        "title": "Big changes",
+        "changes": ["Randomized project adjectives on projects page", "Changed date to local date format on changelogs page"]
     }
 ]
