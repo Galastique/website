@@ -8,6 +8,7 @@ for(let project of projects){
     let adjective = project.adjectives[Math.floor(Math.random() * project.adjectives.length)];
     let title = `${adjective} ${project.name}`;
     let link = `./${project.link}.html`;
+    let sourceLink = `./source-code/${project.link}.html`;
     let image = `../images/${project.link}.png`;
     let description = project.description;
 
@@ -16,6 +17,7 @@ for(let project of projects){
     let eH2 = document.createElement("h2");
     let eP = document.createElement("p");
     let eA = document.createElement("a");
+    let eA2 = document.createElement("a");
     let eImg = document.createElement("img");
 
     //Adds class
@@ -23,8 +25,11 @@ for(let project of projects){
 
     //Changes attributes
     eH2.innerText = title;
-    eA.innerText = "View project ➜";
+    eA.innerHTML = "View project ➜&emsp;&emsp;";
+    eA2.innerText = "View source code ➜";
     eA.setAttribute("href", link);
+    eA2.setAttribute("href", sourceLink);
+    eA2.setAttribute("target", "_blank");
     eImg.setAttribute("src", image);
     eP.innerHTML = description;
 
@@ -34,6 +39,7 @@ for(let project of projects){
     eDiv.appendChild(eP);
     eDiv.appendChild(document.createElement("br"));
     eDiv.appendChild(eA);
+    eDiv.appendChild(eA2);
     eDiv.appendChild(eImg);
     content.appendChild(eDiv);
 
