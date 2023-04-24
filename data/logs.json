@@ -231,7 +231,7 @@
     },
     {
         "date": "2023-04-24",
-        "title": "Small changes",
-        "changes": ["Reduced font size in changelog dates"]
+        "title": "New project!",
+        "changes": ["Added text mocker mini-project", "Reduced font size in changelog dates", "Fixed issue where project images wouldn't appear as tab icons on the source code pages"]
     }
 ]

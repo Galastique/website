@@ -1,0 +1,36 @@
+.content {
+    text-align: center;
+    width: 80%;
+    margin-top: 2%;
+}
+
+.input {
+    float: left;
+    width: 35%;
+}
+
+.output {
+    float: right;
+    width: 35%;
+}
+
+label {
+    font-size: 1.4em;
+}
+
+textarea {
+    margin-top: 1rem;
+    width: 100%;
+    height: 15rem;
+    resize: none;
+    font-size: 1em;
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    padding: 0.4em;
+}
+
+button {
+    margin-top: 10%;
+    width: 8em;
+    height: 4rem;
+    font-size: 1.2em;
+}

@@ -30,6 +30,12 @@
         "description": "This user friendly password generator can create very secure passwords, that are virtually impossible to crack (assuming proper settings are chosen). The passwords are generated on your local device and aren't stored anywhere. <br><br> I managed to complete the generator part of this program in 1 minute and 59 seconds. The hard part was the HTML & CSS, which took me quite a while to make look at least presentable."
     },
     {
+        "name": "Text Mocker",
+        "adjectives": ["Typical", "Tasteful", "Tenacious", "Thoughtful"],
+        "link": "text-mocker",
+        "description": "Have you ever wanted to make fun of someone on the internet? This trusty text-mocker will change any text in a way that easily conveys sarcasm. <br><br> For example: \"I think you are very smart and awesome\" will become \"i tHInK yOU aRe vErY SMaRt aND awEsOMe\""
+    },
+    {
         "name": "Coin",
         "adjectives": ["Clever", "Cool", "Cheeky"],
         "link": "coin",
@@ -49,7 +55,7 @@
     },
     {
         "name": "Tic-tac-toe (not yet implemented)",
-        "adjectives": ["Tactical", "Talented", "Tidy", "Trusty"],
+        "adjectives": ["Tactical", "Talented", "Tidy"],
         "link": "tic-tac-toe",
         "description": "Tic-tac-toe. When this is over, you will be able to play either with a friend or on your own with an \"AI\"."
     }
