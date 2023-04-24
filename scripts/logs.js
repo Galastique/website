@@ -23,7 +23,8 @@ for(let update of updates.reverse()){
 
     //Adds classes
     index % 2 != 0 ? change.setAttribute("class", "change-light") : change.setAttribute("class", "change-dark");
-    changeNumber.setAttribute("class", "change-number")
+    changeDate.setAttribute("class", "change-date");
+    changeNumber.setAttribute("class", "change-number");
 
     //Changes attributes
     changeTitle.innerText = title;

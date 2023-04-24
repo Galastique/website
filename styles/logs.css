@@ -33,5 +33,10 @@ body div div p {
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding-right: 0.8em;
+	padding-right: 1em;
+    font-size: 0.9em;
+}
+
+.change-date {
+    font-size: 0.9em !important;
 }
