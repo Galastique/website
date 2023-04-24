@@ -232,6 +232,6 @@
     {
         "date": "2023-04-24",
         "title": "New project!",
-        "changes": ["Added text mocker mini-project", "Reduced font size in changelog dates", "Fixed issue where project images wouldn't appear as tab icons on the source code pages"]
+        "changes": ["Added text mocker mini-project", "Reduced font size in changelog dates", "Fixed issue where project images wouldn't appear as tab icons on the source code pages", "Adjusted source code area background color to match with the code block"]
     }
 ]
