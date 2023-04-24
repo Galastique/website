@@ -2,7 +2,7 @@
 function mock(){
     let text = document.getElementById("encryptionMessage").value;
     let newText = mockify(text);
-    document.getElementById("decryptionMessage").innerText = newText;
+    document.getElementById("decryptionMessage").value = newText;
     text != "" && document.getElementById("decryptionMessage").removeAttribute("disabled");
 }
 
