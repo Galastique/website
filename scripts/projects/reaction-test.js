@@ -1,4 +1,5 @@
 let ongoing = "no";
+let timeLimit;
 let ongoingTest;
 let results = [];
 let startTime = 0;
