@@ -35,6 +35,20 @@ div div div div {
     height: 1.75rem;
 }
 
+.stats {
+    margin: 0 auto;
+    text-align: center;
+    width: 30em;
+}
+
+#minesLeft {
+    float: left;
+}
+
+#elapsedTime {
+    float: right;
+}
+
 .mine, #flag {
     background-size: contain;
 }

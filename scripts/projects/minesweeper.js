@@ -3,12 +3,15 @@ const boardSize = 16;
 const nMines = 40;
 const explosionSound = document.getElementsByTagName("audio")[0];
 let title = document.getElementsByTagName("h1")[0];
-let stats = document.getElementsByTagName("p")[0];
+let stats = document.getElementById("minesLeft");
+let time = document.getElementById("elapsedTime");
 
 //Game variables
 let alive = true;
 let generated = false;
 let minesLeft = nMines;
+let timerInterval;
+let startTime;
 let mines = [
     ["","","","","","","","","","","","","","","",""],
     ["","","","","","","","","","","","","","","",""],
@@ -128,13 +131,16 @@ function resetBoard(){
     minesLeft = nMines;
     alive = true;
     stats.innerText = `Mines left: ${nMines}`;
+    time.innerText = "Elapsed time: 0:00";
     mines = [["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""]];
 }
 
 //Starts game
 function start(){
     generateMines();
+    startTime = Date.now();
     stats.innerText = `Mines left: ${nMines}`;
+    timerInterval = setInterval(updateTimer, 1000);
 }
 
 //Generates mines
@@ -273,6 +279,7 @@ function checkIfWon(){
 
 //Victory
 function victory(){
+    clearInterval(timerInterval);
     document.getElementById("game").style.borderColor = "darkgreen";
     title.innerText = "You won!!!";
     stats.innerText = "Mines left: 0";
@@ -294,6 +301,7 @@ function victory(){
 //Death
 function death(play = true){
     playSound(play);
+    clearInterval(timerInterval);
     document.getElementById("game").style.borderColor = "darkred";
     title.innerText = "You lost! (Press R to start a new game)";
     generated = false;
@@ -376,4 +384,32 @@ function detectAction(e){
 function playSound(play){
     explosionSound.volume = 0.25;
     play && explosionSound.play();
+}
+
+//Timer
+function updateTimer(){
+    //Updates timer value
+    let nowTime = Date.now();
+    let seconds = Math.round((nowTime - startTime) / 1000);
+    let minutes = Math.floor(seconds / 60);
+    let hours = Math.floor(minutes / 60);
+
+    //Changes time into mm:ss format
+    let displaySeconds = (seconds % 60).toString();
+    let displayMinutes = (minutes % 60).toString();
+    let displayHours = (hours % 60).toString();
+    let displayTime;
+
+    //Makes sure time doesn't look weird if one of the values has a leading 0
+    if(hours == 0){
+        displaySeconds.length == 1 && (displaySeconds = `0${displaySeconds}`);
+        displayTime = `${displayMinutes}:${displaySeconds}`;
+    }else{
+        displaySeconds.length == 1 && (displaySeconds = `0${displaySeconds}`);
+        displayMinutes.length == 1 && (displayMinutes = `0${displayMinutes}`);
+        displayTime = `${displayHours}:${displayMinutes}:${displaySeconds}`;
+    }
+
+    //Displays time
+    time.innerText = `Elapsed time: ${displayTime}`;
 }

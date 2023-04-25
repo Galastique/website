@@ -233,5 +233,10 @@
         "date": "2023-04-24",
         "title": "New project!",
         "changes": ["Added text mocker mini-project", "Reduced font size in changelog dates", "Fixed issue where project images wouldn't appear as tab icons on the source code pages", "Adjusted source code area background color to match with the code block", "Patched bug with reaction test"]
+    },
+    {
+        "date": "2023-04-25",
+        "title": "Cool new addition",
+        "changes": ["Added elapsed time on minesweeper project"]
     }
 ]
