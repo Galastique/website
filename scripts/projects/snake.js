@@ -279,10 +279,8 @@ function detectDirection(e) {
             }
             break;
 
-        //r / space / enter - restart
+        //r - restart
         case 82:
-        case 32:
-        case 13:
             delay = changeDifficulty();
             death();
             start();
