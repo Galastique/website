@@ -33,7 +33,7 @@
         "name": "Caesar Cipher",
         "adjectives": ["Cryptic", "Crazy", "Correct", "Capable"],
         "link": "caesar-cipher",
-        "description": "Use by Julius Caesar, this cipher is a basic \"encryption\" method that works by offsetting the letters in a message by n. <br><br> To use it, simple select whether you want to encrypt or decrypt a message, enter your message, select the offset and click the button to get your result."
+        "description": "Used by Julius Caesar, this cipher is a basic \"encryption\" method that works by offsetting the letters in a message by n. <br><br> To use it, simple select whether you want to encrypt or decrypt a message, enter your message, select the offset and click the button to get your result."
     },
     {
         "name": "Text Mocker",
