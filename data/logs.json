@@ -242,6 +242,6 @@
     {
         "date": "2023-04-26",
         "title": "Huge update!!",
-        "changes": ["Added new project: Caesar Cipher", "Completely changed website's color palette", "Fixed footer (for real this time)", "Changed position of stats in snake", "Improved CSS for text mocker", "Removed footer from projects"]
+        "changes": ["Added new project: Caesar Cipher", "Completely changed website's color palette", "Fixed footer (for real this time)", "Added 3D effect to tiles in minesweeper", "Changed position of stats in snake", "Improved CSS for text mocker", "Removed footer from projects"]
     }
 ]

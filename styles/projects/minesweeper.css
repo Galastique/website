@@ -14,7 +14,7 @@ body div p {
     background-color: rgba(255, 255, 255, 0.25);
     padding-top: 1rem;
     width: 45em;
-    height: 37em;
+    height: 39em;
 }
 
 #game {
@@ -33,10 +33,13 @@ body div p {
 }
 
 div div div div {
-    border: 0.05em solid rgb(60, 60, 60);
     font-size: 1.3em;
     width: 1.75em;
     height: 1.75rem;
+    border-top: 0.1em solid rgba(255, 255, 255, 0.2);
+    border-left: 0.1em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.1em solid rgba(0, 0, 0, 0.2);
+    border-right: 0.1em solid rgba(0, 0, 0, 0.2);
 }
 
 .stats {
@@ -55,6 +58,7 @@ div div div div {
 
 .mine, #flag {
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .one {
