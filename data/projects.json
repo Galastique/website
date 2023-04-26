@@ -30,6 +30,12 @@
         "description": "This user friendly password generator can create very secure passwords, that are virtually impossible to crack (assuming proper settings are chosen). The passwords are generated on your local device and aren't stored anywhere. <br><br> I managed to complete the generator part of this program in 1 minute and 59 seconds. The hard part was the HTML & CSS, which took me quite a while to make look at least presentable."
     },
     {
+        "name": "Caesar Cipher",
+        "adjectives": ["Cryptic", "Crazy", "Correct", "Capable"],
+        "link": "caesar-cipher",
+        "description": "Use by Julius Caesar, this cipher is a basic \"encryption\" method that works by offsetting the letters in a message by n. <br><br> To use it, simple select whether you want to encrypt or decrypt a message, enter your message, select the offset and click the button to get your result."
+    },
+    {
         "name": "Text Mocker",
         "adjectives": ["Typical", "Tasteful", "Tenacious", "Thoughtful"],
         "link": "text-mocker",

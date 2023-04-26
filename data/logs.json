@@ -241,7 +241,7 @@
     },
     {
         "date": "2023-04-26",
-        "title": "Big visual changes",
-        "changes": ["Completely changed website's color palette", "Fixed footer (for real this time)", "Changed position of stats in snake"]
+        "title": "Huge update!!",
+        "changes": ["Added new project: Caesar Cipher", "Completely changed website's color palette", "Fixed footer (for real this time)", "Changed position of stats in snake"]
     }
 ]

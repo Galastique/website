@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Caesar Cipher</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="A basic game, made by Galastique">
+    <meta name="keywords" content="">
+    <meta name="author" content="Galastique">
+    <link rel="icon" href="../images/icons/caesar-cipher.png">
+    <link rel="stylesheet" href="../styles/projects/_template.css">
+    <link rel="stylesheet" href="../styles/projects/caesar-cipher.css">
+    <script src="../scripts/projects/caesar-cipher.js" async></script>
+</head>
+
+<body>
+    <br>
+    <a href="./">🠔 Back</a>
+
+    <div class="content">
+        <h1>Caesar Cipher</h1>
+
+        <div class="action">
+            <input type="radio" name="encryptionType" id="encrypt" value="Encrypt" checked="checked">
+            <label for="encrypt">Encrypt</label>
+            <input type="radio" name="encryptionType" id="decrypt" value="Decrypt">
+            <label for="decrypt">Decrypt</label>
+        </div>
+
+        <div class="caesar">
+            <div class="input">
+                <label>Input message goes here!</label>
+                <textarea id="inputMessage" autofocus></textarea>
+            </div>
+            
+            <div class="offset">
+                <label>Offset</label>
+                <input type="number" id="offset" name="offset">
+                <button onclick="cipher()">Encrypt message</button>
+                <button onclick="swap()">Swap text boxes</button>
+            </div>
+            
+            <div class="output">
+                <label>Output message appears here!</label>
+                <textarea id="outputMessage" disabled></textarea>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made by Galastique - 04/2023</p>
+    </footer>
+</body>
+
+</html>
