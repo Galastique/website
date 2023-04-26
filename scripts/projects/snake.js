@@ -1,6 +1,7 @@
 //Global variables
 let title = document.getElementsByTagName("h1")[0];
-let stats = document.getElementsByTagName("p")[0];
+let currentScore = document.getElementById("currentScore");
+let bestScore = document.getElementById("bestScore");
 const eatingSound = document.getElementsByTagName("audio")[0];
 const boardSize = 16;
 const initialSize = 4;
@@ -203,7 +204,8 @@ function updateScore(){
     }
 
     localStorage.setItem(highScoreType, highScore);
-    stats.innerText = `Current score: ${score}    -    High score (${difficultyList[difficultyIndex]}): ${highScore}`;
+    currentScore.innerText = `Current score: ${score}`;
+    bestScore.innerText = `High score(${ difficultyList[difficultyIndex]}): ${ highScore }`;
 }
     
 //When player dies
