@@ -205,7 +205,7 @@ function updateScore(){
 
     localStorage.setItem(highScoreType, highScore);
     currentScore.innerText = `Current score: ${score}`;
-    bestScore.innerText = `High score(${ difficultyList[difficultyIndex]}): ${ highScore }`;
+    bestScore.innerText = `High score (${ difficultyList[difficultyIndex]}): ${ highScore }`;
 }
     
 //When player dies
