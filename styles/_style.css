@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    color: rgb(200, 200, 200);
-    background-color: rgb(60, 60, 64);
+    color: #E5B8F4;
+    background-color: #2D033B;
     display: flex;
     flex-direction: column;
     min-height: 100%;

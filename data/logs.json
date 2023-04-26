@@ -238,5 +238,10 @@
         "date": "2023-04-25",
         "title": "Cool new addition",
         "changes": ["Added elapsed time on minesweeper project"]
+    },
+    {
+        "date": "2023-04-26",
+        "title": "Big visual changes",
+        "changes": ["Completely changed website's color palette", "Changed position of stats in snake"]
     }
 ]

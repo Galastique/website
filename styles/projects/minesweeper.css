@@ -11,6 +11,10 @@ body div p {
     padding: 0;
     margin: 0 auto;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.25);
+    padding-top: 1rem;
+    width: 45em;
+    height: 37em;
 }
 
 #game {

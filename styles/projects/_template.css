@@ -4,7 +4,8 @@ html * {
 }
 
 body {
-    background-color: rgb(80, 80, 84);
+    color: #E5B8F4;
+    background-color: #2D033B;
 }
 
 button, input, select {
@@ -19,7 +20,7 @@ footer {
     width: 100%;
     font-size: 1em;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: #E5B8F4;
     animation: fadeIn 8s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
@@ -27,7 +28,7 @@ footer {
 
 a {
     font-size: 1.9em;
-    color: black;
+    color: #E5B8F4;
     text-decoration: none;
     margin-left: 2.5em;
     animation: fadeIn 4s;
