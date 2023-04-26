@@ -2,6 +2,20 @@
     text-align: center;
     width: 80%;
     margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mocker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.input, .output, .mock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input {
@@ -12,6 +26,11 @@
 .output {
     float: right;
     width: 35%;
+}
+
+.mock {
+    margin: auto;
+    width: 15%;
 }
 
 label {
@@ -29,8 +48,8 @@ textarea {
 }
 
 button {
-    margin-top: 10%;
-    width: 8em;
+    margin-top: 20%;
+    width: 100%;
     height: 4rem;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
