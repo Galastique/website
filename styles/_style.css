@@ -14,8 +14,13 @@ body {
     background-color: #2D033B;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
     margin: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+.content {
+    padding-bottom: 3.5rem;
 }
 
 hr {
@@ -31,6 +36,8 @@ footer {
     animation: fadeIn 3s;
     animation-delay: 5s;
     animation-fill-mode: forwards;
+    position: absolute;
+    bottom: 0;
 }
 
 body div.content p {

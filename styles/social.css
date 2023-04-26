@@ -3,6 +3,21 @@ h2, p {
     text-align: center;
 }
 
+h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
 .socials {
     height: 52em;
     width: 52rem;
@@ -10,6 +25,7 @@ h2, p {
     vertical-align: middle;
     text-align: center;
     padding: 1em;
+    padding-bottom: 8rem;
 }
 
 .left, .right {
