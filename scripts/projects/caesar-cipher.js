@@ -55,3 +55,8 @@ function cipher(){
 function swap(){
     [input.value, output.value] = [output.value, input.value];
 }
+
+//Changes text on button
+function changeType(){
+    encrypt.checked ? document.getElementById("button").textContent = "Encrypt message" : document.getElementById("button").textContent = "Decrypt message";
+}

@@ -21,9 +21,9 @@
         <h1>Caesar Cipher</h1>
 
         <div class="action">
-            <input type="radio" name="encryptionType" id="encrypt" value="Encrypt" checked="checked">
+            <input type="radio" name="encryptionType" id="encrypt" onclick="changeType()" value="Encrypt" checked="checked">
             <label for="encrypt">Encrypt</label>
-            <input type="radio" name="encryptionType" id="decrypt" value="Decrypt">
+            <input type="radio" name="encryptionType" id="decrypt" onclick="changeType()" value="Decrypt">
             <label for="decrypt">Decrypt</label>
         </div>
 
@@ -36,7 +36,7 @@
             <div class="offset">
                 <label>Offset</label>
                 <input type="number" id="offset" name="offset">
-                <button onclick="cipher()">Encrypt message</button>
+                <button onclick="cipher()" id="button">Encrypt message</button>
                 <button onclick="swap()">Swap text boxes</button>
             </div>
             
