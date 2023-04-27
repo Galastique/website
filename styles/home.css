@@ -32,19 +32,19 @@ h1 {
 }
 
 #a {
-    animation-delay: 400ms;
+    animation-delay: 350ms;
 }
 
 #b {
-    animation-delay: 800ms;
+    animation-delay: 700ms;
 }
 
 #c {
-    animation-delay: 1200ms;
+    animation-delay: 1050ms;
 }
 
 #d {
-    animation-delay: 1600ms;
+    animation-delay: 1400ms;
 }
 
 /*Animations*/
