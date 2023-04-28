@@ -13,9 +13,7 @@ a {
 }
 
 .project-light, .project-dark {
-    margin: auto;
-    margin-top: 1.8em;
-    margin-bottom: 1.8em;
+    margin: 1.8em auto;
     padding: 1.25em;
     width: 50em;
     border-radius: 0.65em 0.65em 0.65em 0.65em;
