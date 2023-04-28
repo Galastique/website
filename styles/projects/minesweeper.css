@@ -36,10 +36,9 @@ div div div div {
     font-size: 1.3em;
     width: 1.75em;
     height: 1.75rem;
-    border-top: 0.1em solid rgba(255, 255, 255, 0.2);
-    border-left: 0.1em solid rgba(255, 255, 255, 0.2);
-    border-bottom: 0.1em solid rgba(0, 0, 0, 0.2);
-    border-right: 0.1em solid rgba(0, 0, 0, 0.2);
+    border-width: 0.1em;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(255, 255, 255, 0.2);
 }
 
 .stats {
