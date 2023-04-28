@@ -118,7 +118,8 @@ function drawBoard(){
 }
 
 //Clears board
-function resetBoard(){
+function resetBoard() {
+    document.body.classList = "";
     let game = document.getElementById("game");
     let child = game.lastElementChild;
     while(child){
@@ -301,6 +302,7 @@ function victory(){
 //Death
 function death(play = true){
     playSound(play);
+    flashScreen();
     clearInterval(timerInterval);
     document.getElementById("game").style.borderColor = "darkred";
     title.innerText = "You lost! (Press R to start a new game)";
@@ -384,6 +386,13 @@ function detectAction(e){
 function playSound(play){
     explosionSound.volume = 0.25;
     play && explosionSound.play();
+}
+
+//Flashes screen on death
+function flashScreen(){
+    //document.body.style.backgroundColor = "red";
+    document.body.classList = "flashScreen";
+    //styleSheet.insertRule("body {animation: flash 1s;animation-fill-mode: forwards;}");
 }
 
 //Timer

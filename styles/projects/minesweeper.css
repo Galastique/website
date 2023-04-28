@@ -96,3 +96,18 @@ div div div div {
 div div div {
     user-select: none;
 }
+
+.flashScreen {
+    animation: flash 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flash {
+    0% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: #2D033B;
+    }
+}
