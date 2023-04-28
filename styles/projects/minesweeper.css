@@ -43,6 +43,7 @@ div div div div {
 
 .stats {
     margin: 0 auto;
+    margin-top: 0.2rem;
     text-align: center;
     width: 30em;
 }
