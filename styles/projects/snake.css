@@ -14,14 +14,14 @@ body div p {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.25);
     padding-top: 1rem;
-    width: 45em;
-    height: 38.1em;
+    width: 40em;
+    height: 40em;
 }
 
 .stats {
     margin: 0 auto;
     text-align: center;
-    width: 30em;
+    width: 80%;
 }
 
 #bestScore {
@@ -36,10 +36,9 @@ body div p {
     display: flex;
     flex-direction: column;
     background-color: rgb(120, 120, 120);
-    width: 30em;
-    height: 30rem;
+    width: 80%;
     margin: auto;
-    border: 0.375em solid darkgoldenrod;
+    border: 0.375em outset darkgoldenrod;
 }
 
 .row {
@@ -49,9 +48,9 @@ body div p {
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
 }
 
-div div div div {
-    width: 1.875em;
-    height: 1.875rem;
+div.row div {
+    width: calc(2em + 0.4px);
+    height: calc(2em + 0.4px);
 }
 
 .difficulty {

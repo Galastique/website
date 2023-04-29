@@ -247,6 +247,6 @@
     {
         "date": "2023-04-26",
         "title": "QOL changes",
-        "changes": ["Minesweeper background will now flash when you die to a mine", "Minor visual changes to text mocker and caesar cipher"]
+        "changes": ["Minesweeper background will now flash when you die to a mine", "Improved snake and minesweeper's interfaces (borders, 3D effects, fixed random gaps)", "Minor visual changes to text mocker and caesar cipher"]
     }
 ]

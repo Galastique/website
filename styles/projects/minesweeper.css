@@ -14,16 +14,16 @@ body div p {
     background-color: rgba(255, 255, 255, 0.25);
     padding-top: 1rem;
     width: 45em;
-    height: 39em;
+    height: 45em;
 }
 
 #game {
     display: flex;
     flex-direction: column;
     background-color: rgb(130, 130, 130);
-    width: 30em;
+    width: 80%;
     margin: auto;
-    border: 0.3em solid darkgoldenrod;
+    border: 0.3em outset darkgoldenrod;
 }
 
 .row {
@@ -34,19 +34,20 @@ body div p {
 
 div.row div {
     font-size: 1.3em;
-    width: 1.45em;
-    height: 1.45em;
+    width: calc(1.73em + 0.4px);
+    height: 1.73em;
     border-width: 0.15em;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2) rgba(255, 255, 255, 0.2);
+    border-style: inset;
+    border-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.6) rgba(255, 255, 255, 0.6);
     text-align: center;
     vertical-align: middle;
+    box-sizing: border-box;
 }
 
 .stats {
     margin: 0.2rem auto;
     text-align: center;
-    width: 30em;
+    width: 80%;
 }
 
 #minesLeft {
