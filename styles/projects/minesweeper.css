@@ -23,7 +23,7 @@ body div p {
     background-color: rgb(130, 130, 130);
     width: 80%;
     margin: auto;
-    border: 0.3em outset darkgoldenrod;
+    border: 0.3em solid darkgoldenrod;
 }
 
 .row {
@@ -35,7 +35,7 @@ body div p {
 div.row div {
     font-size: 1.3em;
     width: calc(1.73em + 0.4px);
-    height: 1.73em;
+    height: calc(1.73em + 0.4px);
     border-width: 0.15em;
     border-style: inset;
     border-color: rgba(255, 255, 255, 0.6) rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.6) rgba(255, 255, 255, 0.6);
@@ -48,13 +48,23 @@ div.row div {
     margin: 0.2rem auto;
     text-align: center;
     width: 80%;
+    
 }
 
-#minesLeft {
-    float: left;
+.stats p {
+    display: inline-block;
 }
 
 #elapsedTime {
+    float: left;
+}
+
+#minesLeft {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#bestTime {
     float: right;
 }
 

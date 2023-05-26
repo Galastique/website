@@ -245,8 +245,13 @@
         "changes": ["Added new project: Caesar Cipher", "Completely changed website's color palette", "Fixed footer (for real this time)", "Added 3D effect to tiles in minesweeper", "Changed position of stats in snake", "Improved CSS for text mocker", "Removed footer from projects"]
     },
     {
-        "date": "2023-04-26",
+        "date": "2023-04-28",
         "title": "QOL changes",
         "changes": ["Minesweeper background will now flash when you die to a mine", "Improved snake and minesweeper's interfaces (borders, 3D effects, fixed random gaps)", "Minor visual changes to text mocker and caesar cipher"]
+    },
+    {
+        "date": "2023-05-26",
+        "title": "Feature update",
+        "changes": ["Minesweeper will now display your best time for your fastest solve"]
     }
 ]

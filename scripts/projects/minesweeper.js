@@ -32,6 +32,7 @@ let mines = [
 ];
 
 //Starts game
+bestTime();
 drawBoard();
 
 //Detects keypresses
@@ -63,6 +64,7 @@ document.getElementById("game").onmouseup = function(event) {
             x < boardSize - 1 && y < boardSize - 1 && (mines[x + 1][y + 1] = "startClick"); //bottom right
 
             start();
+            playSound(0);
         }
 
         //Only reveals tile if flag isnt there
@@ -281,6 +283,8 @@ function checkIfWon(){
 //Victory
 function victory(){
     clearInterval(timerInterval);
+    updateTimer();
+    bestTime(Math.round((Date.now() - startTime) / 1000));
     document.getElementById("game").style.borderColor = "darkgreen";
     title.innerText = "You won!!!";
     stats.innerText = "Mines left: 0";
@@ -300,8 +304,8 @@ function victory(){
 }
 
 //Death
-function death(play = true){
-    playSound(play);
+function death(){
+    playSound();
     flashScreen();
     clearInterval(timerInterval);
     document.getElementById("game").style.borderColor = "darkred";
@@ -340,34 +344,8 @@ function randomNumber(){
 
 //Transforms number in letters for class name
 function number(n){
-    let number = "";
-    switch(n){
-        case 1:
-            number = "one";
-            break;
-        case 2:
-            number = "two";
-            break;
-        case 3:
-            number = "three";
-            break;
-        case 4:
-            number = "four";
-            break;
-        case 5:
-            number = "five";
-            break;
-        case 6:
-            number = "six";
-            break;
-        case 7:
-            number = "seven";
-            break;
-        case 8:
-            number = "height";
-            break;
-    }
-    return number;
+    let numbers = ["", "one", "two", "three", "four", "five", "six", "seven", "height"]
+    return numbers[n];
 }
 
 //Detects key presses
@@ -383,23 +361,19 @@ function detectAction(e){
 }
 
 //Audio
-function playSound(play){
-    explosionSound.volume = 0.25;
-    play && explosionSound.play();
+function playSound(volume = 0.25){
+    explosionSound.volume = volume;
+    explosionSound.play();
 }
 
 //Flashes screen on death
 function flashScreen(){
-    //document.body.style.backgroundColor = "red";
     document.body.classList = "flashScreen";
-    //styleSheet.insertRule("body {animation: flash 1s;animation-fill-mode: forwards;}");
 }
 
-//Timer
-function updateTimer(){
-    //Updates timer value
-    let nowTime = Date.now();
-    let seconds = Math.round((nowTime - startTime) / 1000);
+//Formates time into readable format
+function formatTime(time){
+    let seconds = time;
     let minutes = Math.floor(seconds / 60);
     let hours = Math.floor(minutes / 60);
 
@@ -419,6 +393,33 @@ function updateTimer(){
         displayTime = `${displayHours}:${displayMinutes}:${displaySeconds}`;
     }
 
-    //Displays time
+    return displayTime;
+}
+
+//Updates timer value
+function updateTimer() {
+    let displayTime = formatTime(Math.round((Date.now() - startTime) / 1000));
     time.innerText = `Elapsed time: ${displayTime}`;
+}
+
+//Manages best time stat
+function bestTime(newTime = 0) {
+    const minesweeperSaveDataTemplate = {"bestTime": newTime}
+    let minesweeperSaveData = JSON.parse(localStorage.getItem("minesweeper")).bestTime;
+
+    if (!minesweeperSaveData) {
+        document.getElementById("bestTime").innerText = "Best time: 59:59";
+        localStorage.setItem("minesweeper", JSON.stringify(minesweeperSaveDataTemplate));
+        return;
+    }
+
+    //Saves new time
+    if (newTime != 0 && minesweeperSaveData != 0 && newTime < minesweeperSaveData){
+        minesweeperSaveData = newTime;
+        localStorage.setItem("minesweeper", JSON.stringify({"bestTime": minesweeperSaveData}));
+    }
+
+    //Displays best time
+    let displayTime = formatTime(minesweeperSaveData);
+    document.getElementById("bestTime").innerText = `Best time: ${displayTime}`;
 }
