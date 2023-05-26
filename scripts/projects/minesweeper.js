@@ -405,7 +405,8 @@ function updateTimer() {
 //Manages best time stat
 function bestTime(newTime = 0) {
     const minesweeperSaveDataTemplate = {"bestTime": newTime}
-    let minesweeperSaveData = JSON.parse(localStorage.getItem("minesweeper")).bestTime;
+    let minesweeperSaveData;
+    localStorage.getItem("minesweeper") && (minesweeperSaveData = JSON.parse(localStorage.getItem("minesweeper")).bestTime);
 
     if (!minesweeperSaveData) {
         document.getElementById("bestTime").innerText = "Best time: 59:59";
