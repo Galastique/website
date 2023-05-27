@@ -3,8 +3,10 @@ const boardSize = 16;
 const nMines = 40;
 const explosionSound = document.getElementsByTagName("audio")[0];
 let title = document.getElementsByTagName("h1")[0];
-let stats = document.getElementById("minesLeft");
 let time = document.getElementById("elapsedTime");
+let stats = document.getElementById("minesLeft");
+let notice = document.getElementById("notice");
+let timeBest = document.getElementById("bestTime");
 
 //Game variables
 let alive = true;
@@ -97,7 +99,8 @@ document.getElementById("game").onmouseup = function(event) {
             div.style.backgroundImage = "";
             minesLeft++;
         }
-        minesLeft < 0 ? (stats.innerText = `Mines left: ${minesLeft} (one or more of your flags are incorrect)`) : stats.innerText = `Mines left: ${minesLeft}`;
+        stats.innerText = `Mines left: ${minesLeft}`;
+        minesLeft <= 0 ? (notice.innerText = `  (some flags are incorrect)`) : (notice.innerText = "");
     }
     window.addEventListener("contextmenu", e => e.preventDefault());
 }
@@ -128,6 +131,7 @@ function resetBoard() {
         child = game.lastElementChild;
     }
     game.style.borderColor = "darkgoldenrod";
+    notice.innerText = "";
     title.innerText = "Minesweeper";
     generated = false;
     minesLeft = nMines;
@@ -285,6 +289,7 @@ function victory(){
     updateTimer();
     bestTime(Math.round((Date.now() - startTime) / 1000));
     document.getElementById("game").style.borderColor = "darkgreen";
+    notice.innerText = "";
     title.innerText = "You won!!!";
     stats.innerText = "Mines left: 0";
     generated = false;
@@ -410,7 +415,7 @@ function bestTime(newTime = 0) {
     localStorage.getItem("minesweeper") && (minesweeperSaveData = JSON.parse(localStorage.getItem("minesweeper")).bestTime);
 
     if (!minesweeperSaveData) {
-        document.getElementById("bestTime").innerText = "Best time: 0:00";
+        timeBest.innerText = "Best time: 0:00";
         localStorage.setItem("minesweeper", JSON.stringify(minesweeperSaveDataTemplate));
         return;
     }
@@ -423,5 +428,5 @@ function bestTime(newTime = 0) {
 
     //Displays best time
     let displayTime = formatTime(minesweeperSaveData);
-    document.getElementById("bestTime").innerText = `Best time: ${displayTime}`;
+    timeBest.innerText = `Best time: ${displayTime}`;
 }
