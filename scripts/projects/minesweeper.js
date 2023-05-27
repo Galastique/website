@@ -64,7 +64,6 @@ document.getElementById("game").onmouseup = function(event) {
             x < boardSize - 1 && y < boardSize - 1 && (mines[x + 1][y + 1] = "startClick"); //bottom right
 
             start();
-            playSound(0);
         }
 
         //Only reveals tile if flag isnt there
@@ -304,8 +303,8 @@ function victory(){
 }
 
 //Death
-function death(){
-    playSound();
+function death(sound = true){
+    sound && playSound();
     flashScreen();
     clearInterval(timerInterval);
     document.getElementById("game").style.borderColor = "darkred";
@@ -362,6 +361,8 @@ function detectAction(e){
 
 //Audio
 function playSound(volume = 0.25){
+    explosionSound.pause();
+    explosionSound.currentTime = 0;
     explosionSound.volume = volume;
     explosionSound.play();
 }
@@ -409,7 +410,7 @@ function bestTime(newTime = 0) {
     localStorage.getItem("minesweeper") && (minesweeperSaveData = JSON.parse(localStorage.getItem("minesweeper")).bestTime);
 
     if (!minesweeperSaveData) {
-        document.getElementById("bestTime").innerText = "Best time: 59:59";
+        document.getElementById("bestTime").innerText = "Best time: 0:00";
         localStorage.setItem("minesweeper", JSON.stringify(minesweeperSaveDataTemplate));
         return;
     }

@@ -252,6 +252,6 @@
     {
         "date": "2023-05-26",
         "title": "Feature update",
-        "changes": ["Minesweeper will now display your best time for your fastest solve"]
+        "changes": ["Minesweeper will now display your best time for your fastest solve", "Optimized code", "Fixed a few bugs"]
     }
 ]
