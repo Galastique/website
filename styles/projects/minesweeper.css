@@ -27,6 +27,7 @@ body div p {
     border-style: solid;
     border-color: rgb(184, 134, 11) rgb(160, 115, 5) rgb(160, 115, 5) rgb(184, 134, 11);
     box-shadow: 0.8em 1em 1em rgba(0, 0, 0, 0.4);
+    text-shadow : 0 0 0 black;
 }
 
 .row {
