@@ -256,7 +256,7 @@
     },
     {
         "date": "2023-05-30",
-        "title": "Tiny change",
-        "changes": ["Added <noscript> tag to pages (you don't need to know what this means)"]
+        "title": "Big visual changes",
+        "changes": ["Greatly improved text visibility on all pages!", "Added shadows to various boxes", "Added <noscript> tag to pages (you don't need to know what this means)"]
     }
 ]

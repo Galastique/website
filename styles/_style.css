@@ -17,6 +17,7 @@ body {
     margin: 0;
     position: relative;
     min-height: 100vh;
+    text-shadow : 0.1em 0.1em 0.1em black;
 }
 
 .content {

@@ -48,6 +48,7 @@ footer {
     margin-bottom: 1.5em;
     padding: 1.5em;
     border-radius: 0.6em 0.6em 0.6em 0.6em;
+    box-shadow: 0.6em 0.8em 1em rgba(0, 0, 0, 0.4);
 }
 
 .light {

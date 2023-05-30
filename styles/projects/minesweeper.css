@@ -23,7 +23,10 @@ body div p {
     background-color: rgb(130, 130, 130);
     width: 80%;
     margin: auto;
-    border: 0.3em solid darkgoldenrod;
+    border-width: 0.3em;
+    border-style: solid;
+    border-color: rgb(184, 134, 11) rgb(160, 115, 5) rgb(160, 115, 5) rgb(184, 134, 11);
+    box-shadow: 0.8em 1em 1em rgba(0, 0, 0, 0.4);
 }
 
 .row {

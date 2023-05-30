@@ -18,6 +18,8 @@ a {
     width: 50em;
     border-radius: 0.65em 0.65em 0.65em 0.65em;
     position: relative;
+    text-shadow : 0.05em 0.05em 0.8em black;
+    box-shadow: 0.75em 0.8em 1em rgba(0, 0, 0, 0.4);
 }
 
 .project-light {
