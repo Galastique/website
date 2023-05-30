@@ -45,6 +45,7 @@ textarea {
     font-size: 1em;
     border-radius: 0.8em 0.8em 0.8em 0.8em;
     padding: 0.4em;
+    box-shadow: 0.8em 1em 1em rgba(0, 0, 0, 0.4);
 }
 
 button {
@@ -52,4 +53,5 @@ button {
     width: 100%;
     height: 4rem;
     font-size: 1.1em;
+    box-shadow: 0.4em 0.5em 1em rgba(0, 0, 0, 0.4);
 }
