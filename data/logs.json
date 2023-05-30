@@ -253,5 +253,10 @@
         "date": "2023-05-26",
         "title": "Feature update",
         "changes": ["Minesweeper will now display your best time for your fastest solve", "Optimized code", "Fixed colors not displaying properly on minesweeper", "Fixed a few other small bugs"]
+    },
+    {
+        "date": "2023-05-30",
+        "title": "Tiny change",
+        "changes": ["Added <noscript> tag to pages (you don't need to know what this means)"]
     }
 ]
