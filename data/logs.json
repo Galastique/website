@@ -258,5 +258,10 @@
         "date": "2023-05-30",
         "title": "Big visual changes",
         "changes": ["Greatly improved text visibility on all pages!", "Added shadows to various boxes", "Added <noscript> tag to pages (you don't need to know what this means)"]
+    },
+    {
+        "date": "2023-06-01",
+        "title": "Tiny visual change",
+        "changes": ["Changed color palette (just a little)"]
     }
 ]
