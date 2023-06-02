@@ -14,24 +14,7 @@ let generated = false;
 let minesLeft = nMines;
 let timerInterval;
 let startTime;
-let mines = [
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""],
-    ["","","","","","","","","","","","","","","",""]
-];
+let mines = generateEmptyGrid();
 
 //Starts game
 bestTime();
@@ -138,7 +121,7 @@ function resetBoard() {
     alive = true;
     stats.innerText = `Mines left: ${nMines}`;
     time.innerText = "Elapsed time: 0:00";
-    mines = [["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""],["","","","","","","","","","","","","","","",""]];
+    mines = generateEmptyGrid();
 }
 
 //Starts game
@@ -170,13 +153,17 @@ function generateMines(){
     generateNumbers();
 }
 
-//Checks tiles around first click to reveal area (like every other minesweeper game. it makes it more fun)
-function removeStartClick(){
-    for(let i = 0; i < mines.length; i++){
-        while(mines[i].includes("startClick")){
-            mines[i][mines[i].indexOf("startClick")] = "";
+//Generates empty grid
+function generateEmptyGrid(){
+    let grid = [];
+    for(let n = 0; n < boardSize; n++){
+        let row = [];
+        for(let m = 0; m < boardSize; m++){
+            row.push("");
         }
+        grid.push(row);
     }
+    return grid;
 }
 
 //Generates numbers
@@ -201,6 +188,15 @@ function generateNumbers(){
                 //Adds numbers to array
                 surroundingMines != 0 && (mines[i][j] = surroundingMines);
             }
+        }
+    }
+}
+
+//Checks tiles around first click to reveal area (like every other minesweeper game. it makes it more fun)
+function removeStartClick(){
+    for(let i = 0; i < mines.length; i++){
+        while(mines[i].includes("startClick")){
+            mines[i][mines[i].indexOf("startClick")] = "";
         }
     }
 }
