@@ -1,6 +1,4 @@
-import {getJSON} from "./getJsonData.js"
-
-const projects = getJSON("projects");
+import {projects} from "../data/projects.js";
 let index = 1;
 
 for(let project of projects){

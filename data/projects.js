@@ -1,4 +1,4 @@
-[
+export const projects = [
     {
         "name": "Minesweeper",
         "adjectives": ["Mighty", "Magnificent", "Marvelous", "Mindful"],

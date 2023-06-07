@@ -1,4 +1,4 @@
-[
+export const updates = [
     {
         "date": "2022-06-20",
         "title": "Published website",
@@ -266,7 +266,7 @@
     },
     {
         "date": "2023-06-07",
-        "title": "COLORS!!",
-        "changes": ["Changed color palette a tiny bit (again)"]
+        "title": "Minor changes",
+        "changes": ["Changed color palette a tiny bit (again)", "Changed how data files are read (again) for browser parity"]
     }
 ]

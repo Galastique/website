@@ -1,6 +1,4 @@
-import {getJSON} from "./getJsonData.js"
-
-const updates = getJSON("logs");
+import {updates} from "../data/logs.js"
 let index = 0;
 
 for(let update of updates.reverse()){
