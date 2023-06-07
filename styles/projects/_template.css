@@ -4,8 +4,8 @@ html * {
 }
 
 body {
-    color: #E5B8F4;
-    background-color: #2D034F;
+    color: rgb(232, 188, 248);
+    background-color: rgb(40, 2, 70);
     text-shadow : 0.1em 0.1em 0.1em black;
 }
 

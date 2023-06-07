@@ -263,5 +263,10 @@
         "date": "2023-06-01",
         "title": "Tiny visual change",
         "changes": ["Changed color palette (just a little)"]
+    },
+    {
+        "date": "2023-06-07",
+        "title": "COLORS!!",
+        "changes": ["Changed color palette a tiny bit (again)"]
     }
 ]
