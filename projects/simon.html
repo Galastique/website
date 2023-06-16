@@ -18,8 +18,38 @@
     <a href="./">🠔 Back</a>
     <noscript>You must enable JavaScript to view this page.</noscript>
 
+    <audio>
+        <source src="../sounds/simon_green.wav">
+    </audio>
+    <audio>
+        <source src="../sounds/simon_red.wav">
+    </audio>
+    <audio>
+        <source src="../sounds/simon_yellow.wav">
+    </audio>
+    <audio>
+        <source src="../sounds/simon_blue.wav">
+    </audio>
+
     <div class="content">
         <h1>Simon</h1>
+        <div class="game">
+            <div class="images">
+                <div class="green disabled"><img src="../images/projects/simon/green.png"></div>
+                <div class="red disabled"><img src="../images/projects/simon/red.png"></div>
+                <div class="yellow disabled"><img src="../images/projects/simon/yellow.png"></div>
+                <div class="blue disabled"><img src="../images/projects/simon/blue.png"></div>
+            </div>
+            
+            <div class="hitboxes blink" id="simon">
+                <div class="top left" id="green"></div>
+                <div class="top right" id="red"></div>
+                <div class="bottom left" id="yellow"></div>
+                <div class="bottom right" id="blue"></div>
+            </div>
+
+            <button onclick="start()">Click to start</button>
+        </div>
     </div>
 </body>
 

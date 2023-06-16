@@ -1,0 +1,129 @@
+.content {
+    margin: 0;
+    padding: 0;
+}
+
+.game {
+    width: 36em;
+    height: 36em;
+    margin: auto;
+    top: 0;
+    left: 0;
+}
+
+.images {
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    user-drag: none;
+    cursor: pointer;
+}
+
+button {
+    width: 8em;
+    height: 2em;
+    font-size: 1.4em;
+    position: relative;
+    transform: translateY(-700%);
+}
+
+.disabled {
+    filter: brightness(50%);
+}
+
+.red, .blue, .yellow, .green {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hitboxes {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hitboxes div {
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 0em;
+    border-color: transparent;
+    width: 47.5%;
+    height: 46.5%;
+    cursor: pointer;
+}
+
+.left, .right, .top, .bottom {
+    position: absolute;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 52.5%;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    top: 52.5%;
+}
+
+.top.left {
+    border-color: green;
+}
+
+.top.right {
+    border-color: red;
+}
+
+.bottom.left {
+    border-color: yellow;
+}
+
+.bottom.right {
+    border-color: blue;
+}
+
+.green {
+    --blinkColor: green;
+}
+
+.red {
+    --blinkColor: red;
+}
+
+.yellow {
+    --blinkColor: yellow;
+}
+
+.blue {
+    --blinkColor: blue;
+}
+
+.blink {
+    animation: blinkButton 0.6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blinkButton {
+    0% {
+        filter: drop-shadow(0) brightness(100%);
+    }
+
+    5% {
+        filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(180%);
+    }
+
+    100% {
+        filter: drop-shadow(0) brightness(100%);
+    }
+}

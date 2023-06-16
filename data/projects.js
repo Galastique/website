@@ -48,7 +48,7 @@ export const projects = [
         "description": "It's a coin. <br><br>It randomly shows either head or tails."
     },
     {
-        "name": "Simon (not yet implemented)",
+        "name": "Simon (in progress)",
         "adjectives": ["Simple", "Sacred", "Sensitive", "Smart"],
         "link": "simon",
         "description": "Simon, the memory game. A pattern of colors will blink, and you have to repeat it. It's pretty self explanatory. Hopefully when I actually work on it I won't forget to add sounds."
