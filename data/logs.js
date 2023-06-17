@@ -268,5 +268,10 @@ export const updates = [
         "date": "2023-06-07",
         "title": "Minor changes",
         "changes": ["Changed color palette a tiny bit (again)", "Changed how data files are read (again) for browser parity"]
+    },
+    {
+        "date": "2023-06-17",
+        "title": "New project!",
+        "changes": ["Completed and published Simon game"]
     }
 ]
