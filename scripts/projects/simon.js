@@ -4,17 +4,7 @@ const soundRed = document.getElementsByTagName("audio")[1];
 const soundYellow = document.getElementsByTagName("audio")[2];
 const soundBlue = document.getElementsByTagName("audio")[3];
 const sounds = [soundGreen, soundRed, soundYellow, soundBlue];
-
-//Detects clicks
-document.getElementById("simon").onmouseup = function(event) {
-    let div = event.target;
-    if (!started || !playerTurn || event.button != 0 || div.id == "simon") {
-        return;
-    }
-
-    blink(div.id)
-    playSound(colorIndex);
-}
+let started = false;
 
 //Starts game
 function start() {
@@ -31,6 +21,7 @@ function start() {
 
 //Blinks button
 function blink(divId) {
+    playSound(["green", "red", "yellow", "blue"].indexOf(divId));
     let colorIndex = ["green", "red", "yellow", "blue"].indexOf(divId);
     let imageDiv = document.getElementsByTagName("img")[colorIndex];
     imageDiv.classList.contains("blink") && imageDiv.classList.remove("blink");
@@ -42,6 +33,7 @@ function blink(divId) {
 function playSound(colorIndex) {
     sounds[colorIndex].pause();
     sounds[colorIndex].currentTime = 0;
+    sounds[colorIndex].volume = 0.1;
     sounds[colorIndex].play();
 }
 
@@ -62,4 +54,25 @@ async function playPattern() {
 function listenPattern() {
     playerTurn = true;
     let listenedPattern = [];
+    
+    while (listenedPattern.length < patternList.length && checkPattern(listenedPattern)) {
+        //Detects clicks
+        document.getElementById("simon").onmouseup = function(event) {
+            let div = event.target;
+            if (event.button != 0 || div.id == "simon") {
+                return;
+            }
+
+            //Compares player inputs with pattern
+            listenedPattern.push(div.id);
+            blink(div.id)
+        }
+    }
+
+    function checkPattern(pattern) {
+        let len = pattern.length;
+        console.log(pattern);
+        console.log(patternList.slice(0, len));
+        return true;
+    }
 }
