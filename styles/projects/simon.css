@@ -11,6 +11,20 @@
     left: 0;
 }
 
+.stats {
+    margin: 0 auto 5em;
+    text-align: center;
+    width: 30em;
+}
+
+#bestScore {
+    float: right;
+}
+
+#currentScore {
+    float: left;
+}
+
 .images {
     position: relative;
 }
@@ -110,7 +124,11 @@ button {
 }
 
 .blink {
-    animation: blinkButton 0.6s;
+    animation: blinkButton 0.45s;
+}
+
+.failureBlink {
+    animation: failureBlinkButtons 0.8s;
     animation-fill-mode: forwards;
 }
 
@@ -120,6 +138,24 @@ button {
     }
 
     5% {
+        filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(180%);
+    }
+
+    100% {
+        filter: drop-shadow(0) brightness(100%);
+    }
+}
+
+@keyframes failureBlinkButtons {
+    0% {
+        filter: drop-shadow(0) brightness(100%);
+    }
+
+    30% {
+        filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(180%);
+    }
+    
+    65% {
         filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(180%);
     }
 
