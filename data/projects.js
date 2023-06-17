@@ -6,7 +6,7 @@ export const projects = [
         "description": "In case you were born after the year 2000, here is how you play: Your goal is to find every single mine. The numbers indicate how many mines are around it (corners included). You can right click to place a flag, which will help you keep track of what you've found. It'll also prevent you from accidentally setting off a mine.<br><br>Overall, this is a pretty basic minesweeper recreation. I am very proud of it and I hope you enjoy playing it as much as I enjoyed making it."
     },
     {
-        "name": "Simon (in progress)",
+        "name": "Simon",
         "adjectives": ["Simple", "Sacred", "Sensitive", "Smart"],
         "link": "simon",
         "description": "Simon, the memory game. A pattern of colors will blink, and you have to repeat it. It's pretty self explanatory. Hopefully when I actually work on it I won't forget to add sounds."
