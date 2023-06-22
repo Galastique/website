@@ -5,7 +5,6 @@ const soundRed = document.getElementsByTagName("audio")[1];
 const soundYellow = document.getElementsByTagName("audio")[2];
 const soundBlue = document.getElementsByTagName("audio")[3];
 const soundFailure = document.getElementsByTagName("audio")[4];
-soundFailure.volume = 0.2;
 const sounds = [soundGreen, soundRed, soundYellow, soundBlue, soundFailure];
 let started = false;
 let score = -1;
