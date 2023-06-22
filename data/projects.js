@@ -9,7 +9,7 @@ export const projects = [
         "name": "Simon",
         "adjectives": ["Simple", "Sacred", "Sensitive", "Smart"],
         "link": "simon",
-        "description": "Simon, the memory game. A pattern of colors will blink, and you have to repeat it. It's pretty self explanatory. Hopefully when I actually work on it I won't forget to add sounds."
+        "description": "Simon, the memory game. A pattern of colors will blink, and you have to repeat it. It's pretty self explanatory. Let's see how good of a score you can get :)"
     },
     {
         "name": "Snake",
