@@ -19,7 +19,6 @@ document.getElementById("simon").onmouseup = function(event) {
     }
 
     //Compares player inputs with pattern
-    blink(div.id)
     listenedPattern.push(div.id);
     let lenComputer = patternList.length;
     let lenPlayer = listenedPattern.length;
@@ -30,6 +29,7 @@ document.getElementById("simon").onmouseup = function(event) {
             setTimeout(playPattern, 1000);
             playerTurn = false;
         }
+        blink(div.id)
     } else {
         failure();
     }
@@ -61,9 +61,11 @@ function blink(divId) {
 
 //Plays a sound
 function playSound(colorIndex) {
-    sounds[colorIndex].pause();
-    sounds[colorIndex].currentTime = 0;
-    sounds[colorIndex].volume = 0.1;
+    for (let sound of sounds) {
+        sounds[colorIndex].pause();
+        sounds[colorIndex].currentTime = 0;
+        colorIndex != 4 ? sounds[colorIndex].volume = 0.1 : sounds[colorIndex].volume = 0.08;
+    }
     sounds[colorIndex].play();
 }
 
