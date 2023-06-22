@@ -138,7 +138,7 @@ button {
     }
 
     5% {
-        filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(180%);
+        filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(190%);
     }
 
     100% {
@@ -152,11 +152,11 @@ button {
     }
 
     30% {
-        filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(180%);
+        filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(190%);
     }
     
     65% {
-        filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(180%);
+        filter: drop-shadow(0 0 4em var(--blinkColor)) brightness(190%);
     }
 
     100% {
