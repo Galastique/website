@@ -272,6 +272,6 @@ export const updates = [
     {
         "date": "2023-06-17",
         "title": "New project!",
-        "changes": ["Completed and published Simon game"]
+        "changes": ["Completed and published Simon game", "Added contact email to social list and removed Reddit account"]
     }
 ]
