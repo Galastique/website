@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    color: rgb(232, 188, 248);
-    background-color: rgb(40, 2, 70);
+    color: rgb(220, 220, 220);
+    background-color: rgb(10, 0, 80);
     display: flex;
     flex-direction: column;
     margin: 0;

@@ -276,7 +276,7 @@ export const updates = [
     },
     {
         date: "2023-06-29",
-        title: "Small improvements",
-        changes: ["Changed how reaction tests calculates time for more accurate results", "Heavily improved code for reaction test", "Changed colors in social list"]
+        title: "Various improvements",
+        changes: ["Changed color palette (again)", "Changed how reaction tests calculates time for more accurate results", "Heavily improved code for reaction test", "Changed colors in social list"]
     }
 ]
