@@ -8,7 +8,7 @@ let startTime = 0;
 document.getElementsByTagName("html")[0].onmousedown = function (event) {
     let div = event.target;
 
-    if (div.id == "back") {
+    if(div.id == "back"){
         return;
     }
 
@@ -21,7 +21,7 @@ document.getElementsByTagName("html")[0].onmousedown = function (event) {
 
 //Stops test
 function stop(failed = false){
-    let endTime = Date.now();
+    let endTime = performance.now();
     document.body.style.backgroundColor = "RGB(80, 80, 240)";
     clearTimeout(ongoingTest);
     clearTimeout(timeLimit);
@@ -31,7 +31,7 @@ function stop(failed = false){
         if(startTime > endTime){
             document.getElementById("title").innerHTML = "You clicked too soon!";
         }else{
-            results.push(endTime - startTime);
+            results.push(Math.round(endTime - startTime));
             document.getElementById("title").innerHTML = "Click to test again";
             changeValues();
         }
@@ -55,30 +55,19 @@ function test(){
     document.body.style.backgroundColor = "RGB(100, 180, 100)";
     document.getElementById("title").innerHTML = "Click!";
     ongoing = "yes";
-    startTime = Date.now();
+    startTime = performance.now();
     timeLimit = setTimeout(function() {stop(true)}, 2000);
-}
-
-//Gets average value of results
-function averageTime(results){
-    let sum = 0;
-    for(let i = 0; i < results.length; i++){
-        sum += results[i];
-    }
-    return Math.round(sum / results.length);
 }
 
 //Changes text values
 function changeValues(){
-    let result = results[results.length - 1];
-    let min = Math.min.apply(null, results);
-    let max = Math.max.apply(null, results);
-    let average = averageTime(results);
-    let count = results.length;
     document.getElementById("rules").innerHTML = "";
-    document.getElementById("result").innerHTML = `Result: ${result.toString()}ms`;
-    document.getElementById("min").innerHTML = `Fastest: ${min.toString()}ms`;
-    document.getElementById("max").innerHTML = `Slowest: ${max.toString()}ms`;
-    document.getElementById("average").innerHTML = `Average: ${average.toString()}ms`;
-    document.getElementById("amount").innerHTML = `Amount: ${count.toString()}`;
+    document.getElementById("result").innerHTML = `Result: ${results[results.length - 1]}ms`;
+
+    if(results.length > 1) {
+        document.getElementById("min").innerHTML = `Fastest: ${Math.min.apply(null, results)}ms`;
+        document.getElementById("max").innerHTML = `Slowest: ${Math.max.apply(null, results)}ms`;
+        document.getElementById("average").innerHTML = `Average: ${Math.round(results.reduce((a, b) => a + b, 0) / results.length)}ms`;
+        document.getElementById("amount").innerHTML = `Number of tests: ${results.length}`;
+    }
 }
