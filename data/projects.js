@@ -51,7 +51,7 @@ export const projects = [
         name: "Coin",
         adjectives: ["Clever", "Cool", "Cheeky"],
         link: "coin",
-        description: "It's a coin. <br><br>It randomly shows either head or tails."
+        description: "This coin, just like any other coin, randomly shows either head or tails when you flip it. It's a pretty basic \"project\". <br><br> It is excellent for decision making. Some might argue that it's even better than r/RelationshipAdvice!"
     },
     {
         name: "Hangman (not yet implemented)",

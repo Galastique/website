@@ -17,9 +17,20 @@
     <br>
     <a href="./">🠔 Back</a>
     <noscript>You must enable JavaScript to view this page.</noscript>
+    
+    <audio>
+        <source src="../sounds/coin_flip.wav">
+    </audio>
 
     <div class="content">
-        <img>
+        <img onclick="flip()" src="../images/projects/coin/tails.png">
+        <p id="result">Click the coin to flip it</p>
+
+        <div class="tally">
+            <p>Tally:</p>
+            <p id="heads">Heads - 0</p>
+            <p id="tails">Tails - 0</p>
+        </div>
     </div>
 </body>
 

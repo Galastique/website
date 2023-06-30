@@ -277,6 +277,12 @@ export const updates = [
     {
         date: "2023-06-29",
         title: "Various improvements",
-        changes: ["Changed color palette (again)", "Changed how reaction tests calculates time for more accurate results", "Heavily improved code for reaction test", "Changed colors in social list"]
+        changes: ["Changed color palette (again)", "Changed how reaction tests calculates time for more accurate results", "Heavily improved code for reaction test", "Changed how colors are generated in color generator", "Made lots of tiny changes to the code here and there", "Changed colors in social list", "Pressing \"R\" during a game of snake will no longer restart it if you aren't dead"]
+    },
+    {
+        
+        date: "2023-06-30",
+        title: "Coin overhaul",
+        changes: ["Completely remade coin project", "It is no longer only 1 line of code long", "It will now play a sound when the coin is flipped", "Stats for the flips are shown", "Result is also shown by text", "Coin image is slightly smaller"]
     }
 ]

@@ -1,4 +1,13 @@
 img {
-    width: 40%;
+    height: 24em;
     margin-top: -8%;
+}
+
+#result {
+    font-size: 1.5em;
+}
+
+.tally {
+    margin-top: 2em;
+    line-height: 75%;
 }

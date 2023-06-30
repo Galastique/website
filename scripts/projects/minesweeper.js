@@ -163,6 +163,11 @@ function generateEmptyGrid(){
         }
         grid.push(row);
     }
+
+    //let grid2 = Array(16).fill(Array(16).fill(""));
+    //console.table(grid);
+    //console.table(grid2);
+
     return grid;
 }
 
