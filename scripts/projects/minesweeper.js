@@ -327,11 +327,7 @@ function getCoordsByDiv(id, xOrY){
         for(let j = 0; j < boardSize; j++){
             let item = row.getElementsByTagName("div")[j];
             if(item.id == id){
-                if(xOrY == "x"){
-                    return i;
-                }else if(xOrY == "y"){
-                    return j;
-                }
+                return xOrY == "x" ? i : j;
             }
         }
     }
@@ -410,6 +406,7 @@ function bestTime(newTime = 0) {
     let minesweeperSaveData;
     localStorage.getItem("minesweeper") && (minesweeperSaveData = JSON.parse(localStorage.getItem("minesweeper")).bestTime);
 
+    //If time doesnt exist
     if (!minesweeperSaveData) {
         timeBest.innerText = "Best time: 0:00";
         localStorage.setItem("minesweeper", JSON.stringify(minesweeperSaveDataTemplate));

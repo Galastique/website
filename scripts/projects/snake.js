@@ -62,9 +62,8 @@ function checkerBoard(){
 
 //Clears board
 function clearBoard(){
-    for(let row = 0; row < boardSize; row++){
-        for(let i = 0; i < boardSize; i++){
-            let item = getXY(row + 1, i + 1);
+    for(let row of document.getElementsByClassName("row")){
+        for(let item of row.getElementsByTagName("div")){
             item.className = "";
         }
     }
@@ -80,7 +79,6 @@ function start(){
     overflow = initialSize - 1;
     headLocation = [boardSize / 2, boardSize / 2];
     bodyParts = [[boardSize / 2, boardSize / 2]];
-    currentDirection = null;
     lastDirection = null;
     clearBoard();
     updateScore();
@@ -216,6 +214,7 @@ function death(){
         let snakeHead = getXY(headLocation[0], headLocation[1]);
         snakeHead.style.backgroundImage = "url(../images/projects/snake/frown.png)";
         snakeHead.style.transform = `rotate(${["down", "left", "up", "right"].indexOf(currentDirection) * 90}deg)`;
+        currentDirection = null;
     }
 
     document.getElementById("game").style.borderColor = "darkred";
@@ -283,16 +282,20 @@ function detectDirection(e) {
 
         //r - restart
         case 82:
-            delay = changeDifficulty();
-            death();
-            start();
-            updateScore();
+            if(!currentDirection){   
+                delay = changeDifficulty();
+                death();
+                start();
+                updateScore();
+            }
             break;
     }
 }
 
 //Audio
 function playSound() {
+    eatingSound.pause();
+    eatingSound.currentTime = 0;
     eatingSound.volume = 0.1;
     eatingSound.play();
 }

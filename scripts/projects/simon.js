@@ -36,6 +36,7 @@ document.getElementById("simon").onmouseup = function(event) {
 
 //Starts game
 function start() {
+    //Sets values to default
     started = true;
     playerTurn = false;
     patternList = [];
@@ -44,7 +45,6 @@ function start() {
     while(document.getElementsByClassName("disabled").length > 0) {
         document.getElementsByClassName("disabled")[0].classList.remove("disabled");
     }
-
     setTimeout(playPattern, 800);
 }
 
@@ -61,9 +61,9 @@ function blink(divId) {
 //Plays a sound
 function playSound(colorIndex) {
     for (let sound of sounds) {
-        sounds[colorIndex].pause();
-        sounds[colorIndex].currentTime = 0;
-        colorIndex != 4 ? sounds[colorIndex].volume = 0.1 : sounds[colorIndex].volume = 0.08;
+        sound.pause();
+        sound.currentTime = 0;
+        colorIndex != 4 ? sound.volume = 0.1 : sound.volume = 0.08;
     }
     sounds[colorIndex].play();
 }
@@ -72,7 +72,6 @@ function playSound(colorIndex) {
 async function playPattern() {
     playerTurn = false;
     let newColor = ["green", "red", "yellow", "blue"][Math.floor(Math.random() * 4)];
-    let index = 0;
     patternList.push(newColor);
 
     for (let color of patternList) {

@@ -23,17 +23,11 @@ function cipher(){
         if(char.toLowerCase() != char.toUpperCase()){
             //Encrypt
             if(encrypt.checked){
-                console.log("encrypt");
-                if(char == char.toLowerCase()){
-                    char = charsLower[(charsLower.indexOf(char) + offsetValue) % 26];
-                }else if(char == char.toUpperCase()){
-                    char = charsUpper[(charsUpper.indexOf(char) + offsetValue) % 26];
-                }
+                char == char.toLowerCase() ? (char = charsLower[(charsLower.indexOf(char) + offsetValue) % 26]) : char = charsUpper[(charsUpper.indexOf(char) + offsetValue) % 26];
             }    
             
             //Decrypt
             else if(decrypt.checked){
-                console.log("decrypt");
                 if(char == char.toLowerCase()){
                     let num = charsLower.indexOf(char) - offsetValue;
                     num < 0 && (num += 26);

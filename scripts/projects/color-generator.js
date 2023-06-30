@@ -2,29 +2,15 @@ changeCSS();
 
 //Changes background color and text fields
 function changeCSS(){
-    let colors = generate();
-    let rgb = getRGB(colors);
-    let hex = getHex(colors);
-    let cmyk = getCmyk(colors);
-    let hsv = getHsv(colors);
-    let hsl = getHsl(colors);
-    document.body.style.backgroundColor = rgb;
-    document.getElementById("rgb").innerText = rgb;
-    document.getElementById("hex").innerText = hex;
-    document.getElementById("cmyk").innerText = cmyk;
-    document.getElementById("hsv").innerText = hsv;
-    document.getElementById("hsl").innerText = hsl;
+    let colors = Array.from({length: 3}, () => Math.floor(Math.random() * 256));
+    document.body.style.backgroundColor = getRGB(colors);
+    document.getElementById("rgb").innerText = getRGB(colors);
+    document.getElementById("hex").innerText = getHex(colors);
+    document.getElementById("cmyk").innerText = getCmyk(colors);
+    document.getElementById("hsv").innerText = getHsv(colors);
+    document.getElementById("hsl").innerText = getHsl(colors);
     checkTextColor(colors);
     changeSelectTextColor();
-}
-
-//Generates random color
-function generate(){
-    let c = [];
-    for(let i = 0; i < 3; i++){
-        c.push(Math.floor(Math.random() * 256));
-    }
-    return c;
 }
 
 //Gets rgb value
@@ -37,17 +23,10 @@ function getHex(colors){
     let r = colors[0].toString(16);
     let g = colors[1].toString(16);
     let b = colors[2].toString(16);
-    if(r.length == 1){
-        r = `0${r}`;
-    }
-    if(g.length == 1){
-        g = `0${g}`;
-    }
-    if(b.length == 1){
-        b = `0${b}`;
-    }
-    let hex  = `HEX #${r}${g}${b}`;
-    return hex.toUpperCase();
+    r.length == 1 && (r = `0${r}`);
+    g.length == 1 && (g = `0${g}`);
+    b.length == 1 && (b = `0${b}`);
+    return `HEX #${r}${g}${b}`.toUpperCase();
 }
 
 //Gets cmyk value
@@ -81,14 +60,9 @@ function getHsv(colors){
     }else if(max == b){
         h = Math.round(60 * ((r - g) / delta + 4));
     }
-    if(h < 0){
-        h += 360;
-    }
-    if(max != 0){
-        s = Math.round((1 - (min / max)) * 100);
-    }
-    let hsv = `HSV(${h}°, ${s}%, ${v}%)`;
-    return hsv;
+    h < 0 && (h += 360);
+    max != 0 && (s = Math.round((1 - (min / max)) * 100));
+    return `HSV(${h}°, ${s}%, ${v}%)`;
 }
 
 //Gets hsl value
@@ -109,15 +83,10 @@ function getHsl(colors){
     }else if(max == b){
         h = Math.round(60 * ((r - g) / delta + 4));
     }
-    if(h < 0){
-        h += 360;
-    }
-    if(delta != 0){
-        s = Math.round((delta) / ((1 - Math.abs(2 * l - 1))) * 100);
-    }
+    h < 0 && (h += 360);
+    delta != 0 && (s = Math.round((delta) / ((1 - Math.abs(2 * l - 1))) * 100));
     l = Math.round(l * 100);
-    let hsl = `HSL(${h}°, ${s}%, ${l}%)`;
-    return hsl;
+    return `HSL(${h}°, ${s}%, ${l}%)`;
 }
 
 //Changes text color if background color is too dark
@@ -133,7 +102,7 @@ function checkTextColor(c){
 
 //Changes select text color
 function changeSelectTextColor(){
-    let colors = generate();
+    let colors = Array.from({length: 3}, () => Math.floor(Math.random() * 256));
     let rgb = `RGBA(${colors[0]}, ${colors[1]}, ${colors[2]}, 1)`;
     let styleSheet = document.styleSheets[1];
     styleSheet.removeRule("::selection");

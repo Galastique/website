@@ -72,18 +72,12 @@ function validate(){
     }
 
     //Other
-    if(l == "none" && n == "false" && s == "false"){
-        error += "You must choose at least 1 character option to generate a password";
-    }
+    l == "none" && n == "false" && s == "false" && (error += "You must choose at least 1 character option to generate a password");
 
     document.getElementById("error").innerText = error;
 
     //Proceeds if no errors are found
-    if(error == ""){
-        generate(chars, Math.floor(length));
-    }else {
-        animate("error");
-    }
+    error == "" ? generate(chars, Math.floor(length)) : animate("error");
 }
 
 //Generates password
@@ -120,11 +114,7 @@ function copy(){
 //Toggle password visibility
 function view(){
     let visible = document.getElementById("password").type;
-    if(generated && visible == "password"){
-        document.getElementById("password").type = "text";
-    }else {
-        document.getElementById("password").type = "password";
-    }
+    generated && visible == "password" ? document.getElementById("password").type = "text" : document.getElementById("password").type = "password";
 }
 
 //Error message fade out animation
