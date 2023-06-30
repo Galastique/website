@@ -7,8 +7,8 @@ function flip() {
 
     //Changes image and it's properties
     document.getElementsByTagName("img")[0].setAttribute("src", `../images/projects/coin/${flip}.png`);
-    document.getElementsByTagName("img")[0].setAttribute("alt", `${flip}`);
-    document.getElementsByTagName("img")[0].setAttribute("title", `${flip}`);
+    document.getElementsByTagName("img")[0].setAttribute("alt", flip);
+    document.getElementsByTagName("img")[0].setAttribute("title", flip);
 
     //Changes result text
     document.getElementById("result").innerText = `You flipped ${flip}! Click the coin to flip it again.`;

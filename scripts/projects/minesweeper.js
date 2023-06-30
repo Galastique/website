@@ -155,20 +155,7 @@ function generateMines(){
 
 //Generates empty grid
 function generateEmptyGrid(){
-    let grid = [];
-    for(let n = 0; n < boardSize; n++){
-        let row = [];
-        for(let m = 0; m < boardSize; m++){
-            row.push("");
-        }
-        grid.push(row);
-    }
-
-    //let grid2 = Array(16).fill(Array(16).fill(""));
-    //console.table(grid);
-    //console.table(grid2);
-
-    return grid;
+    return Array(boardSize).fill("").map(() => Array(boardSize).fill(""));
 }
 
 //Generates numbers
