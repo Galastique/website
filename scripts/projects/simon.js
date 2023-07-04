@@ -86,18 +86,14 @@ async function playPattern() {
 //When successful sequence
 function addPoint() {
     score++;
-    let savedHighScore = localStorage.getItem("simon");
-    let highScore;
-
-    if(!savedHighScore){
-        highScore = 0;
+    let highScore = 0;
+    try {
+        highScore = JSON.parse(localStorage.getItem("simon")).highScore;
+    }catch(err){
         localStorage.setItem("simon", JSON.stringify({"highScore": 0}));
-    } else {
-        highScore = JSON.parse(savedHighScore).highScore;
     }
     
-    if(score > JSON.parse(savedHighScore).highScore){
-        console.log("tesT");
+    if(score > highScore){
         highScore = score;
         localStorage.setItem("simon", JSON.stringify({"highScore": highScore}));
     }

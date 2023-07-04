@@ -394,24 +394,20 @@ function updateTimer() {
 
 //Manages best time stat
 function bestTime(newTime = 0) {
-    const minesweeperSaveDataTemplate = {"bestTime": newTime}
-    let minesweeperSaveData;
-    localStorage.getItem("minesweeper") && (minesweeperSaveData = JSON.parse(localStorage.getItem("minesweeper")).bestTime);
+    let bestTime = 0;
 
-    //If time doesnt exist
-    if (!minesweeperSaveData) {
-        timeBest.innerText = "Best time: 0:00";
-        localStorage.setItem("minesweeper", JSON.stringify(minesweeperSaveDataTemplate));
-        return;
+    //Checks if time exists
+    try {
+        bestTime = JSON.parse(localStorage.getItem("minesweeper")).bestTime;
+    }catch(err){
+        localStorage.setItem("minesweeper", JSON.stringify({"bestTime": 0}));
     }
 
     //Saves new time
-    if (newTime != 0 && minesweeperSaveData != 0 && newTime < minesweeperSaveData){
-        minesweeperSaveData = newTime;
-        localStorage.setItem("minesweeper", JSON.stringify({"bestTime": minesweeperSaveData}));
+    if (newTime != 0 && newTime < bestTime || bestTime == 0){
+        bestTime = newTime;
+        localStorage.setItem("minesweeper", JSON.stringify({"bestTime": newTime}));
     }
 
-    //Displays best time
-    let displayTime = formatTime(minesweeperSaveData);
-    timeBest.innerText = `Best time: ${displayTime}`;
+    bestTime != 0 ? timeBest.innerText = `Best time: ${formatTime(bestTime)}` : timeBest.innerText = "Best time: 0:00";
 }
