@@ -284,5 +284,11 @@ export const updates = [
         date: "2023-06-30",
         title: "Coin overhaul",
         changes: ["Completely remade coin project", "It is no longer only 1 line of code long", "It will now play a sound when the coin is flipped", "Stats for the flips are shown", "Result is also shown by text", "Coin image is slightly smaller"]
+    },
+    {
+        
+        date: "2023-07-04",
+        title: "Bug patche",
+        changes: ["Fixed bugs with save data for simon and minesweeper"]
     }
 ]
