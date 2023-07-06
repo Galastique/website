@@ -288,7 +288,13 @@ export const updates = [
     {
         
         date: "2023-07-04",
-        title: "Bug patche",
+        title: "Bug patch",
         changes: ["Fixed bugs with save data for simon and minesweeper"]
+    },
+    {
+        
+        date: "2023-07-06",
+        title: "New project!",
+        changes: ["Completed and uploaded hangman project!"]
     }
 ]
