@@ -6,10 +6,20 @@ img {
     width: 100%;
 }
 
+.links {
+    display: flex;
+}
+
+#playAgain {
+    font-size: 2em;
+    float: left;
+    margin: 0.6em 0;
+}
+
 #meaning {
     font-size: 1.2em;
-    float: left;
-    margin: 1.2em 0;
+    float: right;
+    margin: 1.2em 0.5em;
 }
 
 #meaning:hover {

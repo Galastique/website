@@ -10,8 +10,10 @@ document.getElementById("guesses").onmouseup = detectLetter;
 
 //Starts game
 function start() {
+    document.getElementById("playAgain") && document.getElementById("playAgain").remove();
     document.getElementById("meaning") && document.getElementById("meaning").remove();
     document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/state0.png";
+    word = wordList[Math.floor(Math.random() * wordList.length)];
     setGuesses();
     setWord();
     dead = false;
@@ -132,14 +134,17 @@ function victory() {
     dead = true;
     //document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/win.png";
     revealWord();
+    showPlayAgain();
 }
 
 function failure() {
     dead = true;
     document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/state6.png";
     revealWord();
+    showPlayAgain();
 }
 
+//Reveals mystery word
 function revealWord() {
     let i = 0;
     for(let div of document.getElementById("letters").getElementsByTagName("div")) {
@@ -162,4 +167,14 @@ function showMeaning() {
     link.setAttribute("href", `https://google.com/search?q=${word}+meaning`);
     link.innerText = "View meaning ➜";
     document.getElementsByClassName("word")[0].appendChild(link);
+}
+
+//Shows play again button
+function showPlayAgain() {
+    let link = document.createElement("a");
+    link.setAttribute("id", "playAgain");
+    link.setAttribute("href", "Play again!");
+    link.innerText = "Play again";
+    document.getElementsByClassName("word")[0].appendChild(link);
+    document.getElementById("playAgain").onmouseup = start;
 }
