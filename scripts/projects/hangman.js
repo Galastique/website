@@ -6,9 +6,11 @@ start();
 
 //Detect key presses
 document.onkeydown = detectLetter;
+document.getElementById("guesses").onmouseup = detectLetter;
 
 //Starts game
 function start() {
+    document.getElementById("meaning") && document.getElementById("meaning").remove();
     document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/state0.png";
     setGuesses();
     setWord();
@@ -28,7 +30,7 @@ function setGuesses() {
         let element = document.createElement("div");
         let letter = document.createElement("p");
         letter.innerText = char.toUpperCase();
-        element.setAttribute("id", char);
+        letter.setAttribute("id", char);
         element.appendChild(letter);
         i++ % 6 == 0 && document.getElementById("guesses").appendChild(document.createElement("br"));
         document.getElementById("guesses").appendChild(element);
@@ -51,23 +53,48 @@ function setWord() {
     }
 }
 
+//Detect inputs
 function detectLetter(e) {
-    let key = e.key.toLowerCase();
-    if (dead || "abcdefghijklmnopqrstuvwxyz".indexOf(key) == -1) {
-        return;
+    //Keyboard
+    if (e.type == "keydown") {
+        let letter = e.key.toLowerCase();
+        if (dead || "abcdefghijklmnopqrstuvwxyz".indexOf(letter) == -1) {
+            return;
+        }
+        
+        if (word.indexOf(letter) != -1) {
+            correct(letter);
+        } else {
+            incorrect(letter);
+        }
     }
 
-    if (word.indexOf(key) != -1) {
-        correct(key);
-    } else {
-        incorrect(key);
+    //Mouse
+    else if (e.type == "mouseup") {
+        let div = e.target;
+
+        //Only allow left click
+        if(e.button != 0){
+            return;
+        }
+
+        //Detect letter
+        if("abcdefghijklmnopqrstuvwxyz".indexOf(div.id != -1)){
+            let letter = div.id;
+
+            if (word.indexOf(letter) != -1) {
+                correct(letter);
+            } else {
+                incorrect(letter);
+            }
+        }
     }
 }
 
 //When guess is right
 function correct(letter) {
     //Changes letter colors
-    document.getElementById(letter) ? document.getElementById(letter).setAttribute("id", "right") : function(){return;};
+    document.getElementById(letter) ? document.getElementById(letter).parentElement.setAttribute("id", "right") : function(){return;};
 
     let instances = word.split(letter).length - 1;
     let lastInstance = 0;
@@ -89,7 +116,11 @@ function correct(letter) {
 //When guess is wrong
 function incorrect(letter) {
     //Changes letter colors
-    document.getElementById(letter).setAttribute("id", "wrong");
+    if (!document.getElementById(letter).parentElement.id) {
+        document.getElementById(letter).parentElement.setAttribute("id", "wrong");
+    } else {
+        return;
+    }
 
     //Changes image
     let string = document.getElementsByTagName("img")[0].src.split("/");
@@ -100,16 +131,16 @@ function incorrect(letter) {
 function victory() {
     dead = true;
     //document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/win.png";
-    showCorrectLetters();
+    revealWord();
 }
 
 function failure() {
     dead = true;
     document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/state6.png";
-    showCorrectLetters();
+    revealWord();
 }
 
-function showCorrectLetters() {
+function revealWord() {
     let i = 0;
     for(let div of document.getElementById("letters").getElementsByTagName("div")) {
         if (div.getElementsByTagName("p")[0].innerText != "") {
@@ -125,7 +156,6 @@ function showCorrectLetters() {
 
 //Links to word meaning
 function showMeaning() {
-    document.getElementById("meaning") && document.getElementById("meaning").remove();
     let link = document.createElement("a");
     link.setAttribute("id", "meaning");
     link.setAttribute("target", "_blank");
