@@ -76,7 +76,7 @@ function detectLetter(e) {
         let div = e.target;
 
         //Only allow left click
-        if(e.button != 0 || div.id == "" || div.id == "guesses"){
+        if(dead || e.button != 0 || div.id == "" || div.id == "guesses"){
             return;
         }
 
