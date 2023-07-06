@@ -1,5 +1,5 @@
 import {wordList} from "../../data/hangman.js"
-let word = wordList[Math.floor(Math.random() * wordList.length)];
+let word;
 let dead = false;
 
 start();
@@ -76,7 +76,7 @@ function detectLetter(e) {
         let div = e.target;
 
         //Only allow left click
-        if(e.button != 0 || div.id == ""){
+        if(e.button != 0 || div.id == "" || div.id == "guesses"){
             return;
         }
 
@@ -133,15 +133,15 @@ function incorrect(letter) {
 function victory() {
     dead = true;
     //document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/win.png";
-    revealWord();
     showPlayAgain();
+    revealWord();
 }
 
 function failure() {
     dead = true;
     document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/state6.png";
-    revealWord();
     showPlayAgain();
+    revealWord();
 }
 
 //Reveals mystery word
@@ -165,8 +165,23 @@ function showMeaning() {
     link.setAttribute("id", "meaning");
     link.setAttribute("target", "_blank");
     link.setAttribute("href", `https://google.com/search?q=${word}+meaning`);
+    link.setAttribute("title", "View meaning of the word");
     link.innerText = "View meaning ➜";
-    document.getElementsByClassName("word")[0].appendChild(link);
+    document.getElementsByClassName("links")[0].appendChild(link);
+
+    //Moves link
+    let styleSheet = document.querySelector(":root");
+    let rightMarginSize = 0;
+    let topMarginSize = 1.2;
+    if (word.length >= 11) {
+        rightMarginSize = 0;
+    } else {
+        rightMarginSize = (11 - word.length) * 3.8;
+    }
+
+    word.length <= 4 && (topMarginSize = 3);
+    styleSheet.style.setProperty("--rightMargin", `${rightMarginSize}em`);
+    styleSheet.style.setProperty("--topMargin", `${topMarginSize}em`);
 }
 
 //Shows play again button
@@ -174,7 +189,8 @@ function showPlayAgain() {
     let link = document.createElement("a");
     link.setAttribute("id", "playAgain");
     link.setAttribute("href", "Play again!");
+    link.setAttribute("title", "Play the game again!");
     link.innerText = "Play again";
-    document.getElementsByClassName("word")[0].appendChild(link);
+    document.getElementsByClassName("links")[0].appendChild(link);
     document.getElementById("playAgain").onmouseup = start;
 }

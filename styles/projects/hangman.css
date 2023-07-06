@@ -1,3 +1,8 @@
+:root {
+    --rightMargin: 0em;
+    --topMargin: 0em;
+}
+
 h1 {
     margin-top: -4%;
 }
@@ -7,22 +12,23 @@ img {
 }
 
 .links {
-    display: flex;
+    position: static;
 }
 
 #playAgain {
     font-size: 2em;
     float: left;
-    margin: 0.6em 0;
+    margin: 0.4em 0 -1.6em;
 }
 
 #meaning {
     font-size: 1.2em;
     float: right;
-    margin: 1.2em 0.5em;
+    margin-top: var(--topMargin);
+    margin-right: var(--rightMargin);
 }
 
-#meaning:hover {
+#meaning:hover, #playAgain:hover {
     text-decoration: underline;
 }
 
