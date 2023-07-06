@@ -57,7 +57,7 @@ export const projects = [
         name: "Hangman (not yet implemented)",
         adjectives: ["Handy", "Handsome", "Happy", "Humble"],
         link: "hangman",
-        description: "Hangman: The darkest child's game that exists. This hangman game has a semi-custom word list that contains 40,000+ words!"
+        description: "Hangman: The darkest child's game that exists. This hangman game has a semi-custom word list that contains 40,000+ words! <br><br>It can be played with a keyboard and/or a mouse, you get to choose!"
     },
     {
         name: "Tic-tac-toe (not yet implemented)",
