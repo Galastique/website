@@ -171,16 +171,16 @@ function showMeaning() {
 
     //Moves link
     let styleSheet = document.querySelector(":root");
-    let rightMarginSize = 0;
+    let leftMarginSize = 0;
     let topMarginSize = 1.2;
-    if (word.length >= 11) {
-        rightMarginSize = 0;
+    if (word.length < 11) {
+        leftMarginSize = (word.length * 3.25) - 12;
     } else {
-        rightMarginSize = (11 - word.length) * 3.8;
+        leftMarginSize = 11 * 3.2;
     }
 
     word.length <= 4 && (topMarginSize = 3);
-    styleSheet.style.setProperty("--rightMargin", `${rightMarginSize}em`);
+    styleSheet.style.setProperty("--leftMargin", `${leftMarginSize}em`);
     styleSheet.style.setProperty("--topMargin", `${topMarginSize}em`);
 }
 

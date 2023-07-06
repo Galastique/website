@@ -1,5 +1,5 @@
 :root {
-    --rightMargin: 0em;
+    --leftMargin: 0em;
     --topMargin: 0em;
 }
 
@@ -23,9 +23,9 @@ img {
 
 #meaning {
     font-size: 1.2em;
-    float: right;
+    float: left;
     margin-top: var(--topMargin);
-    margin-right: var(--rightMargin);
+    margin-left: var(--leftMargin);
 }
 
 #meaning:hover, #playAgain:hover {
