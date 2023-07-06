@@ -17,35 +17,30 @@ img {
 }
 
 .game {
-    border-color: red;
     width: 75%;
     left: 10%;
     position: absolute;
 }
 
 .left {
-    border-color: green;
     float: left;
     position: relative;
     width: 24%;
 }
 
 .right {
-    border-color: blue;
     float: right;
     position: relative;
     width: 72%;
 }
 
 #guesses {
-    border-color: powderblue;
     position: static;
     height: 70%;
     flex-wrap: wrap;
 }
 
 .word {
-    border-color: aqua;
     position: static;
     height: 30%;
 }
@@ -57,6 +52,7 @@ img {
 
 #letters div {
     width: 3.6em;
+    height: 3.6em;
     margin: 0.4em;
     border-bottom: 0.4em solid rgba(255, 255, 255, 0.4);
     border-radius: 0.2em;
@@ -65,6 +61,7 @@ img {
 #guesses div {
     width: 3em;
     margin: 0.3em;
+    color: rgba(255, 255, 255, 0.4);
     border-bottom: 0.3em solid rgba(255, 255, 255, 0.4);
     border-radius: 0.15em;
 }
@@ -77,4 +74,18 @@ img {
 #guesses div p {
     margin: 0.3em 0;
     font-size: 1.6em;
+}
+
+#right {
+    color: limegreen !important;
+    border-color: limegreen !important;
+}
+
+#wrong {
+    color: tomato !important;
+    border-color: tomato !important;
+}
+
+#found {
+    border-color: rgb(232, 188, 248) !important;
 }
