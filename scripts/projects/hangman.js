@@ -76,8 +76,12 @@ function detectLetter(e) {
         let div = e.target;
 
         //Only allow left click
-        if(dead || e.button != 0 || div.id == "" || div.id == "guesses"){
+        if(dead || e.button != 0 || div.id == "guesses"){
             return;
+        }
+
+        if (div.id == "") {
+            div = div.getElementsByClassName("p")[0];
         }
 
         //Detect letter
@@ -100,10 +104,10 @@ function correct(letter) {
 
     let instances = word.split(letter).length - 1;
     let lastInstance = 0;
-    for(let i = 0; i < instances; i++) {
-        document.getElementById("letters").getElementsByTagName("p")[word.indexOf(letter, lastInstance == 0 ? lastInstance : lastInstance + 1)].innerText = letter.toUpperCase();
-        document.getElementById("letters").getElementsByTagName("div")[word.indexOf(letter, lastInstance == 0 ? lastInstance : lastInstance + 1)].setAttribute("id", "found");
-        word.indexOf(letter, lastInstance) == 0 ? (lastInstance++) : (lastInstance = word.indexOf(letter, lastInstance + 1));
+    for(let i = 0; i < instances + 1; i++) {
+        document.getElementById("letters").getElementsByTagName("p")[word.indexOf(letter, lastInstance)].innerText = letter.toUpperCase();
+        document.getElementById("letters").getElementsByTagName("div")[word.indexOf(letter, lastInstance)].setAttribute("id", "found");
+        lastInstance = word.indexOf(letter, lastInstance + 1);
     }
 
     //Checks if word has been found
@@ -166,22 +170,8 @@ function showMeaning() {
     link.setAttribute("target", "_blank");
     link.setAttribute("href", `https://google.com/search?q=${word}+meaning`);
     link.setAttribute("title", "View meaning of the word");
-    link.innerText = "View meaning ➜";
+    link.innerText = "View word meaning ➜";
     document.getElementsByClassName("links")[0].appendChild(link);
-
-    //Moves link
-    let styleSheet = document.querySelector(":root");
-    let leftMarginSize = 0;
-    let topMarginSize = 1.2;
-    if (word.length < 11) {
-        leftMarginSize = (word.length * 3.25) - 12;
-    } else {
-        leftMarginSize = 11 * 3.2;
-    }
-
-    word.length <= 4 && (topMarginSize = 3);
-    styleSheet.style.setProperty("--leftMargin", `${leftMarginSize}em`);
-    styleSheet.style.setProperty("--topMargin", `${topMarginSize}em`);
 }
 
 //Shows play again button
