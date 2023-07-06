@@ -3,13 +3,13 @@ h1 {
 }
 
 img {
-    width: 110%;
+    width: 100%;
 }
 
 #meaning {
-    font-size: 1em;
+    font-size: 1.2em;
     float: left;
-    margin: 1em 0;
+    margin: 1.2em 0;
 }
 
 #meaning:hover {
@@ -31,7 +31,7 @@ img {
 .right {
     float: right;
     position: relative;
-    width: 72%;
+    width: 74%;
 }
 
 #guesses {
@@ -50,30 +50,30 @@ img {
     margin: 0 auto;
 }
 
-#letters div {
+#guesses div {
     width: 3.6em;
-    height: 3.6em;
     margin: 0.4em;
+    color: rgba(255, 255, 255, 0.4);
     border-bottom: 0.4em solid rgba(255, 255, 255, 0.4);
     border-radius: 0.2em;
 }
 
-#guesses div {
-    width: 3em;
-    margin: 0.3em;
-    color: rgba(255, 255, 255, 0.4);
-    border-bottom: 0.3em solid rgba(255, 255, 255, 0.4);
-    border-radius: 0.15em;
-}
-
-#letters div p {
+#guesses div p {
     margin: 0.3em 0;
     font-size: 1.8em;
 }
 
-#guesses div p {
-    margin: 0.3em 0;
-    font-size: 1.6em;
+#letters div {
+    width: 3.8em;
+    height: 3.8em;
+    margin: 0.5em;
+    border-bottom: 0.5em solid rgba(255, 255, 255, 0.4);
+    border-radius: 0.25em;
+}
+
+#letters div p {
+    margin: 0.4em 0;
+    font-size: 2em;
 }
 
 #right {
