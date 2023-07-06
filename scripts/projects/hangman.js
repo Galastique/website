@@ -1,5 +1,6 @@
 import {wordList} from "../../data/hangman.js"
 let word = wordList[Math.floor(Math.random() * wordList.length)];
+let dead = false;
 
 start();
 
@@ -11,6 +12,7 @@ function start() {
     document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/state0.png";
     setGuesses();
     setWord();
+    dead = false;
 }
 
 //Adds list of letters
@@ -51,7 +53,7 @@ function setWord() {
 
 function detectLetter(e) {
     let key = e.key.toLowerCase();
-    if ("abcdefghijklmnopqrstuvwxyz".indexOf(key) == -1) {
+    if (dead || "abcdefghijklmnopqrstuvwxyz".indexOf(key) == -1) {
         return;
     }
 
@@ -78,7 +80,7 @@ function correct(letter) {
     //Checks if word has been found
     let foundWord = "";
     for(let div of document.getElementById("letters").getElementsByTagName("p")){
-        foundWord += div.innerText;
+        foundWord += div.innerText.toLowerCase();
     }
 
     word == foundWord && victory();
@@ -96,15 +98,28 @@ function incorrect(letter) {
 }
 
 function victory() {
+    dead = true;
     //document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/win.png";
-    for(let div of document.getElementById("letters").getElementsByTagName("div")) {
-        document.getElementById("letters").getElementsByTagName("div").setAttribute("id", "right");
-    }
-    showMeaning();
+    showCorrectLetters();
 }
 
 function failure() {
+    dead = true;
     document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/state6.png";
+    showCorrectLetters();
+}
+
+function showCorrectLetters() {
+    let i = 0;
+    for(let div of document.getElementById("letters").getElementsByTagName("div")) {
+        if (div.getElementsByTagName("p")[0].innerText != "") {
+            div.setAttribute("id", "right");
+        } else {
+            div.getElementsByTagName("p")[0].innerText = word.charAt(i).toUpperCase();
+            div.setAttribute("id", "wrong");
+        }
+        i++;
+    }
     showMeaning();
 }
 
