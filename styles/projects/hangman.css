@@ -2,6 +2,19 @@ h1 {
     margin-top: -4%;
 }
 
+.game {
+    width: 75%;
+    left: 10%;
+    position: absolute;
+}
+
+/*Left portion of game*/
+.left {
+    float: left;
+    position: relative;
+    width: 24%;
+}
+
 img {
     width: 100%;
     filter: drop-shadow(0.12em 0.12em 0.1em rgb(120, 120, 120));
@@ -15,41 +28,7 @@ select {
     border-radius: 0.5em;
 }
 
-.links {
-    display: flex;
-    flex-direction: column;
-}
-
-#playAgain {
-    position: fixed;
-    font-size: 2em;
-    float: left;
-    margin: 1.2em 0;
-}
-
-#meaning {
-    position: fixed;
-    font-size: 1.2em;
-    float: left;
-    margin: 0.4em 0; 
-}
-
-#meaning:hover, #playAgain:hover {
-    text-decoration: underline;
-}
-
-.game {
-    width: 75%;
-    left: 10%;
-    position: absolute;
-}
-
-.left {
-    float: left;
-    position: relative;
-    width: 24%;
-}
-
+/*Right portion of game*/
 .right {
     float: right;
     position: relative;
@@ -60,16 +39,6 @@ select {
     position: static;
     height: 70%;
     flex-wrap: wrap;
-}
-
-.word {
-    position: static;
-    height: 30%;
-}
-
-#letters, #guesses {
-    display: flex;
-    margin: 0 auto;
 }
 
 #guesses div {
@@ -87,6 +56,16 @@ select {
     font-size: 2em;
 }
 
+.word {
+    position: static;
+    height: 30%;
+}
+
+#guesses, #letters {
+    display: flex;
+    margin: 0 auto;
+}
+
 #letters div {
     width: 3.6em;
     height: 4.2em;
@@ -98,6 +77,29 @@ select {
 #letters div p {
     margin: 0.4em 0;
     font-size: 2.4em;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+}
+
+#meaning {
+    position: fixed;
+    font-size: 1.2em;
+    float: left;
+    margin: 0.4em 0; 
+}
+
+#playAgain {
+    position: fixed;
+    font-size: 2em;
+    float: left;
+    margin: 1.2em 0;
+}
+
+#meaning:hover, #playAgain:hover {
+    text-decoration: underline;
 }
 
 #right {
