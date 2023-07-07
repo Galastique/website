@@ -4,7 +4,7 @@ h1 {
 
 img {
     width: 100%;
-    filter: drop-shadow(0.12em 0.12em 0.1em white);
+    filter: drop-shadow(0.12em 0.12em 0.1em rgb(120, 120, 120));
 }
 
 .links {

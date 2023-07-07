@@ -21,7 +21,6 @@ footer {
     width: 100%;
     font-size: 1em;
     text-align: center;
-    color: #E5B8F4;
     animation: fadeIn 8s;
     animation-delay: 2s;
     animation-fill-mode: forwards;
@@ -29,7 +28,7 @@ footer {
 
 a {
     font-size: 1.9em;
-    color: #E5B8F4;
+    color: rgb(220, 220, 220);
     text-decoration: none;
     margin-left: 2.5em;
     animation: fadeIn 4s;
