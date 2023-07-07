@@ -24,7 +24,7 @@ function start() {
     document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/state0.png";
 
     let wordLength = document.getElementById("length").value;
-    console.log(wordLength);
+    document.getElementById("length").blur();
 
     if (wordLength == "random") {
         word = wordList[Math.floor(Math.random() * wordList.length)];
@@ -33,7 +33,7 @@ function start() {
             word = wordList[Math.floor(Math.random() * wordList.length)];
         } while ((wordLength == "16plus" && word.length < 16) || (wordLength != "16plus" && word.length != wordLength));
     }
-
+    
     setGuesses();
     setWord();
     dead = false;
