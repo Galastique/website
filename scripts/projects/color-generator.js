@@ -1,9 +1,12 @@
+let styleSheet = document.querySelector(':root');
 changeCSS();
+
+document.getElementsByTagName("button")[0].onclick = changeCSS;
 
 //Changes background color and text fields
 function changeCSS(){
     let colors = Array.from({length: 3}, () => Math.floor(Math.random() * 256));
-    document.body.style.backgroundColor = getRGB(colors);
+    styleSheet.style.setProperty("--backgroundColor", getRGB(colors));
     document.getElementById("rgb").innerText = getRGB(colors);
     document.getElementById("hex").innerText = getHex(colors);
     document.getElementById("cmyk").innerText = getCmyk(colors);
@@ -102,9 +105,9 @@ function checkTextColor(c){
 
 //Changes select text color
 function changeSelectTextColor(){
-    let colors = Array.from({length: 3}, () => Math.floor(Math.random() * 256));
-    let rgb = `RGBA(${colors[0]}, ${colors[1]}, ${colors[2]}, 1)`;
-    let styleSheet = document.styleSheets[1];
-    styleSheet.removeRule("::selection");
-    styleSheet.insertRule(`::selection { background: ${rgb}; }`);
+    for (let i = 0; i < 8; i++) {
+        let colors = Array.from({length: 3}, () => Math.floor(Math.random() * 256));
+        let rgb = `RGBA(${colors[0]}, ${colors[1]}, ${colors[2]}, 0.6)`;
+        styleSheet.style.setProperty(`--selectColor${i + 1}`, rgb)
+    }
 }

@@ -300,7 +300,7 @@ export const updates = [
     {
         
         date: "2023-07-07",
-        title: "QOL changes",
-        changes: ["Added option to choose word length in hangman", "Adjusted a few colors here and there"]
+        title: "Many QOL changes",
+        changes: ["Added option to choose word length in hangman", "Random color generator now also randomizes text selection color for each individual portion of text", "Adjusted a few colors here and there"]
     }
 ]

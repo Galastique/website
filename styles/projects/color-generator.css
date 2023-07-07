@@ -1,3 +1,19 @@
+:root {
+    --backgroundColor: rgb(255, 255, 255);
+    --selectColor1: rgb(255, 255, 255);
+    --selectColor2: rgb(255, 255, 255);
+    --selectColor3: rgb(255, 255, 255);
+    --selectColor4: rgb(255, 255, 255);
+    --selectColor5: rgb(255, 255, 255);
+    --selectColor6: rgb(255, 255, 255);
+    --selectColor7: rgb(255, 255, 255);
+    --selectColor8: rgb(255, 255, 255);
+}
+
+html, body {
+    background-color: var(--backgroundColor);
+}
+
 button, select, input {
     font-size: 1em;
 }
@@ -15,4 +31,36 @@ p {
 
 .noShadow {
     text-shadow : 0 0 0;
+}
+
+h1::selection {
+    background: var(--selectColor1);
+}
+
+#rgb::selection {
+    background: var(--selectColor2);
+}
+
+#hex::selection {
+    background: var(--selectColor3);
+}
+
+#cmyk::selection {
+    background: var(--selectColor4);
+}
+
+#hsv::selection {
+    background: var(--selectColor5);
+}
+
+#hsl::selection {
+    background: var(--selectColor6);
+}
+
+button::selection {
+    background: var(--selectColor7);
+}
+
+a::selection {
+    background: var(--selectColor8);
 }
