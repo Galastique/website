@@ -2,18 +2,38 @@ import {wordList} from "../../data/hangman.js"
 let word;
 let dead = false;
 
-start();
-
-//Detect key presses
+//Event listeners
 document.onkeydown = detectLetter;
 document.getElementById("guesses").onmouseup = detectLetter;
+document.getElementById("length").onchange = start;
+
+//Adds options to drop down list
+let dropDown = document.getElementById("length");
+for (let i = 15; i > 2; i--) {
+    let item = document.createElement("option");
+    item.text = i;
+    dropDown.add(item, 1);
+}
+
+start();
 
 //Starts game
 function start() {
     document.getElementById("playAgain") && document.getElementById("playAgain").remove();
     document.getElementById("meaning") && document.getElementById("meaning").remove();
     document.getElementsByTagName("img")[0].src = "../../images/projects/hangman/state0.png";
-    word = wordList[Math.floor(Math.random() * wordList.length)];
+
+    let wordLength = document.getElementById("length").value;
+    console.log(wordLength);
+
+    if (wordLength == "random") {
+        word = wordList[Math.floor(Math.random() * wordList.length)];
+    } else {
+        do {
+            word = wordList[Math.floor(Math.random() * wordList.length)];
+        } while ((wordLength == "16plus" && word.length < 16) || (wordLength != "16plus" && word.length != wordLength));
+    }
+
     setGuesses();
     setWord();
     dead = false;

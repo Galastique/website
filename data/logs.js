@@ -296,5 +296,11 @@ export const updates = [
         date: "2023-07-06",
         title: "New project!",
         changes: ["Completed and uploaded hangman project!"]
+    },
+    {
+        
+        date: "2023-07-07",
+        title: "QOL changes",
+        changes: ["Added option to choose word length in hangman", "Adjusted a few colors here and there"]
     }
 ]

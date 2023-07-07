@@ -7,6 +7,14 @@ img {
     filter: drop-shadow(0.12em 0.12em 0.1em rgb(120, 120, 120));
 }
 
+.length p {
+    margin: 0.5em;
+}
+
+select {
+    border-radius: 0.5em;
+}
+
 .links {
     display: flex;
     flex-direction: column;
