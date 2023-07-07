@@ -189,21 +189,33 @@ function checkLength() {
 
 //Changes score
 function updateScore(){
-    const difficultyList = ["easy", "medium", "hard", "insane"];
-    let difficultyIndex = delays.indexOf(delay);
-    let highScoreType = `highscore_${difficultyList[difficultyIndex]}`;
+    let difficulty = ["easy", "medium", "hard", "insane"][delays.indexOf(delay)];
     let score = snakeLength - initialSize;
-    let highScore = localStorage.getItem(highScoreType);
+    let highScore = 0;
 
-    if(!highScore){
-        highScore = 0;
-    }else if(score > highScore){
-        highScore = score;
+    try {
+        let highScores = JSON.parse(localStorage.getItem("snake")).highScore;
+        highScore =  Object.values(highScores)[Object.keys(highScores).indexOf(difficulty)];
+    }catch(err){
+        localStorage.setItem("snake", JSON.stringify({"highScore": {"easy": 0, "medium": 0, "hard": 0, "insane": 0}}));
     }
 
-    localStorage.setItem(highScoreType, highScore);
+    if(score > highScore){
+        highScore = score;
+        let highScores = JSON.parse(localStorage.getItem("snake")).highScore;
+        highScores = {
+            highScore: {
+                "easy": difficulty == "easy" ? highScore : highScores.easy,
+                "medium": difficulty == "medium" ? highScore : highScores.medium,
+                "hard": difficulty == "hard" ? highScore : highScores.hard,
+                "insane": difficulty == "insane" ? highScore : highScores.insane
+            }
+        };
+        localStorage.setItem("snake", JSON.stringify(highScores));
+    }
+
     currentScore.innerText = `Current score: ${score}`;
-    bestScore.innerText = `High score (${ difficultyList[difficultyIndex]}): ${ highScore }`;
+    bestScore.innerText = `High score (${ difficulty}): ${ highScore }`;
 }
     
 //When player dies
