@@ -8,6 +8,11 @@ h1 {
     position: absolute;
 }
 
+.wrongAnswer {
+    animation: flashWrong 0.75s;
+    animation-fill-mode: forwards;
+}
+
 /*Left portion of game*/
 .left {
     float: left;
@@ -102,16 +107,70 @@ select {
     text-decoration: underline;
 }
 
-#right {
-    color: limegreen !important;
-    border-color: limegreen !important;
+#guesses #right {
+    animation: colorFadeRight 0.5s;
+    animation-fill-mode: forwards;
 }
 
-#wrong {
-    color: tomato !important;
-    border-color: tomato !important;
+#guesses #wrong {
+    animation: colorFadeWrong 0.5s;
+    animation-fill-mode: forwards;
+}
+
+#letters #right {
+    color: limegreen;
+    border-color: limegreen;
+}
+
+#letters #wrong {
+    color: tomato;
+    border-color: tomato;
 }
 
 #found {
     border-color: rgb(232, 188, 248) !important;
+    animation: fadeIn 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flashWrong {
+    0% {
+        box-shadow: 0em 0em 2em 1em red;
+    }
+
+    100% {
+        box-shadow: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        color: rgba(220, 220, 220, 1);
+    }
+}
+
+@keyframes colorFadeRight {
+    0% {
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        color: limegreen;
+        border-color: limegreen;
+    }
+}
+
+@keyframes colorFadeWrong {
+    0% {
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        color: tomato;
+        border-color: tomato;
+    }
 }

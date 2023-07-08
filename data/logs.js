@@ -298,5 +298,10 @@ export const updates = [
         date: "2023-07-07",
         title: "Many QOL changes",
         changes: ["Added option to choose word length in hangman", "Random color generator now also randomizes text selection color for each individual portion of text", "Adjusted a few colors here and there", "Changed how snake high scores are saved"]
+    },
+    {
+        date: "2023-07-08",
+        title: "Visual improvements",
+        changes: ["Added hangman animations", "Removed \"dual-words\" as well as some proper names from hangman wordlist"]
     }
 ]

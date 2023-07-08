@@ -141,6 +141,12 @@ function correct(letter) {
 
 //When guess is wrong
 function incorrect(letter) {
+    //Flashes hangman image with red border   
+    document.getElementsByTagName("img")[0].classList.remove("wrongAnswer");
+    setTimeout(function (){
+        document.getElementsByTagName("img")[0].classList.add("wrongAnswer");
+    }, 1);
+
     //Changes letter colors
     if (!document.getElementById(letter).parentElement.id) {
         document.getElementById(letter).parentElement.setAttribute("id", "wrong");
