@@ -303,5 +303,10 @@ export const updates = [
         date: "2023-07-08",
         title: "Visual improvements",
         changes: ["Added hangman animations", "Removed \"dual-words\" as well as some proper names from hangman wordlist"]
+    },
+    {
+        date: "2023-07-09",
+        title: "Small fixes",
+        changes: ["Patched bug with hangman flashing for already found letters", "Adjusted image size for hangman depending on screen resolutions"]
     }
 ]
