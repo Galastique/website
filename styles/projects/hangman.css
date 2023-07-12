@@ -134,7 +134,7 @@ select {
 
 #found {
     border-color: rgb(232, 188, 248) !important;
-    animation: fadeIn 0.5s;
+    animation: fadeIn 0.8s;
     animation-fill-mode: forwards;
 }
 

@@ -125,8 +125,9 @@ function correct(letter) {
     let instances = word.split(letter).length - 1;
     let lastInstance = 0;
     for(let i = 0; i < instances + 1; i++) {
-        document.getElementById("letters").getElementsByTagName("p")[word.indexOf(letter, lastInstance)].innerText = letter.toUpperCase();
-        document.getElementById("letters").getElementsByTagName("div")[word.indexOf(letter, lastInstance)].setAttribute("id", "found");
+        let index = word.indexOf(letter, lastInstance);
+        document.getElementById("letters").getElementsByTagName("p")[index].innerText = letter.toUpperCase();
+        document.getElementById("letters").getElementsByTagName("div")[index].setAttribute("id", "found");
         lastInstance = word.indexOf(letter, lastInstance + 1);
     }
 
