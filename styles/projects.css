@@ -23,7 +23,7 @@ a {
 }
 
 .project-light h2, .project-dark h2 {
-    text-shadow : 0.1em 0.1em 1.2em black;
+    text-shadow : 0.05em 0.05em 0.1em black;
 }
 
 .project-light {

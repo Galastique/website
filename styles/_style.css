@@ -11,13 +11,13 @@ html {
 
 body {
     color: rgb(220, 220, 220);
-    background-color: rgb(10, 0, 80);
+    background-color: rgb(30, 30, 80);
     display: flex;
     flex-direction: column;
     margin: 0;
     position: relative;
     min-height: 100vh;
-    text-shadow : 0.1em 0.1em 0.1em black;
+    text-shadow : 0.05em 0.05em 0.05em black;
 }
 
 .content {
@@ -64,6 +64,7 @@ h1 {
 
 a {
     text-decoration: none;
+    text-shadow : 0.05em 0.05em 0.1em black;
 }
 
 a:hover {
