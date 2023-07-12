@@ -312,6 +312,6 @@ export const updates = [
     {
         date: "2023-07-12",
         title: "Visual improvements",
-        changes: ["Changed website color palette (should be the last time)", "Adjusted text shadows for links and titles", "Massively improved CSS files", "Fixed tiny gaps that would appear in snake game"]
+        changes: ["Changed website color palette (should be the last time)", "Adjusted text shadows for links and titles", "Massively improved CSS files", "Fixed tiny gaps that would appear in snake game", "Slightly adjusted tile colors in snake"]
     }
 ]

@@ -35,7 +35,7 @@ body div p {
 #game {
     display: flex;
     flex-direction: column;
-    background-color: rgb(120, 120, 120);
+    background-color: rgb(140, 140, 160);
     width: 80%;
     margin: auto;
     border: 0.375em outset darkgoldenrod;
@@ -58,7 +58,7 @@ div.row div {
 }
 
 .darker {
-    background-color: rgb(110, 110, 110);
+    background-color: rgb(120, 120, 140);
 }
 
 .head {
