@@ -49,8 +49,8 @@ body div p {
 }
 
 div.row div {
-    width: calc(2em + 0.4px);
-    height: calc(2em + 0.4px);
+    width: 2em;
+    height: 2em;
 }
 
 .difficulty {
