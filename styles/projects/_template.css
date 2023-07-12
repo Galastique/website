@@ -1,11 +1,10 @@
-html * {
-    font-family: Gadugi;
+* {
     font-weight: bold;
 }
 
 body {
-    color: rgb(220, 220, 220);
-    background-color: rgb(30, 30, 80);
+    color: var(--textColor);
+    background-color: var(--backgroundColor);
     text-shadow : 0.1em 0.1em 0.1em black;
 }
 
@@ -13,25 +12,17 @@ button, input, select {
     border-radius: 0.8em 0.8em 0.8em 0.8em;
 }
 
-footer {
-    position: fixed;
-    opacity: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    font-size: 1em;
-    text-align: center;
-    animation: fadeIn 8s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
-}
-
 a {
     font-size: 1.9em;
-    color: rgb(220, 220, 220);
+    color: var(--textColor);
     text-decoration: none;
     margin-left: 2.5em;
     animation: fadeIn 4s;
+}
+
+#noUnderline {
+    text-decoration: none;
+    width: 3.5em;
 }
 
 button, select, input {

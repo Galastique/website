@@ -18,7 +18,12 @@ body div p {
 }
 
 h1 {
+    font-size: 2.4em;
     text-align: center;
+}
+
+p {
+    font-size: 1.2em;
 }
 
 .content {

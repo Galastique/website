@@ -2,6 +2,8 @@
 * {
     font-family: Gadugi;
     scroll-behavior: smooth;
+    --backgroundColor: rgb(30, 30, 80);
+    --textColor: rgb(220, 220, 220);
 }
 
 html {
@@ -10,8 +12,8 @@ html {
 }
 
 body {
-    color: rgb(220, 220, 220);
-    background-color: rgb(30, 30, 80);
+    color: var(--textColor);
+    background-color: var(--backgroundColor);
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -24,8 +26,16 @@ body {
     padding-bottom: 3.5rem;
 }
 
-hr {
+hr#navigation {
     width: 80%;
+    box-shadow : 0.5em 0.5em 2em 0.01em black;
+}
+
+.selected {
+    color: rgb(240, 240, 240);
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-decoration-style: double;
 }
 
 footer {
@@ -41,8 +51,8 @@ footer {
     bottom: 0;
 }
 
-body div.content p {
-    font-size: 1.2em;
+footer p {
+    font-size: 1em;
 }
 
 nav {
@@ -58,10 +68,6 @@ hr {
     border-radius: 0.1em 0.1em 0.1em 0.1em;
 }
 
-h1 {
-    font-size: 2.4em;
-}
-
 a {
     text-decoration: none;
     text-shadow : 0.05em 0.05em 0.1em black;
@@ -69,18 +75,17 @@ a {
 
 a:hover {
     text-decoration: underline;
-    color: rgb(220, 220, 220);
+    color: rgb(240, 240, 240);
 }
 
 /*Links in nav bar*/
 nav a {
     color: rgb(200, 200, 200);
-    margin: 1em;
-    margin-bottom: 0;
+    margin: 1em 1em 0;
 }
 
 /*Footer image*/
-footer img {
+#cgl {
     cursor: pointer;
     height: 2.5em;
     padding-right: 0.25em;
@@ -106,31 +111,21 @@ footer div a {
     position: relative;
 }
 
-.selected {
-    color: rgb(220, 220, 220);
-    text-decoration: underline;
-    text-decoration-thickness: 0.08em;
-    text-decoration-style: double;
-}
-
 /*Custom text selection color*/
 ::selection {
   background: rgba(128, 87, 148, 0.6);
 }
 
 /*Custom scroll bar*/
-/*Width*/
 ::-webkit-scrollbar {
     width: 0.8em;
 }
 
-/*Scrollbar*/
 ::-webkit-scrollbar-thumb {
     background: rgb(128, 87, 148);
     border-radius: 0.5em;
 }
 
-/*Scrollbar on hover*/
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(114, 82, 130);
 }

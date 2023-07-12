@@ -127,6 +127,6 @@ div div div {
     }
 
     100% {
-        background-color: #2D033B;
+        background-color: var(--backgroundColor);
     }
 }

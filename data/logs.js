@@ -312,6 +312,6 @@ export const updates = [
     {
         date: "2023-07-12",
         title: "Visual improvements",
-        changes: ["Changed website color palette (should be the last time)", "Adjusted text shadows for links and titles"]
+        changes: ["Changed website color palette (should be the last time)", "Adjusted text shadows for links and titles", "Massively improved CSS files"]
     }
 ]

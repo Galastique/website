@@ -8,6 +8,10 @@ div div p {
     text-align: justify;
 }
 
+p {
+    font-size: 1.2em;
+}
+
 a {
     margin-right: 2em;
 }
