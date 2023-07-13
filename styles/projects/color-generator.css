@@ -1,5 +1,5 @@
 :root {
-    --backgroundColor: rgb(255, 255, 255);
+    --newBackgroundColor: rgb(255, 255, 255);
     --selectColor1: rgb(255, 255, 255);
     --selectColor2: rgb(255, 255, 255);
     --selectColor3: rgb(255, 255, 255);
@@ -11,7 +11,7 @@
 }
 
 html, body {
-    background-color: var(--backgroundColor);
+    background-color: var(--newBackgroundColor);
 }
 
 button, select, input {

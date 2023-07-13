@@ -316,7 +316,7 @@ export const updates = [
     },
     {
         date: "2023-07-13",
-        title: "",
-        changes: ["Optimized how some elements are reset (minesweeper grid, hangman elements, etc.)"]
+        title: "PROGRAMMING!!!",
+        changes: ["Fixed color generator, which was broken by a previous change", "Optimized how some elements are reset (minesweeper grid, hangman elements, etc.)"]
     }
 ]

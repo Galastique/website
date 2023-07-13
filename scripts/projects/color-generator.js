@@ -6,7 +6,7 @@ document.getElementsByTagName("button")[0].onclick = changeCSS;
 //Changes background color and text fields
 function changeCSS(){
     let colors = Array.from({length: 3}, () => Math.floor(Math.random() * 256));
-    styleSheet.style.setProperty("--backgroundColor", getRGB(colors));
+    styleSheet.style.setProperty("--newBackgroundColor", getRGB(colors));
     document.getElementById("rgb").innerText = getRGB(colors);
     document.getElementById("hex").innerText = getHex(colors);
     document.getElementById("cmyk").innerText = getCmyk(colors);
