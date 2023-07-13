@@ -1,45 +1,73 @@
 import {projects} from "../data/projects.js";
-let index = 1;
 
-for(let project of projects){
-    //Project data
-    let adjective = project.adjectives[Math.floor(Math.random() * project.adjectives.length)];
-    let title = `${adjective} ${project.name}`;
-    let link = `./${project.link}.html`;
-    let sourceLink = `./source-code/${project.link}.html`;
-    let image = `../images/icons/${project.link}.png`;
-    let description = project.description;
+document.getElementById("filter").onmouseup = changeFilter;
+displayProjects("all");
 
-    //Create elements
-    let eDiv = document.createElement("div");
-    let eH2 = document.createElement("h2");
-    let eP = document.createElement("p");
-    let eA = document.createElement("a");
-    let eA2 = document.createElement("a");
-    let eImg = document.createElement("img");
+//Changes which filter is applied
+function changeFilter(e) {
+    let id = "";
+    if (e.target.id == "filter" || (e.target.id == "" && e.target.parentElement.id == "")) {
+        return;
+    }
+    e.target.id == "" ? (id = e.target.parentElement.id) : (id = e.target.id);
+    
+    document.getElementsByClassName("selectedFilter")[0].className = "";
+    document.getElementById(id).className = "selectedFilter";
 
-    //Adds class
-    index % 2 == 0 ? eDiv.setAttribute("class", "project-dark") : eDiv.setAttribute("class", "project-light");
+    displayProjects(id);
+}
 
-    //Changes attributes
-    eH2.innerText = title;
-    eA.innerHTML = "View project ➜";
-    eA2.innerText = "View source code ➜";
-    eA.setAttribute("href", link);
-    eA2.setAttribute("href", sourceLink);
-    eA2.setAttribute("target", "_blank");
-    eImg.setAttribute("src", image);
-    eP.innerHTML = description;
+//Dislays projects in blocks
+function displayProjects(type) {
+    document.getElementById("projects").innerHTML = "";
+    
+    //Loads projects
+    let index = 1;
+    for(let project of projects){
+        //Only shows project if it's the correct type
+        if (type != "all" && project.type != type) {
+            continue;
+        }
 
-    //Integrates elements
-    let content = document.getElementsByClassName("content")[0];
-    eDiv.appendChild(eH2);
-    eDiv.appendChild(eP);
-    eDiv.appendChild(document.createElement("br"));
-    eDiv.appendChild(eA);
-    eDiv.appendChild(eA2);
-    eDiv.appendChild(eImg);
-    content.appendChild(eDiv);
+        //Project data
+        let adjective = project.adjectives[Math.floor(Math.random() * project.adjectives.length)];
+        let title = `${adjective} ${project.name}`;
+        let link = `./${project.link}.html`;
+        let sourceLink = `./source-code/${project.link}.html`;
+        let image = `../images/icons/${project.link}.png`;
+        let description = project.description;
 
-    index++;
-};
+        //Create elements
+        let eDiv = document.createElement("div");
+        let eH2 = document.createElement("h2");
+        let eP = document.createElement("p");
+        let eA = document.createElement("a");
+        let eA2 = document.createElement("a");
+        let eImg = document.createElement("img");
+
+        //Adds class
+        index % 2 == 0 ? eDiv.setAttribute("class", "project-dark") : eDiv.setAttribute("class", "project-light");
+
+        //Changes attributes
+        eH2.innerText = title;
+        eA.innerHTML = "View project ➜";
+        eA2.innerText = "View source code ➜";
+        eA.setAttribute("href", link);
+        eA2.setAttribute("href", sourceLink);
+        eA2.setAttribute("target", "_blank");
+        eImg.setAttribute("src", image);
+        eP.innerHTML = description;
+
+        //Integrates elements
+        let content = document.getElementById("projects");
+        eDiv.appendChild(eH2);
+        eDiv.appendChild(eP);
+        eDiv.appendChild(document.createElement("br"));
+        eDiv.appendChild(eA);
+        eDiv.appendChild(eA2);
+        eDiv.appendChild(eImg);
+        content.appendChild(eDiv);
+
+        index++;
+    };
+}

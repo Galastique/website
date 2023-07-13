@@ -1,14 +1,55 @@
-h2 {
+/*Part above the projects*/
+#subtitle {
+    font-size: 1.8em;
+    margin: 1.5em;
+}
+
+#center {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+#filter {
+    height: 3rem;
+    display: inline-flex;
+}
+
+#filter h3 {
+    margin-top: 0.75rem;
+}
+
+#filter div {
+    margin: 0 1em;
+    padding: 0em 0.4em;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 2em;
+    cursor: pointer;
+}
+
+#filter div:hover {
+    text-decoration: underline;
+}
+
+#filter p {
+    margin: 0em 0.2em;
+    line-height: 3rem;
     text-align: center;
 }
 
-/*Project descriptions*/
-div div p {
-    max-width: 80%;
-    text-align: justify;
+.selectedFilter {
+    background-color: rgba(255, 255, 255, 0.25) !important;
 }
 
-p {
+/*Projects*/
+h2 {
+    text-align: center;
+    text-shadow : 0.05em 0.05em 0.1em black;
+}
+
+#projects p {
+    max-width: 80%;
+    text-align: justify;
     font-size: 1.2em;
 }
 
@@ -20,14 +61,10 @@ a {
     margin: 1.8em auto;
     padding: 1.25em;
     width: 50em;
-    border-radius: 0.65em 0.65em 0.65em 0.65em;
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
     position: relative;
     text-shadow : 0.05em 0.05em 0.8em black;
     box-shadow: 0.75em 0.8em 1em rgba(0, 0, 0, 0.4);
-}
-
-.project-light h2, .project-dark h2 {
-    text-shadow : 0.05em 0.05em 0.1em black;
 }
 
 .project-light {
@@ -39,18 +76,18 @@ a {
 }
 
 /*Links to projects*/
-div div a:link, div div a:visited, div div a:active {
+#projects a:link, #projects a:visited, #projects a:active {
     color: rgb(200, 200, 200);
     text-decoration: none;
 }
 
-div div a:hover {
+#projects a:hover {
     color: rgb(200, 200, 200);
     text-decoration: underline;
 }
 
 /*Project images*/
-div div img {
+#projects img {
     width: 9.4em;
     position: absolute;
     top: 0;
