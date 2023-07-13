@@ -65,6 +65,8 @@ a {
     position: relative;
     text-shadow : 0.05em 0.05em 0.8em black;
     box-shadow: 0.75em 0.8em 1em rgba(0, 0, 0, 0.4);
+    animation: slideIn 1.2s;
+    animation-fill-mode: forwards;
 }
 
 .project-light {
@@ -94,4 +96,20 @@ a {
     bottom: 0;
     margin: auto;
     margin-left: 40.5%;
+}
+
+@for $i from 1 through 20 {
+    .project-dark:nth-child(#{$i}n) .project-light:nth-child(#{$i}n) {
+        animation-delay: #{$i * 1}s;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        margin-top: 20em;
+    }
+
+    100% {
+        margin-top: 1.8em;
+    }
 }
