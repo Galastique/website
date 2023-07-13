@@ -107,12 +107,7 @@ function drawBoard(){
 //Clears board
 function resetBoard() {
     document.body.classList = "";
-    let game = document.getElementById("game");
-    let child = game.lastElementChild;
-    while(child){
-        game.removeChild(child);
-        child = game.lastElementChild;
-    }
+    document.getElementById("game").innerHTML = "";
     game.style.borderColor = "darkgoldenrod";
     notice.innerText = "";
     title.innerText = "Minesweeper";

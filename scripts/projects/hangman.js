@@ -41,11 +41,7 @@ function start() {
 
 //Adds list of letters
 function setGuesses() {
-    let child = document.getElementById("guesses").lastElementChild;
-    while(child = document.getElementById("guesses").lastElementChild){
-        document.getElementById("guesses").removeChild(child);
-        child = document.getElementById("guesses").lastElementChild;
-    }
+    document.getElementById("guesses").innerHTML = "";
 
     let i = 0;
     for (let char of "abcdefghijklmnopqrstuvwxyz") {
@@ -61,11 +57,7 @@ function setGuesses() {
 
 //Adds divs for word to guess
 function setWord() {
-    let child = document.getElementById("letters").lastElementChild;
-    while(child){
-        document.getElementById("letters").removeChild(child);
-        child = document.getElementById("letters").lastElementChild;
-    }
+    document.getElementById("letters").innerHTML = "";
 
     for (let char of word) {
         let element = document.createElement("div");
