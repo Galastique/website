@@ -98,12 +98,6 @@ a {
     margin-left: 40.5%;
 }
 
-@for $i from 1 through 20 {
-    .project-dark:nth-child(#{$i}n) .project-light:nth-child(#{$i}n) {
-        animation-delay: #{$i * 1}s;
-    }
-}
-
 @keyframes slideIn {
     0% {
         margin-top: 20em;
