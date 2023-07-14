@@ -316,7 +316,12 @@ export const updates = [
     },
     {
         date: "2023-07-13",
-        title: "New addition!",
+        title: "New additions!",
         changes: ["You can now filter through the projects by type!", "Added smooth animation to the loading of projects on project tab", "Fixed color generator, which was broken by a previous change", "Optimized how some elements are reset (minesweeper grid, hangman elements, etc.)"]
+    },
+    {
+        date: "2023-07-14",
+        title: "New addition!",
+        changes: ["You can no longer apply the already applied projects filter"]
     }
 ]

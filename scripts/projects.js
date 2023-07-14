@@ -5,15 +5,21 @@ displayProjects("all");
 
 //Changes which filter is applied
 function changeFilter(e) {
+    //Finds clicked element
     let id = "";
     if (e.target.id == "filter" || (e.target.id == "" && e.target.parentElement.id == "")) {
         return;
     }
     e.target.id == "" ? (id = e.target.parentElement.id) : (id = e.target.id);
+
+    //Doesn't let you reapply same filter
+    if (document.getElementsByClassName("selectedFilter")[0].id == id) {
+        return;
+    }
     
+    //Changes filter
     document.getElementsByClassName("selectedFilter")[0].className = "";
     document.getElementById(id).className = "selectedFilter";
-
     displayProjects(id);
 }
 
