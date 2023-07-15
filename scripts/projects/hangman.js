@@ -181,6 +181,23 @@ function revealWord() {
         i++;
     }
     showMeaning();
+    playWinAnimation();
+}
+
+//Plays winning animation if applicable
+function playWinAnimation() {
+    let test = document.getElementById("letters").getElementsByTagName("div");
+
+    for (let div of test) {
+        if (div.id == "wrong") {
+            return;
+        }
+    }
+
+    let index = 0;
+    for(let div of document.getElementById("letters").getElementsByTagName("div")) {
+        setTimeout(function(){div.getElementsByTagName("p")[0].id = "won"}, index++ * 100);
+    }
 }
 
 //Links to word meaning

@@ -321,7 +321,12 @@ export const updates = [
     },
     {
         date: "2023-07-14",
-        title: "New addition!",
+        title: "Bug fix",
         changes: ["You can no longer apply the already applied projects filter"]
+    },
+    {
+        date: "2023-07-15",
+        title: "Visual improvement",
+        changes: ["Added winning animation to hangman"]
     }
 ]

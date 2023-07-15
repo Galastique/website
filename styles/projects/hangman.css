@@ -142,6 +142,12 @@ select {
     animation-fill-mode: forwards;
 }
 
+#won {
+    animation: winning 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
 @keyframes flashWrong {
     0% {
         box-shadow: 0em 0em 2em 1em red;
@@ -149,6 +155,20 @@ select {
 
     100% {
         box-shadow: none;
+    }
+}
+
+@keyframes winning {
+    0% {
+        margin-top: 0.4em;
+    }
+
+    50% {
+        margin-top: -0.5em;
+    }
+
+    100% {
+        margin-top: 0.4em;
     }
 }
 
