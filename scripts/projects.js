@@ -52,7 +52,7 @@ function displayProjects(type) {
         let eImg = document.createElement("img");
 
         //Adds class
-        index % 2 == 0 ? eDiv.setAttribute("class", "project-dark") : eDiv.setAttribute("class", "project-light");
+        index++ % 2 == 0 ? eDiv.setAttribute("class", "project-dark") : eDiv.setAttribute("class", "project-light");
 
         //Changes attributes
         eH2.innerText = title;
@@ -73,7 +73,5 @@ function displayProjects(type) {
         eDiv.appendChild(eA2);
         eDiv.appendChild(eImg);
         content.appendChild(eDiv);
-
-        index++;
     };
 }

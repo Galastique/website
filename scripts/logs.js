@@ -33,7 +33,7 @@ for(let update of updates.reverse()){
     changeDate.innerText = timestamp.toLocaleDateString(); //local date format(?)
     //changeDate.innerText = timestamp.toDateString(); //"Sun Apr 23 2023" format
     //changeDate.innerText = timestamp.toISOString().substring(0, 10); //2023-04-23 format
-    changeNumberText.innerText = `Update #${updates.length - index}`;
+    changeNumberText.innerText = `Update #${updates.length - index++}`;
 
     //Integrates elements
     let content = document.getElementsByClassName("content")[0];
@@ -43,6 +43,4 @@ for(let update of updates.reverse()){
     change.appendChild(changeList);
     change.appendChild(changeDate);
     content.appendChild(change);
-
-    index++;
 };
