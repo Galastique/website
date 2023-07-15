@@ -170,14 +170,15 @@ function failure() {
 
 //Reveals mystery word
 function revealWord() {
-    let index = 0;
+    let i = 0;
     for(let div of document.getElementById("letters").getElementsByTagName("div")) {
         if (div.getElementsByTagName("p")[0].innerText != "") {
             div.setAttribute("id", "right");
         } else {
-            div.getElementsByTagName("p")[0].innerText = word.charAt(index++).toUpperCase();
+            div.getElementsByTagName("p")[0].innerText = word.charAt(i).toUpperCase();
             div.setAttribute("id", "wrong");
         }
+        i++;
     }
     showMeaning();
     playWinAnimation();
