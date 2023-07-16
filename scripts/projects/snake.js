@@ -252,7 +252,7 @@ function randomNumber(){
 
 //Detects which direction user is trying to move
 function detectDirection(e) {
-    if(!currentDirection && !lastDirection){
+    if(!currentDirection && !lastDirection && overflow > 1){
         delay = changeDifficulty();
         clearInterval(slither);
         slither = setInterval(move, delay);
@@ -294,12 +294,10 @@ function detectDirection(e) {
 
         //r - restart
         case 82:
-            if(!currentDirection){   
-                delay = changeDifficulty();
-                death();
-                start();
-                updateScore();
-            }
+            delay = changeDifficulty();
+            death();
+            start();
+            updateScore();
             break;
     }
 }

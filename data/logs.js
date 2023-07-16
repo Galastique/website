@@ -328,5 +328,10 @@ export const updates = [
         date: "2023-07-15",
         title: "Visual improvement",
         changes: ["Added winning animation to hangman"]
+    },
+    {
+        date: "2023-07-16",
+        title: "bug fix",
+        changes: ["Patched major bug in snake"]
     }
 ]
