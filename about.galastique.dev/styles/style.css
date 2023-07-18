@@ -1,18 +1,26 @@
 /*Global*/
-html * {
+* {
     font-family: Gadugi;
+    scroll-behavior: smooth;
+    --backgroundColor: rgb(30, 30, 80);
+    --textColor: rgb(220, 220, 220);
+}
+
+html {
+    overflow: overlay;
+    height: 100%;
 }
 
 body {
     text-align: center;
-    color: rgb(200, 200, 200);
-    background-color: rgb(60, 60, 64);
+    color: var(--textColor);
+    background-color: var(--backgroundColor);
 }
 
 nav {
     text-align: right;
-    margin-right: 20px;
-    margin-top: 10px;
+    margin-right: 2em;
+    margin-top: 1em;
 }
 
 footer {
@@ -26,7 +34,7 @@ footer {
 }
 
 body div p {
-    font-size: 10px;
+    font-size: 0.8em;
 }
 
 div ul li p {
@@ -46,25 +54,24 @@ ul {
 }
 
 body ul li p, li {
-    font-size: 20px;
+    font-size: 1.1em;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 2em;
 }
 
 h3 {
-    font-size: 24px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 a {
-    color: rgb(200, 200, 200);
+    color: var(--textColor);
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
-    color: rgb(220, 220, 220);
 }
