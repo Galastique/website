@@ -8,6 +8,8 @@ let generated = false;
 let prompted = false;
 let copied = false;
 
+document.getElementById("recommended").onclick = recommended;
+
 //Checks if selected options are correct
 function validate(){
     let chars = "";
@@ -131,4 +133,13 @@ function leaving(){
         alert("You haven't copied your generated password. Are you sure you would like to leave?");
         prompted = true;
     }
+}
+
+//Uses recommended settings
+function recommended() {
+    document.getElementById("length").value = "24";
+    document.getElementById("letters").value = "both";
+    document.getElementById("numbers").value = "true";
+    document.getElementById("special").value = "true";
+    document.getElementById("easy").value = "false";
 }

@@ -336,7 +336,7 @@ export const updates = [
     },
     {
         date: "2023-07-18",
-        title: "QAL improvement",
-        changes: ["Color generator will now fade between each new color"]
+        title: "QOL improvement",
+        changes: ["Added \"use recommended settings\" option to password generator", "Color generator will now fade between each new color"]
     }
 ]
