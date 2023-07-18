@@ -61,13 +61,13 @@ div.row div {
     background-color: rgb(120, 120, 140);
 }
 
+.body {
+    background-color: green;
+}
+
 .head {
     background-color: darkgreen;
     background-size: contain;
-}
-
-.body {
-    background-color: green;
 }
 
 .fruit {
