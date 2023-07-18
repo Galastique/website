@@ -331,7 +331,12 @@ export const updates = [
     },
     {
         date: "2023-07-16",
-        title: "bug fix",
+        title: "Major bug fix",
         changes: ["Patched major bug in snake"]
+    },
+    {
+        date: "2023-07-18",
+        title: "QAL improvement",
+        changes: ["Color generator will now fade between each new color"]
     }
 ]

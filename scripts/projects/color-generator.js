@@ -1,4 +1,6 @@
 let styleSheet = document.querySelector(':root');
+let timeout;
+
 changeCSS();
 
 document.getElementsByTagName("button")[0].onclick = changeCSS;
@@ -6,7 +8,7 @@ document.getElementsByTagName("button")[0].onclick = changeCSS;
 //Changes background color and text fields
 function changeCSS(){
     let colors = Array.from({length: 3}, () => Math.floor(Math.random() * 256));
-    styleSheet.style.setProperty("--newBackgroundColor", getRGB(colors));
+    fade(colors);
     document.getElementById("rgb").innerText = getRGB(colors);
     document.getElementById("hex").innerText = getHex(colors);
     document.getElementById("cmyk").innerText = getCmyk(colors);
@@ -110,4 +112,17 @@ function changeSelectTextColor(){
         let rgb = `RGBA(${colors[0]}, ${colors[1]}, ${colors[2]}, 0.6)`;
         styleSheet.style.setProperty(`--selectColor${i + 1}`, rgb)
     }
+}
+
+//Fades colors into eachother
+function fade(colors){
+    document.getElementsByTagName("body")[0].classList.add("fade");
+    styleSheet.style.setProperty("--newNewBackgroundColor", getRGB(colors));
+
+    timeout && clearTimeout(timeout);
+
+    timeout = setTimeout(function(){
+        styleSheet.style.setProperty("--newBackgroundColor", getRGB(colors));
+        document.getElementsByTagName("body")[0].classList.remove("fade");
+    }, 500)
 }

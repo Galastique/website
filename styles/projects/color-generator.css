@@ -1,5 +1,6 @@
 :root {
     --newBackgroundColor: rgb(255, 255, 255);
+    --newNewBackgroundColor: rgb(255, 255, 255);
     --selectColor1: rgb(255, 255, 255);
     --selectColor2: rgb(255, 255, 255);
     --selectColor3: rgb(255, 255, 255);
@@ -10,7 +11,7 @@
     --selectColor8: rgb(255, 255, 255);
 }
 
-html, body {
+body {
     background-color: var(--newBackgroundColor);
 }
 
@@ -63,4 +64,19 @@ button::selection {
 
 a::selection {
     background: var(--selectColor8);
+}
+
+.fade {
+    animation: fade 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+    0% {
+        background-color: var(--newBackgroundColor);
+    }
+
+    100% {
+        background-color: var(--newNewBackgroundColor);
+    }
 }

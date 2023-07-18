@@ -36,7 +36,7 @@ export const projects = [
     },
     {
         name: "Color Generator",
-        adjectives: ["Cool", "Colorful", "Colourful", "Classy"],
+        adjectives: ["Cool", "Colorful", "Classy"],
         link: "color-generator",
         description: "This random color generator generates a color randomly. If you ever need colors for a project, a palette or anything else, this is the project for you. <br><br> The generated color will have its RGB, HEX, CMYK, HSV and HSL values displayed.",
         type: "randomizer"
