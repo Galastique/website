@@ -1,1 +1,2 @@
-about.galastique.dev/
+echo "about.galastique.dev/" >> .gitignore
+git rm --cached about.galastique.dev/
