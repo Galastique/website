@@ -1,3 +1,7 @@
+:root {
+    --snakeColor: green;
+}
+
 h1 {
     margin-top: 0;
     margin-bottom: 0;
@@ -61,13 +65,13 @@ div.row div {
     background-color: rgb(120, 120, 140);
 }
 
-.body {
-    background-color: green;
-}
-
 .head {
     background-color: darkgreen;
     background-size: contain;
+}
+
+.body {
+    background-color: var(--snakeColor);
 }
 
 .fruit {

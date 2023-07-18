@@ -1,4 +1,5 @@
 //Global variables
+let styleSheet = document.querySelector(':root');
 let title = document.getElementsByTagName("h1")[0];
 let currentScore = document.getElementById("currentScore");
 let bestScore = document.getElementById("bestScore");
@@ -73,6 +74,7 @@ function clearBoard(){
 //Starts game
 function start(){
     //Resets settings to default values
+    styleSheet.style.setProperty("--snakeColor", "green");
     document.getElementById("game").style.borderColor = "darkgoldenrod";
     title.innerText = "Snake";
     snakeLength = initialSize;
@@ -229,6 +231,7 @@ function death(){
         currentDirection = null;
     }
 
+    styleSheet.style.setProperty("--snakeColor", "rgb(80, 160, 80)");
     document.getElementById("game").style.borderColor = "darkred";
     title.innerText = "You died! (Press R to restart)";
 }
