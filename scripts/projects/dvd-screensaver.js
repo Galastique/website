@@ -67,6 +67,7 @@ function hitWall() {
     hits.timeSinceLast = performance.now();
 }
 
+//Same thing here
 function updateStats() {
     document.getElementById("sideHits").innerText = `Side hits: ${hits.side}`;
     document.getElementById("cornerHits").innerText = `Corner hits: ${hits.corner}`;

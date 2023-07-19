@@ -64,7 +64,7 @@ export const projects = [
     },
     {
         name: "DVD Screensaver",
-        adjectives: ["Distracting", "Dismissive"],
+        adjectives: ["Distracting", "Delightful", "Dapper"],
         link: "dvd-screensaver",
         description: "Just a generic DVD screensaver. This one will count the stats for the amount of times it touches the edges, as well as the corners. If you prefer to have a peaceful, unobstructed screensaver experience, that is also possible by simply hiding the stats. ",
         type: "misc"

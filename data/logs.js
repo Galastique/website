@@ -338,5 +338,10 @@ export const updates = [
         date: "2023-07-18",
         title: "QOL improvement",
         changes: ["Added \"use recommended settings\" option to password generator", "Color generator will now fade between each new color", "Snake will now have faded colors when it dies", "Changed message on welcome screen"]
+    },
+    {
+        date: "2023-07-19",
+        title: "New minor project",
+        changes: ["Added DVD screensaver \"project\""]
     }
 ]
