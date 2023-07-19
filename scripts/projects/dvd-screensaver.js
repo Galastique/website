@@ -1,4 +1,5 @@
 //Properties
+let styleSheet = document.querySelector(':root');
 let image = document.getElementById("logo");
 let axisX = {motion: "right", position: 0};
 let axisY = {motion: "down", position: 0};
@@ -34,6 +35,19 @@ function move() {
     } else if (axisY.motion == "up") {
         axisY.position -= imageHeight;
     }
+
+    //Makes animation smooth
+    styleSheet.style.setProperty("--leftEnd", `${axisX.position}%`);
+    styleSheet.style.setProperty("--topEnd", `${axisY.position}%`);
+
+    image.classList.add("slide");
+
+    setTimeout(function(){
+        styleSheet.style.setProperty("--leftStart", getComputedStyle(document.body).getPropertyValue("--leftEnd"));
+        styleSheet.style.setProperty("--topStart", getComputedStyle(document.body).getPropertyValue("--topEnd"));
+        image.classList.remove("slide");
+    }, 10);
+
     image.style.left = `${axisX.position}%`;
     image.style.top = `${axisY.position}%`;
 
