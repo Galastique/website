@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+    text-align: center;
+}
+
+#stats {
+    line-height: 80%;
+}
+
+#toggleVisibility {
+    font-size: 0.8em;
+    color: rgb(80, 80, 80);
+}
+
+img {
+    position: absolute;
+    width: 18%;
+    filter: invert();
+}
+
+.visible {
+    opacity: 1;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+#noUnderline {
+    animation: none;
+}
