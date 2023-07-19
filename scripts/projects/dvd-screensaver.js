@@ -1,13 +1,11 @@
+//Properties
 let image = document.getElementById("logo");
-let axisX = {motion: "right", position: 0, max: window.innerWidth - image.width};
-let axisY = {motion: "down", position: 0, max: window.innerHeight - image.height};
-let sideHits = 0;
-let cornerHits = 0;
-let timeSinceLastHit = 999;
+let axisX = {motion: "right", position: 0};
+let axisY = {motion: "down", position: 0};
+let hits = {side: 0, corner: 0, timeSinceLast: 999};
 
 document.onkeydown = toggleUI;
-
-setInterval(move, 6);
+setInterval(move, 10);
 
 //Hides UI
 function toggleUI(e) {
@@ -21,27 +19,26 @@ function toggleUI(e) {
 
 //Moves image
 function move() {
-    //Resets variables in case browser changes
-    axisX.max = window.innerWidth - image.width;
-    axisY.max = window.innerHeight - image.height;
+    let imageHeight = image.height / window.innerHeight;
+    let imageWidth = image.width / window.innerWidth;
 
     //Moves image
     if (axisX.motion == "right") {
-        axisX.position++
+        axisX.position += imageWidth;
     } else if (axisX.motion == "left") {
-        axisX.position--;
+        axisX.position -= imageWidth;
     }
 
     if (axisY.motion == "down") {
-        axisY.position++
+        axisY.position += imageHeight;
     } else if (axisY.motion == "up") {
-        axisY.position--;
+        axisY.position -= imageHeight;
     }
-    image.style.left = `${axisX.position / window.innerWidth * 100}%`;
-    image.style.top = `${axisY.position / window.innerHeight * 100}%`;
+    image.style.left = `${axisX.position}%`;
+    image.style.top = `${axisY.position}%`;
 
     //Checks if direction changes
-    if (axisX.position >= axisX.max) {
+    if (axisX.position >= 100 - imageWidth * 100) {
         axisX.motion = "left";
         hitWall();
     } else if (axisX.position <= 0) {
@@ -49,7 +46,7 @@ function move() {
         hitWall();
     }
 
-    if (axisY.position >= axisY.max) {
+    if (axisY.position >= 100 - imageHeight * 100) {
         axisY.motion = "up";
         hitWall();
     } else if (axisY.position <= 0) {
@@ -61,15 +58,16 @@ function move() {
 
 //Pretty self explanatory
 function hitWall() {
-    if (performance.now() - timeSinceLastHit <= 5) {
-        cornerHits++;
+    if (performance.now() - hits.timeSinceLast <= 5) {
+        hits.corner++;
+        hits.side--;
     } else {
-        sideHits++;
+        hits.side++;
     }
-    timeSinceLastHit = performance.now();
+    hits.timeSinceLast = performance.now();
 }
 
 function updateStats() {
-    document.getElementById("sideHits").innerText = `Side hits: ${sideHits}`;
-    document.getElementById("cornerHits").innerText = `Corner hits: ${cornerHits}`;
+    document.getElementById("sideHits").innerText = `Side hits: ${hits.side}`;
+    document.getElementById("cornerHits").innerText = `Corner hits: ${hits.corner}`;
 }

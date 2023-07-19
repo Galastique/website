@@ -29,3 +29,8 @@ img {
 #noUnderline {
     animation: none;
 }
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
