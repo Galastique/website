@@ -43,8 +43,8 @@ img {
 }
 
 .slide {
-    animation: slide 10ms;
-    animation-fill-mode: backwards;
+    animation: slide;
+    animation-fill-mode: forwards;
 }
 
 @keyframes slide {

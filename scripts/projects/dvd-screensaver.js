@@ -10,12 +10,10 @@ setInterval(move, 10);
 
 //Hides UI
 function toggleUI(e) {
-    if (e.code != "KeyS") {
-        return;
+    if (e.code == "KeyS") {   
+        document.getElementById("stats").className == "invisible" ? (document.getElementById("stats").className = "visible") : (document.getElementById("stats").className = "invisible");
+        document.getElementById("noUnderline").className == "invisible" ? (document.getElementById("noUnderline").className = "visible") : (document.getElementById("noUnderline").className = "invisible");
     }
-    
-    document.getElementById("stats").className == "invisible" ? (document.getElementById("stats").className = "visible") : (document.getElementById("stats").className = "invisible");
-    document.getElementById("noUnderline").className == "invisible" ? (document.getElementById("noUnderline").className = "visible") : (document.getElementById("noUnderline").className = "invisible");
 }
 
 //Moves image
@@ -39,17 +37,6 @@ function move() {
     //Makes animation smooth
     styleSheet.style.setProperty("--leftEnd", `${axisX.position}%`);
     styleSheet.style.setProperty("--topEnd", `${axisY.position}%`);
-
-    image.classList.add("slide");
-
-    setTimeout(function(){
-        styleSheet.style.setProperty("--leftStart", getComputedStyle(document.body).getPropertyValue("--leftEnd"));
-        styleSheet.style.setProperty("--topStart", getComputedStyle(document.body).getPropertyValue("--topEnd"));
-        image.classList.remove("slide");
-    }, 10);
-
-    image.style.left = `${axisX.position}%`;
-    image.style.top = `${axisY.position}%`;
 
     //Checks if direction changes
     if (axisX.position >= 100 - imageWidth * 100) {

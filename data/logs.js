@@ -343,5 +343,10 @@ export const updates = [
         date: "2023-07-19",
         title: "New minor project",
         changes: ["Added DVD screensaver \"project\""]
+    },
+    {
+        date: "2023-07-21",
+        title: "Minor changes",
+        changes: ["Made DVD screensaver animation smoother and improved code", ""]
     }
 ]
