@@ -59,7 +59,7 @@ function move() {
 
 //Pretty self explanatory
 function hitWall() {
-    if (performance.now() - hits.timeSinceLast <= 5) {
+    if (performance.now() - hits.timeSinceLast <= 10) {
         hits.corner++;
         hits.side--;
     } else {
