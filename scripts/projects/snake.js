@@ -43,22 +43,6 @@ function drawBoard(){
 
         game.appendChild(row);
     }
-    checkerBoard();
-}
-
-//Turn board into checker board pattern
-function checkerBoard(){
-    for(let i = 0; i < boardSize; i++) {
-        let row = document.getElementsByClassName("row")[i];
-
-        for(let j = 0; j < boardSize; j++){
-            let cell = row.getElementsByTagName("div")[j];
-
-            if((i + j) % 2 == 0){
-                cell.className = "darker";
-            }
-        }
-    }
 }
 
 //Clears board
@@ -68,7 +52,6 @@ function clearBoard(){
             item.className = "";
         }
     }
-    checkerBoard();
 }
 
 //Starts game
@@ -125,8 +108,9 @@ function move(){
             overflow--;
         }
 
-        //Adds head
+        //Adds head and restyles body borders
         bodyParts.push([headLocation[0], headLocation[1]]);
+        styleBorders();
         
         //Checks if object is on head
         snakeHead.classList.add("head");
@@ -321,4 +305,9 @@ function changeDifficulty() {
             return delays[i];
         }
     }
+}
+
+//Changes rounded edges look on body border
+function styleBorders() {
+    console.log(bodyParts);
 }

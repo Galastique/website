@@ -348,5 +348,10 @@ export const updates = [
         date: "2023-07-21",
         title: "Minor changes",
         changes: ["Made DVD screensaver animation smoother and improved code", "Heavily improved how projects are loaded", "Added hover text to project images in projects list", "Improved CSS for projects list"]
+    },
+    {
+        date: "2023-08-09",
+        title: "Snake update",
+        changes: ["Completely changed how the board's checker pattern is generated"]
     }
 ]

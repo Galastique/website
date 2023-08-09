@@ -39,7 +39,7 @@ body div p {
 #game {
     display: flex;
     flex-direction: column;
-    background-color: rgb(140, 140, 160);
+    background: repeating-conic-gradient(rgb(140, 140, 160) 0% 25%, rgb(120, 120, 140) 0% 50%) 50% / 4em 4em;
     width: 80%;
     margin: auto;
     border: 0.375em outset darkgoldenrod;
@@ -61,10 +61,6 @@ div.row div {
     padding-top: 0.75rem;
 }
 
-.darker {
-    background-color: rgb(120, 120, 140);
-}
-
 .head {
     background-color: darkgreen;
     background-size: contain;
@@ -72,6 +68,7 @@ div.row div {
 
 .body {
     background-color: var(--snakeColor);
+    border-radius: 0.5em;
 }
 
 .fruit {
