@@ -352,6 +352,6 @@ export const updates = [
     {
         date: "2023-08-09",
         title: "Snake update",
-        changes: ["Completely changed how the board's checker pattern is generated"]
+        changes: ["Added border around snake to make it easier to track when it's very long", "Completely changed how the board's checker pattern is generated"]
     }
 ]

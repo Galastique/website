@@ -61,16 +61,104 @@ div.row div {
     padding-top: 0.75rem;
 }
 
+.fruit {
+    background-color: darkred;
+}
+
 .head {
     background-color: darkgreen;
     background-size: contain;
+    border-width: 0;
 }
 
 .body {
     background-color: var(--snakeColor);
-    border-radius: 0.5em;
+    box-sizing: border-box;
+    border: 0.1em none rgb(30, 80, 30);
 }
 
-.fruit {
-    background-color: darkred;
+
+/*Changes body borders depending on where the snake moves*/
+.upup, .upright, .upleft, .rightup, .rightright, .rightdown, .downright, .downleft, .downdown, .leftup, .leftleft, .leftdown, .up, .right, .left, .down {
+    border-style: solid;
+}
+
+.upup {
+    border-bottom-style: none;
+    border-top-style: none;
+}
+
+.upright {
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+.upleft {
+    border-bottom-style: none;
+    border-left-style: none;
+}
+
+
+.rightup {
+    border-left-style: none;
+    border-top-style: none;
+}
+
+.rightright {
+    border-left-style: none;
+    border-right-style: none;
+}
+
+.rightdown {
+    border-left-style: none;
+    border-bottom-style: none;
+}
+
+
+.downright {
+    border-top-style: none;
+    border-right-style: none;
+}
+
+.downleft {
+    border-top-style: none;
+    border-left-style: none;
+}
+
+.downdown {
+    border-top-style: none;
+    border-bottom-style: none;
+}
+
+
+.leftup {
+    border-right-style: none;
+    border-top-style: none;
+}
+
+.leftleft {
+    border-right-style: none;
+    border-left-style: none;
+}
+
+.leftdown {
+    border-right-style: none;
+    border-bottom-style: none;
+}
+
+
+.up {
+    border-top-style: none;
+}
+
+.right {
+    border-right-style: none;
+}
+
+.left {
+    border-left-style: none;
+}
+
+.down {
+    border-bottom-style: none;
 }

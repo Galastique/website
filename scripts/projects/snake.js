@@ -102,15 +102,15 @@ function move(){
 
         //Removes last bit of tail
         if(overflow == 0){
-            tail.classList.remove("body");
+            tail.classList = "";
             bodyParts.shift();
         }else{
             overflow--;
         }
 
-        //Adds head and restyles body borders
-        bodyParts.push([headLocation[0], headLocation[1]]);
-        styleBorders();
+        //Adds head & restyles tail and head
+        bodyParts.push([headLocation[0], headLocation[1], currentDirection]);
+        styleEnds();
         
         //Checks if object is on head
         snakeHead.classList.add("head");
@@ -130,8 +130,10 @@ function move(){
     //Transforms head piece into body
     function headToBody(){
         let head = getXY(headLocation[0], headLocation[1]);
-        head.classList.replace("head", "body");
+        head.classList = "body";
+        lastDirection ? head.classList.add(`${lastDirection}${currentDirection}`) : head.classList.add(`${currentDirection}${currentDirection}`);
         head.style.backgroundImage = "";
+        head.style.transform = "rotate(0deg)";
     }
 }
 
@@ -207,6 +209,7 @@ function updateScore(){
 //When player dies
 function death(){
     clearInterval(slither);
+    styleEnds();
 
     if(currentDirection){
         let snakeHead = getXY(headLocation[0], headLocation[1]);
@@ -308,6 +311,9 @@ function changeDifficulty() {
 }
 
 //Changes rounded edges look on body border
-function styleBorders() {
-    console.log(bodyParts);
+function styleEnds() {
+    let snakeHead = getXY(headLocation[0], headLocation[1]);
+    let tail = getXY(bodyParts[0][0], bodyParts[0][1]);
+    tail.classList = `body ${bodyParts[1][2]}`;
+    snakeHead.classList.add(["up", "right", "down", "left"][["down", "left", "up", "right"].indexOf(bodyParts[snakeLength - 2][2])]);
 }
