@@ -138,8 +138,9 @@ function headToBody(dead = false){
     }
 
     //Borders
+    let classes = ["up", "right", "down", "left"];
     head.classList.add(currentDirection);
-    lastDirection ? head.classList.add(["up", "right", "down", "left"][["down", "left", "up", "right"].indexOf(lastDirection)]) : head.classList.add(["up", "right", "down", "left"][["down", "left", "up", "right"].indexOf(currentDirection)]);
+    lastDirection ? head.classList.add(classes[["down", "left", "up", "right"].indexOf(lastDirection)]) : head.classList.add(classes[["down", "left", "up", "right"].indexOf(currentDirection)]);
 }
 
 //Changes rounded edges look on body border
