@@ -353,5 +353,10 @@ export const updates = [
         date: "2023-08-09",
         title: "Snake update",
         changes: ["Added border around snake to make it easier to track when it's very long", "Completely changed how the board's checker pattern is generated"]
+    },
+    {
+        date: "2023-08-10",
+        title: "Snake fixed",
+        changes: ["Patched several bugs with borders", "Fruit is now a circle", "Heavily optimized code (it's still mostly trash tho)"]
     }
 ]

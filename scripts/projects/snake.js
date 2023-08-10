@@ -126,15 +126,42 @@ function move(){
         
         lastDirection = currentDirection;
     }
+}
 
-    //Transforms head piece into body
-    function headToBody(){
-        let head = getXY(headLocation[0], headLocation[1]);
+//Transforms head piece into body
+function headToBody(dead = false){
+    let head = getXY(headLocation[0], headLocation[1]);
+    if(!dead){
         head.classList = "body";
-        lastDirection ? head.classList.add(`${lastDirection}${currentDirection}`) : head.classList.add(`${currentDirection}${currentDirection}`);
         head.style.backgroundImage = "";
         head.style.transform = "rotate(0deg)";
     }
+
+    //Borders
+    head.classList.add(currentDirection);
+    lastDirection ? head.classList.add(["up", "right", "down", "left"][["down", "left", "up", "right"].indexOf(lastDirection)]) : head.classList.add(["up", "right", "down", "left"][["down", "left", "up", "right"].indexOf(currentDirection)]);
+}
+
+//Changes rounded edges look on body border
+function styleEnds() {
+    //Tail
+    let tail = getXY(bodyParts[0][0], bodyParts[0][1]);
+    tail.classList = `body ${bodyParts[1][2]}`;
+
+    //Head
+    let snakeHead = getXY(headLocation[0], headLocation[1]);
+    let classes = ["up", "right", "down", "left"];
+    let directions = ["down", "left", "up", "right"];
+
+    try{
+        if (snakeHead.classList.contains("fruit")) {
+            snakeHead.classList = `fruit head ${classes[directions.indexOf(bodyParts[snakeLength - 2][2])]}`;
+        } else if (snakeHead.classList.contains("body")) {
+            snakeHead.classList = "body head up";
+        } else {
+            snakeHead.classList = `head ${classes[directions.indexOf(bodyParts[snakeLength - 2][2])]}`;
+        }
+    }catch(err){}
 }
 
 //Generates fruit
@@ -209,6 +236,7 @@ function updateScore(){
 //When player dies
 function death(){
     clearInterval(slither);
+    headToBody(true);
     styleEnds();
 
     if(currentDirection){
@@ -308,12 +336,4 @@ function changeDifficulty() {
             return delays[i];
         }
     }
-}
-
-//Changes rounded edges look on body border
-function styleEnds() {
-    let snakeHead = getXY(headLocation[0], headLocation[1]);
-    let tail = getXY(bodyParts[0][0], bodyParts[0][1]);
-    tail.classList = `body ${bodyParts[1][2]}`;
-    snakeHead.classList.add(["up", "right", "down", "left"][["down", "left", "up", "right"].indexOf(bodyParts[snakeLength - 2][2])]);
 }
