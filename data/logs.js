@@ -357,6 +357,11 @@ export const updates = [
     {
         date: "2023-08-10",
         title: "Snake fixed",
-        changes: ["Patched several bugs with borders", "Fruit is now a circle", "Heavily optimized code (it's still mostly trash tho)"]
+        changes: ["Patched several bugs with borders", "Fruits are now circles", "Heavily optimized code (it's still mostly trash tho)"]
+    },
+    {
+        date: "2023-08-12",
+        title: "New snake feature",
+        changes: ["You can now pause the snake game by pressing \"P\"!"]
     }
 ]

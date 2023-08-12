@@ -10,6 +10,7 @@ const delays = [250, 150, 100, 75];
 let delay = delays[1];
 
 //Initial snake variables
+let paused = 0;
 let snakeLength;
 let overflow;
 let headLocation;
@@ -60,6 +61,7 @@ function start(){
     styleSheet.style.setProperty("--snakeColor", "green");
     document.getElementById("game").style.borderColor = "darkgoldenrod";
     title.innerText = "Snake";
+    paused = 0;
     snakeLength = initialSize;
     overflow = initialSize - 1;
     headLocation = [boardSize / 2, boardSize / 2];
@@ -240,7 +242,7 @@ function death(){
     headToBody(true);
     styleEnds();
 
-    if(currentDirection){
+    if (currentDirection) {
         let snakeHead = getXY(headLocation[0], headLocation[1]);
         snakeHead.style.backgroundImage = "url(../images/projects/snake/frown.png)";
         snakeHead.style.transform = `rotate(${["down", "left", "up", "right"].indexOf(currentDirection) * 90}deg)`;
@@ -282,7 +284,7 @@ function detectDirection(e) {
         //w / up
         case 87:
         case 38:
-            if(lastDirection != "down"){
+            if(lastDirection != "down" && paused == 0){
                 currentDirection = "up";
             }
             break;
@@ -290,7 +292,7 @@ function detectDirection(e) {
         //a / left
         case 65:
         case 37:
-            if(lastDirection != "right"){
+            if(lastDirection != "right" && paused == 0){
                 currentDirection = "left";
             }
             break;
@@ -298,7 +300,7 @@ function detectDirection(e) {
         //s / down
         case 83:
         case 40:
-            if(lastDirection != "up"){
+            if(lastDirection != "up" && paused == 0){
                 currentDirection = "down";
             }
             break;
@@ -306,7 +308,7 @@ function detectDirection(e) {
         //d / right
         case 68:
         case 39:
-            if(lastDirection != "left"){
+            if(lastDirection != "left" && paused == 0){
                 currentDirection = "right";
             }
             break;
@@ -317,6 +319,32 @@ function detectDirection(e) {
             death();
             start();
             updateScore();
+            break;
+
+        //p - pause
+        case 80:
+            if (title.innerText.includes("died") || (snakeLength == 4 && overflow == 3)) {
+                return;
+            }
+
+            if (paused == 0) {
+                //Paused game
+                paused = delay;
+                delay = Infinity;
+                clearInterval(slither);
+
+                //Changes interface
+                title.innerText = "Snake (Game paused)";
+                document.getElementById("game").style.opacity = "0.5";
+            } else {
+                delay = paused;
+                paused = 0;
+                slither = setInterval(move, delay);
+
+                //Changes interface
+                title.innerText = "Snake";
+                document.getElementById("game").style.opacity = "1";
+            }
             break;
     }
 }

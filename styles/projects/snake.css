@@ -61,6 +61,12 @@ div.row div {
     padding-top: 0.75rem;
 }
 
+#pause {
+    padding-top: 0.15em;
+    font-size: 0.75em;
+    color: rgb(160, 160, 160);
+}
+
 .fruit {
     background-color: darkred;
     border-radius: 50%;
@@ -70,6 +76,7 @@ div.row div {
     background-color: darkgreen;
     background-size: contain;
     border-width: 0;
+    border-radius: 0 0 0.3em 0.3em;
 }
 
 .body {
