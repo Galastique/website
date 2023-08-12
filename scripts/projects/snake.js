@@ -315,6 +315,16 @@ function detectDirection(e) {
 
         //r - restart
         case 82:
+            if (paused != 0) {
+                delay = paused;
+                paused = 0;
+                slither = setInterval(move, delay);
+
+                //Changes interface
+                title.innerText = "Snake";
+                document.getElementById("game").style.opacity = "1";
+            }
+            
             delay = changeDifficulty();
             death();
             start();
