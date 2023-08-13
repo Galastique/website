@@ -363,5 +363,10 @@ export const updates = [
         date: "2023-08-12",
         title: "New snake feature",
         changes: ["You can now pause the snake game by pressing \"P\"!"]
+    },
+    {
+        date: "2023-08-13",
+        title: "Changed color",
+        changes: ["Changed color of password generator's interface"]
     }
 ]
