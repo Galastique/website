@@ -111,7 +111,7 @@ footer div a {
     position: relative;
 }
 
-/*Custom text selection color*/
+/*Text selection color*/
 ::selection {
   background: rgba(128, 87, 148, 0.6);
 }
