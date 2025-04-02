@@ -20,7 +20,7 @@ function changeFilter(e) {
     }
 }
 
-//Dislays projects in blocks
+//Displays projects in blocks
 function displayProjects(type) {
     document.getElementById("projects").innerHTML = "";
 

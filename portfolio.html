@@ -2,55 +2,41 @@
 <html lang="en">
 
 <head>
-    <title>Personal Projects</title>
+    <title>Portfolio</title>
     <meta charset="UTF-8">
     <meta name="description" content="Here is an archive for all of my programming projects. Most of them are web based, which means you can access them right here!">
     <meta name="keywords" content="galastique, gastalique, galatisque, galactique, galastic, gastalic, galatisc, galactic, gala, galas, programming, projects, project, code, coding, javascript, html, css, javascript, vanilla javascript, project, projects, programming project, simple programming project, coding project, simple coding project, programming projects, simple programming projects, coding projects, simple coding projects, minesweeper, snake, simon, hangman, tic-tac-toe, tic tac toe, tictactoe, coin, coin flip, random, reaction, test, reaction test, color, color generator, random color generator, password, password generator, random password generator">
     <meta name="author" content="Galastique">
-    <link rel="icon" href="../images/logo.png">
-    <link rel="stylesheet" href="../styles/_style.css">
-    <link rel="stylesheet" href="../styles/projects.css">
-    <script type="module" src="../scripts/projects.js" async></script>
+    <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="./styles/_style.css">
+    <link rel="stylesheet" href="./styles/portfolio.css">
+    <script type="module" src="./scripts/portfolio.js" async></script>
 </head>
 
 <body>
     <nav>
-        <a href="../">Home</a>
-        <a class="selected" href="./">Projects</a>
-        <a href="../portfolio.html">Portfolio</a>
-        <a href="../social.html">Social</a>
-        <a href="../changelogs.html">Logs</a>
+        <a href="./">Home</a>
+        <a href="./projects/">Projects</a>
+        <a class="selected" href="./portfolio.html">Portfolio</a>
+        <a href="./social.html">Social</a>
+        <a href="./changelogs.html">Logs</a>
     </nav>
     <hr id="navigation">
     <noscript>You must enable JavaScript to view this page.</noscript>
 
     <div class="content">
-        <h2 id="subtitle">Here are the latest programming related projects that I've been working on</h2>
-
-        <div id="center">
-            <div id="filter">
-                <h3>Filter by type: </h3>
-                <div class="selectedFilter" id="all">
-                    <p>Everything</p>
-                </div>
-                <div id="game">
-                    <p>Games</p>
-                </div>
-                <div id="randomizer">
-                    <p>Randomizers</p>
-                </div>
-                <div id="misc">
-                    <p>Miscellaneous</p>
-                </div>
-            </div>
+        <div class="center">
+            <h2 id="subtitle">Here is a project I have worked on in a professional setting</h2>
+            <div class="projects" id="professional"></div>
+            <br>
+            <h2 id="subtitle">Here is a list of personal projects I have worked on</h2>
+            <div class="projects" id="personal"></div>
         </div>
-
-        <div id="projects"></div>
     </div>
     
     <footer>
         <div>
-            <img src="../images/cgl.png" alt="CGL Micro's Logo" title="CGL Micro Inc." id="cgl">
+            <img src="./images/cgl.png" alt="CGL Micro's Logo" title="CGL Micro Inc." id="cgl">
             <a href="https://www.cglmicro.ca/" target="_blank">Hosting generously sponsored<br>by CGL Micro Inc.</a>
         </div>
         <p>Made by Galastique // 2022 - 2025</p>

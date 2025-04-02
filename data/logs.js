@@ -27,7 +27,7 @@ export const updates = [
     {
         date: "2022-07-05",
         title: "Minor changes",
-        changes: ["Updated my logo", "Added text on homchangeDateage", "Adjusted page size", "Removed fade in animation from pages that aren't the home page"]
+        changes: ["Updated my logo", "Added text on home page", "Adjusted page size", "Removed fade in animation from pages that aren't the home page"]
     },
     {
         date: "2022-07-06",
@@ -368,5 +368,15 @@ export const updates = [
         date: "2023-08-13",
         title: "Changed color",
         changes: ["Changed color of password generator's interface"]
+    },
+    {
+        date: "2025-03-10",
+        title: "Removed socials",
+        changes: ["Removed 2 items for socials page", "Updated year in footer of all pages"]
+    },
+    {
+        date: "2025-04-01",
+        title: "Added portfolio",
+        changes: ["Added portfolio page to website"]
     }
 ]

@@ -4,8 +4,8 @@ nav a, footer, hr {
 }
 
 hr {
-    animation: expand 3s;
-    animation-delay: 2s;
+    animation: expand 4s;
+    animation-delay: 2.5s;
     animation-fill-mode: forwards;
 }
 
@@ -31,7 +31,7 @@ p {
     padding-right: 10%;
 }
 
-#a, #b, #c, #d {
+#a, #b, #c, #d, #e {
     animation: fadeIn 3s;
     animation-fill-mode: forwards;
 }
@@ -50,6 +50,10 @@ p {
 
 #d {
     animation-delay: 1400ms;
+}
+
+#e {
+    animation-delay: 1750ms;
 }
 
 /*Animations*/

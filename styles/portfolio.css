@@ -1,0 +1,78 @@
+/*Part above the projects*/
+#subtitle {
+    font-size: 1.8em;
+    margin: 1.5em;
+}
+
+#center {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*Projects*/
+h2 {
+    text-align: center;
+    text-shadow : 0.05em 0.05em 0.1em black;
+}
+
+.projects p {
+    max-width: 80%;
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+a {
+    margin-right: 2em;
+}
+
+.project {
+    margin: 1.8em auto;
+    padding: 1.25em;
+    width: 64em;
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    position: relative;
+    text-shadow : 0.05em 0.05em 0.8em black;
+    box-shadow: 0.75em 0.8em 1em rgba(0, 0, 0, 0.4);
+    animation: slideIn 1.2s;
+    animation-fill-mode: forwards;
+}
+
+.light {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+.dark {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+/*Links to projects*/
+.projects a:link, .projects a:visited, .projects a:active {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}
+
+.projects a:hover {
+    color: rgb(200, 200, 200);
+    text-decoration: underline;
+}
+
+/*Project images*/
+.projects img {
+    width: 12em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 65.5%;
+}
+
+@keyframes slideIn {
+    0% {
+        margin-top: 20em;
+    }
+
+    100% {
+        margin-top: 1.8em;
+    }
+}
